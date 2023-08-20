@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "event_name": "Annual Charity Gala",
+    "event_name": "Enjoy gourmet dining, live music, and a silent auction featuring exclusive items.",
     "event_date": ["10", "AUG", "2023"],
     "images": [
       "https://img.freepik.com/free-photo/cute-stylish-children-dark-space-beautiful-teen-girls-boy-standing-together_155003-15170.jpg?size=626&ext=jpg&uid=R93922666&ga=GA1.2.235952763.1681062999&semt=ais",
@@ -12,7 +12,7 @@
   },
   {
     "id": "2",
-    "event_name": "Tech Innovation Summit",
+    "event_name": "Explore cutting-edge technologies, attend insightful talks by industry leaders.",
     "event_date": ["15", "SEP", "2023"],
     "images": [
       "https://img.freepik.com/free-photo/happy-kids-playing-city-s-street-sunny-summer-s-day-front-modern-building-group-happy-childrens-teenagers-having-fun-together-concept-friendship-childhood-summer-holidays_155003-25113.jpg?size=626&ext=jpg&uid=R93922666&ga=GA1.2.235952763.1681062999&semt=ais",

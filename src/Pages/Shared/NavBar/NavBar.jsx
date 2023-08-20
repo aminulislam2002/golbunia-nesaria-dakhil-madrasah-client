@@ -5,7 +5,7 @@ const NavBar = () => {
   const navOptions = (
     <>
       <li>
-        <Link>HOME</Link>
+        <Link to="/">HOME</Link>
       </li>
       <li className="relative group">
         <div className="flex">
@@ -80,7 +80,7 @@ const NavBar = () => {
 
   return (
     <div className="navbar bg-white  fixed top-0 z-50">
-      <div className="navbar-start flex justify-end">
+      <div className="navbar-start flex lg:justify-end">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <AiOutlineMenu></AiOutlineMenu>
@@ -92,12 +92,12 @@ const NavBar = () => {
             {navOptions}
           </ul>
         </div>
-        <butto className="btn btn-ghost normal-case text-xl">Golbunia Nesaria Dakhil Madrasah</butto>
+        <butto className="btn btn-ghost normal-case text-xl hidden md:block">Golbunia Nesaria Dakhil Madrasah</butto>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
-      <div className="navbar-end flex justify-start">
+      <div className="navbar-end flex lg:justify-start">
         <button className="bg-yellow-500 hover:bg-yellow-600 text-blue-950 py-1 px-5 rounded font-semibold">LOGIN</button>
       </div>
     </div>

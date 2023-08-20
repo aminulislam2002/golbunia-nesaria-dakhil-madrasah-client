@@ -25,46 +25,48 @@ const TeachersSection = () => {
 
   return (
     <div className="container mx-auto py-10">
-      <div className="grid grid-cols-3 gap-20">
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-semibold text-blue-950">MEET OUR TEACHERS</h1>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {dataToShow.map((teacherData, id) => (
           <div key={id}>
-            <Link>
-              <div className="card w-full glass py-10">
-                <div className="flex justify-center items-center">
-                  <img src={teacherData.image} alt="car!" className="w-[200px] h-[180px] " />
-                </div>
-                <div className="flex justify-center items-center ">
-                  <div>
-                    <h2 className="font-bold text-center text-gray-500">{teacherData.name}</h2>
-                    <p className="font-bold text-center text-blue-950">{teacherData.position}</p>
-                  </div>
+            <Link to={`/teacher/${id}`} className="hover:no-underline">
+              <div className="card w-full glass p-4 rounded-lg shadow-lg bg-slate-200">
+                <div className="flex justify-center items-center mb-4">
+                  <img src={teacherData.image} alt={teacherData.name} className="w-32 h-32 md:w-[150px] md:h-[150px] " />
                 </div>
                 <div>
-                  <span className="flex justify-center items-center gap-1">
-                    <MdEmail></MdEmail>
+                  <h2 className="font-bold text-center text-gray-800 text-lg">{teacherData.name}</h2>
+                  <p className="font-semibold text-center text-blue-500">{teacherData.position}</p>
+                </div>
+                <div className="mt-4">
+                  <div className="flex justify-center items-center gap-1">
+                    <MdEmail className="text-blue-500" />
                     <p>{teacherData.contact?.email}</p>
-                  </span>
-                  <span className="flex justify-center items-center gap-1">
-                    <IoIosCall></IoIosCall>
+                  </div>
+                  <div className="flex justify-center items-center gap-1">
+                    <IoIosCall className="text-blue-500" />
                     <p>{teacherData.contact?.phone}</p>
-                  </span>
+                  </div>
                 </div>
               </div>
             </Link>
           </div>
         ))}
       </div>
-      <div className="flex justify-center items-center mt-10">
+      <div className="flex justify-center items-center mt-6">
         {!showAllTeachersData ? (
           <button
-            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-1/3 font-semibold text-base"
+            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-full md:w-auto font-semibold text-base rounded-lg shadow-md"
             onClick={handleSeeMoreClick}
           >
             VIEW ALL TEACHERS
           </button>
         ) : (
           <button
-            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-1/3 font-semibold text-base"
+            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-full md:w-auto font-semibold text-base rounded-lg shadow-md"
             onClick={handleSeeLessClick}
           >
             SEE LESS...
