@@ -5,81 +5,81 @@ const NavBar = () => {
   const navOptions = (
     <>
       <li>
-        <Link className="text-white hover:text-white">HOME</Link>
+        <Link>HOME</Link>
       </li>
       <li className="relative group">
-        <div className="flex text-white hover:text-white">
+        <div className="flex">
           <p>ABOUT</p>
           <span className="group-hover:rotate-180">
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48 bg-blue-950 hover:bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48 bg-white hover:bg-white p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <li>
-              <Link className="text-white hover:text-yellow-300">Solutions</Link>
+              <Link>Solutions</Link>
             </li>
             <li>
-              <Link className="text-white hover:text-yellow-300">Design</Link>
+              <Link>Design</Link>
             </li>
             <li>
-              <Link className="text-white hover:text-yellow-300">Development</Link>
+              <Link>Development</Link>
             </li>
             <li>
-              <Link className="text-white hover:text-yellow-300">Hosting</Link>
+              <Link>Hosting</Link>
             </li>
             <li>
-              <Link className="text-white hover:text-yellow-300">Domain register</Link>
+              <Link>Domain register</Link>
             </li>
           </ul>
         </div>
       </li>
       <li className="relative group">
-        <div className="flex hover:text-white">
+        <div className="flex">
           <p>ACADEMICS</p>
           <span className="group-hover:rotate-180">
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 hover:bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48  bg-white hover:bg-white p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <li>
-              <Link className="text-white hover:text-yellow-300">Solutions</Link>
+              <Link>Solutions</Link>
             </li>
             <li>
-              <Link className="text-white hover:text-yellow-300">Design</Link>
+              <Link>Design</Link>
             </li>
             <li>
-              <Link className="text-white hover:text-yellow-300">Development</Link>
+              <Link>Development</Link>
             </li>
             <li>
-              <Link className="text-white hover:text-yellow-300">Hosting</Link>
+              <Link>Hosting</Link>
             </li>
             <li>
-              <Link className="text-white hover:text-yellow-300">Domain register</Link>
+              <Link>Domain register</Link>
             </li>
           </ul>
         </div>
       </li>
       <li>
-        <Link className="hover:text-white">RESULT</Link>
+        <Link>RESULT</Link>
       </li>
       <li>
-        <Link className="hover:text-white">PHOTOS</Link>
+        <Link>PHOTOS</Link>
       </li>
       <li>
-        <Link to="#Notice" className="hover:text-white">
+        <a href="#Notice" >
           NOTICE
-        </Link>
+        </a>
       </li>
       <li>
-        <Link className="hover:text-white">CONTACT</Link>
+        <a href="#Contact" >CONTACT</a>
       </li>
     </>
   );
 
   return (
-    <div className="navbar bg-blue-950 text-white fixed top-0 z-50">
+    <div className="navbar bg-white  fixed top-0 z-50">
       <div className="navbar-start flex justify-end">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -87,7 +87,7 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-blue-950 text-white rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-white  rounded-box w-52"
           >
             {navOptions}
           </ul>

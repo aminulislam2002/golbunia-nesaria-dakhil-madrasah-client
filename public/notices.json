@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "notice_subject": "Important Meeting",
+    "date": ["25", "Nov", "2023"],
+    "image_url": "https://example.com/notice1.jpg",
+    "description": "There will be an important meeting on Thursday at 2:00 PM in the conference room. All team members are required to attend."
+  },
+  {
+    "id": 2,
+    "notice_subject": "Office Closure",
+    "date": ["25", "Nov", "2023"],
+    "image_url": "https://example.com/notice2.jpg",
+    "description": "Please be informed that the office will be closed on Monday due to a public holiday. Enjoy your day off!"
+  },
+  {
+    "id": 3,
+    "notice_subject": "Employee Appreciation Lunch",
+    "date": ["25", "Nov", "2023"],
+    "image_url": "https://example.com/notice3.jpg",
+    "description": "To show our appreciation for your hard work, we will be having an employee appreciation lunch on Friday at the rooftop cafeteria. Please RSVP by Wednesday."
+  },
+  {
+    "id": 4,
+    "notice_subject": "Upcoming Training Workshop",
+    "date": ["25", "Nov", "2023"],
+    "image_url": "https://example.com/notice4.jpg",
+    "description": "There will be a training workshop on the latest software tools next Wednesday. Register on the HR portal."
+  },
+  {
+    "id": 5,
+    "notice_subject": "Office Renovation",
+    "date": ["25", "Nov", "2023"],
+    "image_url": "https://example.com/notice5.jpg",
+    "description": "We are renovating the office starting next week. Please be prepared for some temporary changes in workspace."
+  },
+  {
+    "id": 6,
+    "notice_subject": "Charity Drive",
+    "date": ["25", "Nov", "2023"],
+    "image_url": "https://example.com/notice6.jpg",
+    "description": "Join us in our annual charity drive. Let's make a positive impact on our community."
+  },
+  {
+    "id": 7,
+    "notice_subject": "IT System Maintenance",
+    "date": ["25", "Nov", "2023"],
+    "image_url": "https://example.com/notice7.jpg",
+    "description": "Our IT team will perform system maintenance on Friday night. Expect some downtime."
+  }
+]
