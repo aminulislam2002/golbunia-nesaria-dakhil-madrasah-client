@@ -5,16 +5,16 @@ const NavBar = () => {
   const navOptions = (
     <>
       <li>
-        <Link className="hover:text-white">HOME</Link>
+        <Link className="text-white hover:text-white">HOME</Link>
       </li>
       <li className="relative group">
-        <div className="flex hover:text-white">
+        <div className="flex text-white hover:text-white">
           <p>ABOUT</p>
           <span className="group-hover:rotate-180">
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 hover:bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48 bg-blue-950 hover:bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <li>
               <Link className="text-white hover:text-yellow-300">Solutions</Link>
@@ -66,6 +66,11 @@ const NavBar = () => {
       </li>
       <li>
         <Link className="hover:text-white">PHOTOS</Link>
+      </li>
+      <li>
+        <Link to="#Notice" className="hover:text-white">
+          NOTICE
+        </Link>
       </li>
       <li>
         <Link className="hover:text-white">CONTACT</Link>

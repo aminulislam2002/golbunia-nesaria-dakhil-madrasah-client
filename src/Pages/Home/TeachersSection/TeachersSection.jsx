@@ -24,7 +24,7 @@ const TeachersSection = () => {
   }, []);
 
   return (
-    <div className="container mx-auto py-20">
+    <div className="container mx-auto py-10">
       <div className="grid grid-cols-3 gap-20">
         {dataToShow.map((teacherData, id) => (
           <div key={id}>

@@ -1,3 +1,4 @@
+import EventsSection from "../EventsSection/EventsSection";
 import TeachersSection from "../TeachersSection/TeachersSection";
 import TopBanner from "../TopBanner/TopBanner";
 
@@ -6,6 +7,7 @@ const Home = () => {
     <div>
       <TopBanner></TopBanner>
       <TeachersSection></TeachersSection>
+      <EventsSection></EventsSection>
       <h1>This is home page</h1>
     </div>
   );
