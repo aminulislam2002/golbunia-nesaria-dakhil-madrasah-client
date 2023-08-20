@@ -1,9 +1,11 @@
+import TeachersSection from "../TeachersSection/TeachersSection";
 import TopBanner from "../TopBanner/TopBanner";
 
 const Home = () => {
   return (
     <div>
       <TopBanner></TopBanner>
+      <TeachersSection></TeachersSection>
       <h1>This is home page</h1>
     </div>
   );
