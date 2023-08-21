@@ -5,6 +5,8 @@ import StudentsRoutineLayout from "../Layouts/StudentsRoutineLayout";
 import StudentsRoutines from "../Pages/Academics/StudentsRoutines/StudentsRoutines";
 import ClassesSyllabusLayout from "../Layouts/ClassesSyllabusLayout";
 import ClassesSyllabus from "../Pages/Academics/ClassesSyllabus/ClassesSyllabus";
+import StudentsResultsLayout from "../Layouts/StudentsResultsLayout";
+import StudentsResult from "../Pages/Academics/StudentsResult/StudentsResult";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +36,16 @@ export const router = createBrowserRouter([
       {
         path: "",
         element: <ClassesSyllabus></ClassesSyllabus>,
+      },
+    ],
+  },
+  {
+    path: "students-results",
+    element: <StudentsResultsLayout></StudentsResultsLayout>,
+    children: [
+      {
+        path: "",
+        element: <StudentsResult></StudentsResult>,
       },
     ],
   },

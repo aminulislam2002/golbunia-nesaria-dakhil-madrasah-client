@@ -50,7 +50,7 @@ const NavBar = () => {
               <Link>Student Protal</Link>
             </li>
             <li>
-              <Link>Result</Link>
+              <Link to="/students-results">Result</Link>
             </li>
             <li>
               <Link>Events</Link>
