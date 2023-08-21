@@ -16,6 +16,10 @@ import Eff from "../Pages/Links/Eff/Eff";
 import Etif from "../Pages/Links/Etif/Etif";
 import Erps from "../Pages/Links/Erps/Erps";
 import NoticeSection from "../Pages/Home/NoticeSection/NoticeSection";
+import LoginSignUpLayout from "../Layouts/LoginSignUpLayout";
+import StudentSignUp from "../Pages/Authentication/StudentSignUp/StudentSignUp";
+import TeacherSignUp from "../Pages/Authentication/TeacherSignUp/TeacherSignUp";
+import Login from "../Pages/Authentication/Login/Login";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +65,24 @@ export const router = createBrowserRouter([
       {
         path: "notice-board",
         element: <NoticeSection></NoticeSection>,
+      },
+    ],
+  },
+  {
+    path: "login-register",
+    element: <LoginSignUpLayout></LoginSignUpLayout>,
+    children: [
+      {
+        path: "student-register",
+        element: <StudentSignUp></StudentSignUp>,
+      },
+      {
+        path: "teacher-register",
+        element: <TeacherSignUp></TeacherSignUp>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
       },
     ],
   },

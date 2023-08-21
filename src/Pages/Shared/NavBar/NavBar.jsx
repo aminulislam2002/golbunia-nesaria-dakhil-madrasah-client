@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import { AiOutlineDown, AiOutlineMenu } from "react-icons/ai";
+import { MdDarkMode, MdAccountCircle } from "react-icons/md";
+import { AiFillPlusSquare } from "react-icons/ai";
+import { PiSignOutBold } from "react-icons/pi";
+import { FcSettings } from "react-icons/fc";
 
 const NavBar = () => {
+  const userName = "Aminul Islam";
+  const isUser = false;
+
   const navOptions = (
     <>
       <li className="text-white">
@@ -154,7 +161,35 @@ const NavBar = () => {
         <ul className="flex justify-center items-center gap-10 menu-horizontal px-1">{navOptions}</ul>
       </div>
       <div className="navbar-end flex justify-end lg:justify-center items-center lg:w-1/12">
-        <button className="bg-yellow-500 hover:bg-yellow-600 text-blue-950 py-1 px-5 rounded font-semibold">LOGIN</button>
+        <div className="dropdown dropdown-end">
+          <label tabIndex={0} className="bg-yellow-500 hover:bg-yellow-600 text-blue-950 py-1 px-5 rounded font-semibold">
+            LOGIN
+          </label>
+          <ul tabIndex={0} className="dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-blue-950 text-white">
+            {isUser ? (
+              <>
+                <button className="w-full text-left">
+                  <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3">Profile</li>
+                </button>
+                <div className="flex justify-center items-center">
+                  <PiSignOutBold className="w-7 h-7"></PiSignOutBold>
+                  <button className="w-full text-left">
+                    <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3"> Log Out</li>
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <Link to="login-register/student-register">
+                  <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3">Student Login</li>
+                </Link>
+                <Link to="login-register/teacher-register">
+                  <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3">Teacher Login</li>
+                </Link>
+              </>
+            )}
+          </ul>
+        </div>
       </div>
     </div>
   );
