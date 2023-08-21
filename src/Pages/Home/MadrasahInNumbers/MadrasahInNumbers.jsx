@@ -5,7 +5,7 @@ import { HiUserGroup } from "react-icons/hi";
 
 const MadrasahInNumbers = () => {
   return (
-    <div className="container mx-auto py-10 bg-gray-200 bg-opacity-30">
+    <div className="container mx-auto py-10 bg-black bg-opacity-10">
       <div className="text-center mb-8">
         <h1 className="text-3xl font-semibold text-blue-950">MADRASAH IN NUMBERS</h1>
       </div>

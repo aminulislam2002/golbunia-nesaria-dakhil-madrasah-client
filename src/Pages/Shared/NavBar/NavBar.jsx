@@ -9,27 +9,27 @@ const NavBar = () => {
       </li>
       <li className="relative group">
         <div className="flex">
-          <p>ABOUT</p>
+          <p>ABOUT US</p>
           <span className="group-hover:rotate-180">
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48 bg-white hover:bg-white p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-52 bg-white hover:bg-white p-1 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <li>
-              <Link>Solutions</Link>
+              <Link>At A Glance</Link>
             </li>
             <li>
-              <Link>Design</Link>
+              <Link>History of Madrasah</Link>
             </li>
             <li>
-              <Link>Development</Link>
+              <Link>Mission And Vission</Link>
             </li>
             <li>
-              <Link>Hosting</Link>
+              <Link>Photo Gallary</Link>
             </li>
             <li>
-              <Link>Domain register</Link>
+              <Link>Committee</Link>
             </li>
           </ul>
         </div>
@@ -44,34 +44,121 @@ const NavBar = () => {
         <div className="absolute z-50 hidden top-full w-48  bg-white hover:bg-white p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <li>
-              <Link>Solutions</Link>
+              <a href="#Notice">Notice Board</a>
             </li>
             <li>
-              <Link>Design</Link>
+              <Link>Student Protal</Link>
             </li>
             <li>
-              <Link>Development</Link>
+              <Link>Result</Link>
             </li>
             <li>
-              <Link>Hosting</Link>
+              <Link>Events</Link>
             </li>
             <li>
-              <Link>Domain register</Link>
+              <Link>News</Link>
+            </li>
+            <li>
+              <Link>Resources</Link>
+            </li>
+            <li>
+              <Link>Rover Scut</Link>
+            </li>
+            <li>
+              <Link to="students-routines">Students Routine</Link>
+            </li>
+            <li>
+              <Link>Class Syllabus</Link>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li className="relative group">
+        <div className="flex">
+          <p>CLASSES</p>
+          <span className="group-hover:rotate-180">
+            <AiOutlineDown></AiOutlineDown>
+          </span>
+        </div>
+        <div className="absolute z-50 hidden top-full w-48  bg-white hover:bg-white p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+          <ul>
+            <li>
+              <Link>One</Link>
+            </li>
+            <li>
+              <Link>Two</Link>
+            </li>
+            <li>
+              <Link>Three</Link>
+            </li>
+            <li>
+              <Link>Four</Link>
+            </li>
+            <li>
+              <Link>Five</Link>
+            </li>
+            <li>
+              <Link>Six</Link>
+            </li>
+            <li>
+              <Link>Seven</Link>
+            </li>
+            <li>
+              <Link>Eight</Link>
+            </li>
+            <li>
+              <Link>Nine</Link>
+            </li>
+            <li>
+              <Link>Ten</Link>
             </li>
           </ul>
         </div>
       </li>
       <li>
-        <Link>RESULT</Link>
+        <Link>BLOG</Link>
       </li>
-      <li>
-        <Link>PHOTOS</Link>
-      </li>
-      <li>
-        <a href="#Notice">NOTICE</a>
-      </li>
-      <li>
-        <a href="#Contact">CONTACT</a>
+      <li className="relative group">
+        <div className="flex">
+          <p>LINKS</p>
+          <span className="group-hover:rotate-180">
+            <AiOutlineDown></AiOutlineDown>
+          </span>
+        </div>
+        <div className="absolute z-50 hidden top-full w-48  bg-white hover:bg-white p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+          <ul>
+            <li>
+              <Link>One</Link>
+            </li>
+            <li>
+              <Link>Two</Link>
+            </li>
+            <li>
+              <Link>Three</Link>
+            </li>
+            <li>
+              <Link>Four</Link>
+            </li>
+            <li>
+              <Link>Five</Link>
+            </li>
+            <li>
+              <Link>Six</Link>
+            </li>
+            <li>
+              <Link>Seven</Link>
+            </li>
+            <li>
+              <Link>Eight</Link>
+            </li>
+            <li>
+              <Link>Nine</Link>
+            </li>
+            <li>
+              <Link>Ten</Link>
+            </li>
+          </ul>
+        </div>
       </li>
     </>
   );
