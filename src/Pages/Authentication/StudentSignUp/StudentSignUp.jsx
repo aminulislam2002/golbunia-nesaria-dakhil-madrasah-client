@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { FaLinkedin, FaTwitterSquare, FaGithub } from "react-icons/fa";
+import { useState } from "react";
 
 const StudentSignUp = () => {
+  const [isAgreed, setIsAgreed] = useState(false);
   const {
     register,
     handleSubmit,
@@ -16,12 +18,17 @@ const StudentSignUp = () => {
     console.log(data);
   };
 
+  const handleCheckboxChange = (e) => {
+    setIsAgreed(e.target.checked);
+  };
+
   return (
     <div className="relative h-screen">
       <div
         className="absolute inset-0 bg-no-repeat max-h-screen bg-center"
         style={{
-          backgroundImage: "url(https://img.freepik.com/free-vector/isometric-data-protection-concept-with-parent-child-login-window-lock-3d_1284-63713.jpg?size=626&ext=jpg&uid=R93922666&ga=GA1.2.235952763.1681062999&semt=sph)",
+          backgroundImage:
+            "url(https://img.freepik.com/free-vector/isometric-data-protection-concept-with-parent-child-login-window-lock-3d_1284-63713.jpg?size=626&ext=jpg&uid=R93922666&ga=GA1.2.235952763.1681062999&semt=sph)",
         }}
       ></div>
 
@@ -59,14 +66,14 @@ const StudentSignUp = () => {
                   />
                 </div>
               </div>
-              {/* Phone Number or Email Address field */}
+              {/* Email Address field */}
               <div className="mb-2">
-                <label className="block text-gray-700 text-sm font-bold mb-1">Phone Number or Email</label>
+                <label className="block text-gray-700 text-sm font-bold mb-1">Email</label>
                 <input
                   type="email"
                   {...register("email", { required: true })}
                   name="email"
-                  placeholder="Enter your phone number or email"
+                  placeholder="Enter your email"
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
@@ -101,7 +108,12 @@ const StudentSignUp = () => {
               {/* Terms and condition checkbox  */}
               <div className="form-control">
                 <label className="flex gap-4 text-sm mb-2">
-                  <input type="checkbox" checked="checked" className="checkbox checkbox-sm" readOnly/>
+                  <input
+                    type="checkbox"
+                    className="checkbox checkbox-sm"
+                    readOnly
+                    onChange={handleCheckboxChange}
+                  />
                   <div>
                     I agree to <button className="text-blue-500">Terms & Conditions of Use</button> and
                     <button className="text-blue-500">Privacy Policy</button>.
@@ -113,6 +125,7 @@ const StudentSignUp = () => {
                 <button
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded w-full focus:outline-none focus:shadow-outline"
                   type="submit"
+                  disabled={!isAgreed}
                 >
                   Agree and Register
                 </button>

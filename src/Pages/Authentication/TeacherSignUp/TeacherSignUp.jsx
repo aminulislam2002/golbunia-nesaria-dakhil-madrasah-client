@@ -4,8 +4,11 @@ import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { FaLinkedin, FaTwitterSquare, FaGithub } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const TeacherSignUp = () => {
+  const [isAgreed, setIsAgreed] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -184,6 +187,10 @@ const TeacherSignUp = () => {
     }
   };
 
+  const handleCheckboxChange = (e) => {
+    setIsAgreed(e.target.checked);
+  };
+
   return (
     <div className="relative h-screen">
       <div
@@ -281,7 +288,13 @@ const TeacherSignUp = () => {
               {/* Terms and condition checkbox  */}
               <div className="form-control">
                 <label className="flex gap-4 text-sm mb-2">
-                  <input type="checkbox" checked="checked" className="checkbox checkbox-sm" readOnly />
+                  <input
+                    type="checkbox"
+                    className="checkbox checkbox-sm"
+                    readOnly
+                    checked={isAgreed}
+                    onChange={handleCheckboxChange}
+                  />
                   <div>
                     I agree to <button className="text-blue-500">Terms & Conditions of Use</button> and
                     <button className="text-blue-500">Privacy Policy</button>.
@@ -293,6 +306,7 @@ const TeacherSignUp = () => {
                 <button
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded w-full focus:outline-none focus:shadow-outline"
                   type="submit"
+                  disabled={!isAgreed}
                 >
                   Agree and Register
                 </button>
