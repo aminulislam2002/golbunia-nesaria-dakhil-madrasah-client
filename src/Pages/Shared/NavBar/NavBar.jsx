@@ -16,21 +16,21 @@ const NavBar = () => {
         </div>
         <div className="absolute z-50 hidden top-full w-52 bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
-            <li>
-              <Link className="">At A Glance</Link>
-            </li>
-            <li>
-              <Link to="/history-of-madrasah">History of Madrasah</Link>
-            </li>
-            <li>
-              <Link to="/mission-and-vision">Mission And Vision</Link>
-            </li>
-            <li>
-              <Link to="/photos-gallery">Photo Gallery</Link>
-            </li>
-            <li>
-              <Link to="authority-and-committee">Committee</Link>
-            </li>
+            <Link>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">At A Glance</li>
+            </Link>
+            <Link to="/history-of-madrasah">
+              <li className="hover:bg-white hover:text-black ps-2 rounded">History of Madrasah</li>
+            </Link>
+            <Link to="/mission-and-vision">
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Mission And Vision</li>
+            </Link>
+            <Link to="/photos-gallery">
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Photo Gallery</li>
+            </Link>
+            <Link to="authority-and-committee">
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Committee</li>
+            </Link>
           </ul>
         </div>
       </li>
@@ -44,35 +44,31 @@ const NavBar = () => {
         <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/notice-board">
-              <li>
-                <li>Notice Board</li>
-              </li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
             </Link>
             <Link>
-              <li>
-                <li>Student Protal</li>
-              </li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Student Protal</li>
             </Link>
             <Link to="/students-results">
-              <li>Result</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Result</li>
             </Link>
             <Link>
-              <li>Events</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Events</li>
             </Link>
             <Link>
-              <li>News</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">News</li>
             </Link>
             <Link>
-              <li>Resources</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Resources</li>
             </Link>
             <Link>
-              <li>Rover Scut</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Rover Scut</li>
             </Link>
             <Link to="/students-routines">
-              <li>Students Routine</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
             </Link>
             <Link to="/classes-syllabus">
-              <li>Class Syllabus</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Class Syllabus</li>
             </Link>
           </ul>
         </div>
@@ -86,36 +82,9 @@ const NavBar = () => {
         </div>
         <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
-            <li>
-              <Link>One</Link>
-            </li>
-            <li>
-              <Link>Two</Link>
-            </li>
-            <li>
-              <Link>Three</Link>
-            </li>
-            <li>
-              <Link>Four</Link>
-            </li>
-            <li>
-              <Link>Five</Link>
-            </li>
-            <li>
-              <Link>Six</Link>
-            </li>
-            <li>
-              <Link>Seven</Link>
-            </li>
-            <li>
-              <Link>Eight</Link>
-            </li>
-            <li>
-              <Link>Nine</Link>
-            </li>
-            <li>
-              <Link>Ten</Link>
-            </li>
+            <Link>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">One</li>
+            </Link>
           </ul>
         </div>
       </li>
@@ -132,31 +101,31 @@ const NavBar = () => {
         <div className="absolute z-50 hidden top-full w-60  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/eSIF">
-              <li>eSIF</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">eSIF</li>
             </Link>
             <Link to="/eFF">
-              <li>eFF</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">eFF</li>
             </Link>
             <Link to="/eTIF">
-              <li>eTIF</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">eTIF</li>
             </Link>
             <Link to="/eRPS">
-              <li>eRPS</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">eRPS</li>
             </Link>
             <Link>
-              <li>Madrasah Education Board</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Madrasah Education Board</li>
             </Link>
             <Link>
-              <li>Ministry Of Education</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Ministry Of Education</li>
             </Link>
             <Link>
-              <li>National Web Protal</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">National Web Protal</li>
             </Link>
             <Link>
-              <li>Dhaka Education Board</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Dhaka Education Board</li>
             </Link>
             <Link>
-              <li>National Curriculum Textbook</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">National Curriculum Textbook</li>
             </Link>
           </ul>
         </div>
