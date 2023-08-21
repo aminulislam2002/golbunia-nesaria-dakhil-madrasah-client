@@ -101,7 +101,7 @@ const StudentSignUp = () => {
               {/* Terms and condition checkbox  */}
               <div className="form-control">
                 <label className="flex gap-4 text-sm mb-2">
-                  <input type="checkbox" checked="" className="checkbox checkbox-sm" />
+                  <input type="checkbox" checked="checked" className="checkbox checkbox-sm" readOnly/>
                   <div>
                     I agree to <button className="text-blue-500">Terms & Conditions of Use</button> and
                     <button className="text-blue-500">Privacy Policy</button>.

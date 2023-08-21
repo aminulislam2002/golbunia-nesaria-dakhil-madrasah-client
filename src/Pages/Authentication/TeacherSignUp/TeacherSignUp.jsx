@@ -3,33 +3,186 @@ import { useForm } from "react-hook-form";
 import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { FaLinkedin, FaTwitterSquare, FaGithub } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const TeacherSignUp = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const validTeacherIds = ["abc1", "abc2", "abc3", "abc4", "abc5", "abc6", "abc7", "abc8", "abc9", "abc10"];
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
 
-  const onSubmit = (data) => {
-    console.log("onSubmit function called");
-    console.log(data);
+  const predefinedTeacherIds = ["abc1", "abc2", "abc3", "abc4", "abc5", "abc6", "abc7", "abc8", "abc9", "abc10"];
+
+  const handleFacebookSignUp = async () => {
+    const { value: userId } = await Swal.fire({
+      title: "Enter your Teacher ID:",
+      input: "text",
+      inputPlaceholder: "Teacher ID",
+      showCancelButton: true,
+      confirmButtonText: "Login",
+      cancelButtonText: "Cancel",
+    });
+
+    if (userId) {
+      if (predefinedTeacherIds.includes(userId)) {
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+        });
+        console.log("Yes you are valid!");
+        // Authentication code is here
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "Invalid Teacher ID",
+        });
+      }
+    }
+  };
+  const handleGoogleSignUp = async () => {
+    const { value: userId } = await Swal.fire({
+      title: "Enter your Teacher ID:",
+      input: "text",
+      inputPlaceholder: "Teacher ID",
+      showCancelButton: true,
+      confirmButtonText: "Login",
+      cancelButtonText: "Cancel",
+    });
+
+    if (userId) {
+      if (predefinedTeacherIds.includes(userId)) {
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+        });
+        console.log("Yes you are valid!");
+        // Authentication code is here
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "Invalid Teacher ID",
+        });
+      }
+    }
+  };
+  const handleLinkedinSignUp = async () => {
+    const { value: userId } = await Swal.fire({
+      title: "Enter your Teacher ID:",
+      input: "text",
+      inputPlaceholder: "Teacher ID",
+      showCancelButton: true,
+      confirmButtonText: "Login",
+      cancelButtonText: "Cancel",
+    });
+
+    if (userId) {
+      if (predefinedTeacherIds.includes(userId)) {
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+        });
+        console.log("Yes you are valid!");
+        // Authentication code is here
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "Invalid Teacher ID",
+        });
+      }
+    }
+  };
+  const handleTwitterSignUp = async () => {
+    const { value: userId } = await Swal.fire({
+      title: "Enter your Teacher ID:",
+      input: "text",
+      inputPlaceholder: "Teacher ID",
+      showCancelButton: true,
+      confirmButtonText: "Login",
+      cancelButtonText: "Cancel",
+    });
+
+    if (userId) {
+      if (predefinedTeacherIds.includes(userId)) {
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+        });
+        console.log("Yes you are valid!");
+        // Authentication code is here
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "Invalid Teacher ID",
+        });
+      }
+    }
+  };
+  const handleGithubSignUp = async () => {
+    const { value: userId } = await Swal.fire({
+      title: "Enter your Teacher ID:",
+      input: "text",
+      inputPlaceholder: "Teacher ID",
+      showCancelButton: true,
+      confirmButtonText: "Login",
+      cancelButtonText: "Cancel",
+    });
+
+    if (userId) {
+      if (predefinedTeacherIds.includes(userId)) {
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+        });
+        console.log("Yes you are valid!");
+        // Authentication code is here
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "Invalid Teacher ID",
+        });
+      }
+    }
   };
 
-  // const onSubmit = (data) => {
-  //   const { teacherId } = data;
-  //   console.log("onSubmit function called");
-  //   console.log(data);
-
-  //   if (validTeacherIds.includes(teacherId)) {
-  //     // Valid ID, continue with your logic
-  //   } else {
-  //     "not match"
-  //     // Invalid ID, you can set an error message here
-  //   }
-  // };
+  const onSubmit = (data) => {
+    if (predefinedTeacherIds.includes(data.teacherId)) {
+      Toast.fire({
+        icon: "success",
+        title: "Signed in successfully",
+      });
+      console.log("onSubmit function called");
+      console.log(data);
+      // Authentication code is here
+    } else {
+      Swal.fire({
+        title: "Sorry!",
+        text: "You are not valid Teacher.",
+        icon: "warning",
+        confirmButtonText: "Okay",
+      });
+      // Clear the form
+      reset();
+    }
+  };
 
   return (
     <div className="relative h-screen">
@@ -97,7 +250,6 @@ const TeacherSignUp = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
-               
               {/* Password field */}
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-1">Login Password</label>
@@ -129,7 +281,7 @@ const TeacherSignUp = () => {
               {/* Terms and condition checkbox  */}
               <div className="form-control">
                 <label className="flex gap-4 text-sm mb-2">
-                  <input type="checkbox" checked="" className="checkbox checkbox-sm" />
+                  <input type="checkbox" checked="checked" className="checkbox checkbox-sm" readOnly />
                   <div>
                     I agree to <button className="text-blue-500">Terms & Conditions of Use</button> and
                     <button className="text-blue-500">Privacy Policy</button>.
@@ -160,19 +312,19 @@ const TeacherSignUp = () => {
               <hr />
             </div>
             <div className="flex justify-center items-center gap-5">
-              <button>
+              <button onClick={handleFacebookSignUp}>
                 <BsFacebook className="w-8 h-8"></BsFacebook>
               </button>
-              <button>
+              <button onClick={handleGoogleSignUp}>
                 <FcGoogle className="w-8 h-8"></FcGoogle>
               </button>
-              <button>
+              <button onClick={handleLinkedinSignUp}>
                 <FaLinkedin className="w-8 h-8"></FaLinkedin>
               </button>
-              <button>
+              <button onClick={handleTwitterSignUp}>
                 <FaTwitterSquare className="w-8 h-8"></FaTwitterSquare>
               </button>
-              <button>
+              <button onClick={handleGithubSignUp}>
                 <FaGithub className="w-8 h-8"></FaGithub>
               </button>
             </div>
