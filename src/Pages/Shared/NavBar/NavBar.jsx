@@ -65,10 +65,10 @@ const NavBar = () => {
               <Link>Rover Scut</Link>
             </li>
             <li>
-              <Link to="students-routines">Students Routine</Link>
+              <Link to="/students-routines">Students Routine</Link>
             </li>
             <li>
-              <Link>Class Syllabus</Link>
+              <Link to="/classes-syllabus">Class Syllabus</Link>
             </li>
           </ul>
         </div>

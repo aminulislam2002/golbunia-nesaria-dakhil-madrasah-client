@@ -1,7 +1,7 @@
 const StudentsRoutines = () => {
   return (
     <div>
-      <h1>Students Routine Here</h1>
+      <h1>Students Routines data is coming soon....</h1>
     </div>
   );
 };
