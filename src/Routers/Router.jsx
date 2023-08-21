@@ -7,6 +7,10 @@ import ClassesSyllabusLayout from "../Layouts/ClassesSyllabusLayout";
 import ClassesSyllabus from "../Pages/Academics/ClassesSyllabus/ClassesSyllabus";
 import StudentsResultsLayout from "../Layouts/StudentsResultsLayout";
 import StudentsResult from "../Pages/Academics/StudentsResult/StudentsResult";
+import HistoryOfMadrasah from "../Pages/AboutUs/HistoryOfMadrasah/HistoryOfMadrasah";
+import MissionAndVision from "../Pages/AboutUs/MissionAndVision/MissionAndVision";
+import PhotosGallery from "../Pages/AboutUs/PhotosGallery/PhotosGallery";
+import AuthorityAndCommittee from "../Pages/AboutUs/AuthorityAndCommittee/AuthorityAndCommittee";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +20,22 @@ export const router = createBrowserRouter([
       {
         path: "",
         element: <Home></Home>,
+      },
+      {
+        path: "history-of-madrasah",
+        element: <HistoryOfMadrasah></HistoryOfMadrasah>,
+      },
+      {
+        path: "mission-and-vision",
+        element: <MissionAndVision></MissionAndVision>,
+      },
+      {
+        path: "photos-gallery",
+        element: <PhotosGallery></PhotosGallery>,
+      },
+      {
+        path: "authority-and-committee",
+        element: <AuthorityAndCommittee></AuthorityAndCommittee>,
       },
     ],
   },

@@ -20,16 +20,16 @@ const NavBar = () => {
               <Link className="">At A Glance</Link>
             </li>
             <li>
-              <Link>History of Madrasah</Link>
+              <Link to="/history-of-madrasah">History of Madrasah</Link>
             </li>
             <li>
-              <Link>Mission And Vission</Link>
+              <Link to="/mission-and-vision">Mission And Vision</Link>
             </li>
             <li>
-              <Link>Photo Gallary</Link>
+              <Link to="/photos-gallery">Photo Gallery</Link>
             </li>
             <li>
-              <Link>Committee</Link>
+              <Link to="authority-and-committee">Committee</Link>
             </li>
           </ul>
         </div>
