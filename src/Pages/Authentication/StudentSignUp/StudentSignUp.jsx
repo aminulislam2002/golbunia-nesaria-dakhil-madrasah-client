@@ -34,45 +34,45 @@ const StudentSignUp = () => {
         </div>
         <div className="flex justify-center items-center order-1 md:order-2">
           <div className="w-full max-w-md bg-gray-200 rounded shadow-md px-8 pt-4 pb-6">
-            <h1 className="text-2xl font-bold text-center mb-4">Sign up</h1>
+            <h1 className="text-2xl font-bold text-center mb-2">Sign up</h1>
             <form className="" onSubmit={handleSubmit(onSubmit)}>
               {/* Full name*/}
-              <div className="flex justify-center items-center gap-4 mb-4">
+              <div className="flex justify-center items-center gap-4 mb-2">
                 <div>
-                  <label className="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
+                  <label className="block text-gray-700 text-sm font-bold mb-1">First Name:</label>
                   <input
                     type="text"
                     {...register("fistName", { required: true })}
                     name="fistName"
                     placeholder="Enter your first name"
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 text-sm font-bold mb-2">Last Name:</label>
+                  <label className="block text-gray-700 text-sm font-bold mb-1">Last Name:</label>
                   <input
                     type="text"
                     {...register("lastName", { required: true })}
                     name="lastName"
                     placeholder="Enter your last name"
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                 </div>
               </div>
               {/* Phone Number or Email Address field */}
-              <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Phone Number or Email</label>
+              <div className="mb-2">
+                <label className="block text-gray-700 text-sm font-bold mb-1">Phone Number or Email</label>
                 <input
                   type="email"
                   {...register("email", { required: true })}
                   name="email"
                   placeholder="Enter your phone number or email"
-                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
               {/* Password field */}
-              <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Login Password</label>
+              <div className="mb-2">
+                <label className="block text-gray-700 text-sm font-bold mb-1">Login Password</label>
                 <input
                   type="password"
                   {...register("password", {
@@ -81,12 +81,12 @@ const StudentSignUp = () => {
                   })}
                   name="password"
                   placeholder="Set the login password"
-                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
               {/* Confirm Password field */}
-              <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
+              <div className="mb-2">
+                <label className="block text-gray-700 text-sm font-bold mb-1">Confirm Password</label>
                 <input
                   type="password"
                   {...register("confirmPassword", {
@@ -95,12 +95,12 @@ const StudentSignUp = () => {
                   })}
                   name="confirmPassword"
                   placeholder="Set the login password again"
-                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
               {/* Terms and condition checkbox  */}
               <div className="form-control">
-                <label className="flex gap-4 text-sm mb-4">
+                <label className="flex gap-4 text-sm mb-2">
                   <input type="checkbox" checked="" className="checkbox checkbox-sm" />
                   <div>
                     I agree to <button className="text-blue-500">Terms & Conditions of Use</button> and
@@ -111,7 +111,7 @@ const StudentSignUp = () => {
               {/* Register button field */}
               <div className="flex items-center justify-between">
                 <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full focus:outline-none focus:shadow-outline"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded w-full focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
                   Agree and Register
@@ -126,7 +126,7 @@ const StudentSignUp = () => {
               </Link>
             </div>
             {/* Social Login */}
-            <div className="grid grid-cols-3 items-center justify-center mb-4">
+            <div className="grid grid-cols-3 items-center justify-center mb-2">
               <hr />
               <span className="text-center block text-gray-700 text-sm font-bold">Sign in with</span>
               <hr />
