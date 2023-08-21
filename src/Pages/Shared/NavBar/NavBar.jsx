@@ -43,33 +43,37 @@ const NavBar = () => {
         </div>
         <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
-            <li>
-              <a href="#Notice">Notice Board</a>
-            </li>
-            <li>
-              <Link>Student Protal</Link>
-            </li>
-            <li>
-              <Link to="/students-results">Result</Link>
-            </li>
-            <li>
-              <Link>Events</Link>
-            </li>
-            <li>
-              <Link>News</Link>
-            </li>
-            <li>
-              <Link>Resources</Link>
-            </li>
-            <li>
-              <Link>Rover Scut</Link>
-            </li>
-            <li>
-              <Link to="/students-routines">Students Routine</Link>
-            </li>
-            <li>
-              <Link to="/classes-syllabus">Class Syllabus</Link>
-            </li>
+            <Link to="/notice-board">
+              <li>
+                <li>Notice Board</li>
+              </li>
+            </Link>
+            <Link>
+              <li>
+                <li>Student Protal</li>
+              </li>
+            </Link>
+            <Link to="/students-results">
+              <li>Result</li>
+            </Link>
+            <Link>
+              <li>Events</li>
+            </Link>
+            <Link>
+              <li>News</li>
+            </Link>
+            <Link>
+              <li>Resources</li>
+            </Link>
+            <Link>
+              <li>Rover Scut</li>
+            </Link>
+            <Link to="/students-routines">
+              <li>Students Routine</li>
+            </Link>
+            <Link to="/classes-syllabus">
+              <li>Class Syllabus</li>
+            </Link>
           </ul>
         </div>
       </li>
@@ -125,38 +129,35 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-60  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
-            <li>
-              <Link>One</Link>
-            </li>
-            <li>
-              <Link>Two</Link>
-            </li>
-            <li>
-              <Link>Three</Link>
-            </li>
-            <li>
-              <Link>Four</Link>
-            </li>
-            <li>
-              <Link>Five</Link>
-            </li>
-            <li>
-              <Link>Six</Link>
-            </li>
-            <li>
-              <Link>Seven</Link>
-            </li>
-            <li>
-              <Link>Eight</Link>
-            </li>
-            <li>
-              <Link>Nine</Link>
-            </li>
-            <li>
-              <Link>Ten</Link>
-            </li>
+            <Link to="/eSIF">
+              <li>eSIF</li>
+            </Link>
+            <Link to="/eFF">
+              <li>eFF</li>
+            </Link>
+            <Link to="/eTIF">
+              <li>eTIF</li>
+            </Link>
+            <Link to="/eRPS">
+              <li>eRPS</li>
+            </Link>
+            <Link>
+              <li>Madrasah Education Board</li>
+            </Link>
+            <Link>
+              <li>Ministry Of Education</li>
+            </Link>
+            <Link>
+              <li>National Web Protal</li>
+            </Link>
+            <Link>
+              <li>Dhaka Education Board</li>
+            </Link>
+            <Link>
+              <li>National Curriculum Textbook</li>
+            </Link>
           </ul>
         </div>
       </li>
@@ -168,7 +169,7 @@ const NavBar = () => {
       <div className="navbar-start flex lg:w-3/12">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <AiOutlineMenu></AiOutlineMenu>
+            <AiOutlineMenu className="text-white"></AiOutlineMenu>
           </label>
           <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-blue-950 rounded-box w-52">
             {navOptions}
