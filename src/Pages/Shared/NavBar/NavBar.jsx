@@ -7,7 +7,9 @@ import { FcSettings } from "react-icons/fc";
 
 const NavBar = () => {
   const userName = "Aminul Islam";
-  const isUser = false;
+  const profileImage =
+    "https://img.freepik.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?size=626&ext=jpg&ga=GA1.2.235952763.1681062999&semt=ais";
+  const isUser = true;
 
   const navOptions = (
     <>
@@ -168,13 +170,20 @@ const NavBar = () => {
           <ul tabIndex={0} className="dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-blue-950 text-white">
             {isUser ? (
               <>
-                <button className="w-full text-left">
-                  <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3">Profile</li>
-                </button>
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center gap-1">
+                  <Link to="/dashboard/profile">
+                    <img src={profileImage} className="w-7 h-7 rounded-full" alt="" />
+                    <button className="w-full text-left">
+                      <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3">
+                        View Your Profile
+                      </li>
+                    </button>
+                  </Link>
+                </div>
+                <div className="flex justify-center items-center gap-1">
                   <PiSignOutBold className="w-7 h-7"></PiSignOutBold>
                   <button className="w-full text-left">
-                    <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3"> Log Out</li>
+                    <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3">Log Out</li>
                   </button>
                 </div>
               </>

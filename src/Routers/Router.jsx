@@ -20,6 +20,8 @@ import LoginSignUpLayout from "../Layouts/LoginSignUpLayout";
 import StudentSignUp from "../Pages/Authentication/StudentSignUp/StudentSignUp";
 import TeacherSignUp from "../Pages/Authentication/TeacherSignUp/TeacherSignUp";
 import Login from "../Pages/Authentication/Login/Login";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import Profile from "../Pages/Dashboard/Profile/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -65,6 +67,16 @@ export const router = createBrowserRouter([
       {
         path: "notice-board",
         element: <NoticeSection></NoticeSection>,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "profile",
+        element: <Profile></Profile>,
       },
     ],
   },
