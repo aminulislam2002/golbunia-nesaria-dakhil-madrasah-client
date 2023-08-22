@@ -14,9 +14,9 @@ const DashboardLayout = () => {
           Manage Events
         </li>
       </Link>
-      <Link to="/dashboard">
+      <Link to="/dashboard/manageNotices">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
+          Manage Notices
         </li>
       </Link>
       <Link to="/dashboard">

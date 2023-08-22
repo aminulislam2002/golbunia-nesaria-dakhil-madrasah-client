@@ -25,6 +25,9 @@ import Profile from "../Pages/Dashboard/Profile/Profile";
 import AllEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/AllEvent/AllEvent";
 import AddEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/AddEvent/AddEvent";
 import UpdateEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/UpdateEvent/UpdateEvent";
+import AllNotice from "../Pages/Dashboard/AdminDashboard/ManageNotices/AllNotice/AllNotice";
+import AddNotice from "../Pages/Dashboard/AdminDashboard/ManageNotices/AddNotice/AddNotice";
+import UpdateNotice from "../Pages/Dashboard/AdminDashboard/ManageNotices/UpdateNotice/UpdateNotice";
 
 export const router = createBrowserRouter([
   {
@@ -92,6 +95,18 @@ export const router = createBrowserRouter([
       {
         path: "updateEvent",
         element: <UpdateEvent></UpdateEvent>,
+      },
+      {
+        path: "manageNotices",
+        element: <AllNotice></AllNotice>,
+      },
+      {
+        path: "addNotice",
+        element: <AddNotice></AddNotice>,
+      },
+      {
+        path: "updateNotice",
+        element: <UpdateNotice></UpdateNotice>,
       },
     ],
   },

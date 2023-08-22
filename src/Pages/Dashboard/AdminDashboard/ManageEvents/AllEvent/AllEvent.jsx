@@ -13,7 +13,7 @@ const AllEvent = () => {
           </div>
 
           <Link to="/dashboard/addEvent">
-            <div className="flex justify-center items-center gap-1 w-1/3 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
+            <div className="flex justify-center items-center gap-1 w-1/3 h-10 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
               <span className="text-xl font-semibold">Add Event</span>
               <BiMessageAdd className="w-7 h-7 text-green-500"></BiMessageAdd>
             </div>
