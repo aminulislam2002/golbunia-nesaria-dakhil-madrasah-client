@@ -23,6 +23,8 @@ import Login from "../Pages/Authentication/Login/Login";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import AllEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/AllEvent/AllEvent";
+import AddEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/AddEvent/AddEvent";
+import UpdateEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/UpdateEvent/UpdateEvent";
 
 export const router = createBrowserRouter([
   {
@@ -82,6 +84,14 @@ export const router = createBrowserRouter([
       {
         path: "manageEvents",
         element: <AllEvent></AllEvent>,
+      },
+      {
+        path: "addEvent",
+        element: <AddEvent></AddEvent>,
+      },
+      {
+        path: "updateEvent",
+        element: <UpdateEvent></UpdateEvent>,
       },
     ],
   },
