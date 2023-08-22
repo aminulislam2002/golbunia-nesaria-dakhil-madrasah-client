@@ -1,56 +1,89 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { GrMenu } from "react-icons/gr";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
 
 const DashboardLayout = () => {
-  const options = (
+  const isAdmin = true;
+  const isTeacher = false;
+  const isStudent = false;
+
+  const optionsOne = (
     <>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2">
-        <button className="lg:text-xl font-semibold">Filter menu</button>
-      </li>
-      {/* Add more menu items here */}
+      <Link to="/dashboard/manageEvents">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Manage Events
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+    </>
+  );
+
+  const optionsTwo = (
+    <>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+    </>
+  );
+
+  const optionsThree = (
+    <>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Route
+        </li>
+      </Link>
     </>
   );
 
@@ -62,7 +95,7 @@ const DashboardLayout = () => {
       <div className="drawer container mx-auto">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content lg:flex gap-1">
-          <div className="w-full lg:w-3/12 bg-blue-800 lg:mt-16 overflow-y-auto max-h-[100vh]">
+          <div className="w-full lg:w-3/12 bg-blue-800 lg:pt-16 overflow-y-auto max-h-[100vh] h-screen">
             <div className="flex justify-start">
               <div className="flex-none lg:hidden">
                 <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
@@ -75,8 +108,9 @@ const DashboardLayout = () => {
             </div>
             <div className="flex-none hidden lg:block mt-4">
               <ul className="menu-vertical">
-                {/* Add more menu items here */}
-                {options}
+                {isAdmin && <> {optionsOne} </>}
+                {isTeacher && <> {optionsTwo} </>}
+                {isStudent && <> {optionsThree} </>}
               </ul>
             </div>
           </div>
@@ -89,8 +123,9 @@ const DashboardLayout = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay overflow-x-auto max-h-[100vh]"></label>
           <ul className="p-4 w-52 bg-blue-800 h-full overflow-y-auto">
-            {/* Add more sidebar items here */}
-            {options}
+            {isAdmin && <> {optionsOne} </>}
+            {isTeacher && <> {optionsTwo} </>}
+            {isStudent && <> {optionsThree} </>}
           </ul>
         </div>
       </div>

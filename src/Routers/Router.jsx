@@ -22,6 +22,7 @@ import TeacherSignUp from "../Pages/Authentication/TeacherSignUp/TeacherSignUp";
 import Login from "../Pages/Authentication/Login/Login";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Profile from "../Pages/Dashboard/Profile/Profile";
+import AllEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/AllEvent/AllEvent";
 
 export const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ export const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile></Profile>,
+      },
+      {
+        path: "manageEvents",
+        element: <AllEvent></AllEvent>,
       },
     ],
   },

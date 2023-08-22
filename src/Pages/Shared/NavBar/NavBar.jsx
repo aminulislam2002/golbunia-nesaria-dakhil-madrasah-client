@@ -170,16 +170,16 @@ const NavBar = () => {
           <ul tabIndex={0} className="dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-blue-950 text-white">
             {isUser ? (
               <>
-                <div className="flex justify-center items-center gap-1">
-                  <Link to="/dashboard/profile">
+                <Link to="/dashboard/profile">
+                  <div className="flex justify-center items-center gap-1">
                     <img src={profileImage} className="w-7 h-7 rounded-full" alt="" />
                     <button className="w-full text-left">
                       <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3">
                         View Your Profile
                       </li>
                     </button>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
                 <div className="flex justify-center items-center gap-1">
                   <PiSignOutBold className="w-7 h-7"></PiSignOutBold>
                   <button className="w-full text-left">
