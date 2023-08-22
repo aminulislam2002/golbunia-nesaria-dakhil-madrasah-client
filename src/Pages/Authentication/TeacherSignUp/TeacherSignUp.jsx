@@ -44,14 +44,14 @@ const TeacherSignUp = () => {
       if (predefinedTeacherIds.includes(userId)) {
         Swal.fire({
           icon: "success",
-          title: "Login Successful",
+          title: "Validation Successful",
         });
         console.log("Yes you are valid!");
         // Authentication code is here
       } else {
         Swal.fire({
           icon: "error",
-          title: "Login Failed",
+          title: "Validation Failed",
           text: "Invalid Teacher ID",
         });
       }
@@ -71,14 +71,14 @@ const TeacherSignUp = () => {
       if (predefinedTeacherIds.includes(userId)) {
         Swal.fire({
           icon: "success",
-          title: "Login Successful",
+          title: "Validation Successful",
         });
         console.log("Yes you are valid!");
         // Authentication code is here
       } else {
         Swal.fire({
           icon: "error",
-          title: "Login Failed",
+          title: "Validation Failed",
           text: "Invalid Teacher ID",
         });
       }
@@ -98,14 +98,14 @@ const TeacherSignUp = () => {
       if (predefinedTeacherIds.includes(userId)) {
         Swal.fire({
           icon: "success",
-          title: "Login Successful",
+          title: "Validation Successful",
         });
         console.log("Yes you are valid!");
         // Authentication code is here
       } else {
         Swal.fire({
           icon: "error",
-          title: "Login Failed",
+          title: "Validation Failed",
           text: "Invalid Teacher ID",
         });
       }
@@ -125,14 +125,14 @@ const TeacherSignUp = () => {
       if (predefinedTeacherIds.includes(userId)) {
         Swal.fire({
           icon: "success",
-          title: "Login Successful",
+          title: "Validation Successful",
         });
         console.log("Yes you are valid!");
         // Authentication code is here
       } else {
         Swal.fire({
           icon: "error",
-          title: "Login Failed",
+          title: "Validation Failed",
           text: "Invalid Teacher ID",
         });
       }
@@ -152,14 +152,14 @@ const TeacherSignUp = () => {
       if (predefinedTeacherIds.includes(userId)) {
         Swal.fire({
           icon: "success",
-          title: "Login Successful",
+          title: "Validation Successful",
         });
         console.log("Yes you are valid!");
         // Authentication code is here
       } else {
         Swal.fire({
           icon: "error",
-          title: "Login Failed",
+          title: "Validation Failed",
           text: "Invalid Teacher ID",
         });
       }

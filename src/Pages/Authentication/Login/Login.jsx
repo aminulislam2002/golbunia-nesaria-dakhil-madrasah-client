@@ -21,7 +21,8 @@ const Login = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+          backgroundImage:
+            "url(https://img.freepik.com/free-vector/isometric-data-protection-concept-with-parent-child-login-window-lock-3d_1284-63713.jpg?size=626&ext=jpg&uid=R93922666&ga=GA1.2.235952763.1681062999&semt=sph)",
         }}
       ></div>
 
@@ -34,21 +35,21 @@ const Login = () => {
         </div>
         <div className="flex justify-center items-center order-1 md:order-2">
           <div className="w-full max-w-md bg-white rounded shadow-md px-8 pt-4 pb-6">
-            <h1 className="text-2xl font-bold text-center mb-4">Sign In</h1>
+            <h1 className="text-2xl font-bold text-center mb-2">Sign In</h1>
             <form className="" onSubmit={handleSubmit(onSubmit)}>
-              {/* Phone Number or Email Address field */}
-              <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Phone Number or Email</label>
+              {/* Email Address field */}
+              <div className="mb-2">
+                <label className="block text-gray-700 text-sm font-bold mb-2">Email</label>
                 <input
                   type="email"
                   {...register("email", { required: true })}
                   name="email"
-                  placeholder="Enter your phone number or email"
-                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder="Enter your email"
+                  className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
               {/* Password field */}
-              <div className="mb-4">
+              <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
                 <input
                   type="password"
@@ -57,11 +58,11 @@ const Login = () => {
                     minLength: 6,
                   })}
                   placeholder="Enter your login password"
-                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
               {/* Forgot password button */}
-              <div className="flex justify-end items-end mb-4 text-sm">
+              <div className="flex justify-end items-end mb-2 text-sm">
                 <Link to="" className="text-blue-500">
                   Forgot password?
                 </Link>
@@ -69,7 +70,7 @@ const Login = () => {
               {/* Sign In button field */}
               <div className="flex items-center justify-between">
                 <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full focus:outline-none focus:shadow-outline"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded w-full focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
                   Sign In
@@ -84,7 +85,7 @@ const Login = () => {
               </Link>
             </div>
             {/* Social Login */}
-            <div className="grid grid-cols-3 items-center justify-center mb-4">
+            <div className="grid grid-cols-3 items-center justify-center mb-2">
               <hr />
               <span className="text-center block text-gray-700 text-sm font-bold">Sign in with</span>
               <hr />
