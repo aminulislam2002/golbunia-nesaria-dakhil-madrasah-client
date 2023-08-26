@@ -1,21 +1,94 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import { FaLinkedin, FaTwitterSquare, FaGithub } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const StudentSignUp = () => {
   const [isAgreed, setIsAgreed] = useState(false);
+  const [passwordMismatchError, setPasswordMismatchError] = useState(false);
+
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
+  const { createUserWithEmail, updateUserProfileName, createUserWithGoogle, user } = useContext(AuthContext);
+
+  const handleGoogleSignUp = () => {
+    createUserWithGoogle()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: `${user.displayName} Login Successful`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "warning",
+          title: `${user.displayName} Login Failed`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
+  };
+
   const onSubmit = (data) => {
-    console.log("onSubmit function called");
-    console.log(data);
+    if (data.password !== data.confirmPassword) {
+      setPasswordMismatchError(true);
+    } else {
+      setPasswordMismatchError(false);
+      const userData = {
+        name: `${data.fistName} ${data.lastName}`,
+        email: data.email,
+        password: data.password,
+        role: "student",
+      };
+
+      // Continue with your registration logic here
+      createUserWithEmail(data.email, data.password)
+        .then((result) => {
+          console.log("CURRENT USER INFORMATION:", result.user);
+          updateUserProfileName(userData.name)
+            .then(() => {
+              Swal.fire({
+                icon: "success",
+                title: `${userData.name} Login Successful`,
+                showConfirmButton: false,
+                timer: 3000,
+              });
+              reset();
+              navigate("/");
+            })
+            .catch((error) => {
+              console.log(error);
+              Swal.fire({
+                icon: "warning",
+                title: `${userData.name} Login Failed`,
+                showConfirmButton: false,
+                timer: 3000,
+              });
+            });
+        })
+        .catch((error) => {
+          console.log(error);
+          Swal.fire({
+            icon: "warning",
+            title: `${userData.name} Login Failed`,
+            showConfirmButton: false,
+            timer: 3000,
+          });
+        });
+    }
   };
 
   const handleCheckboxChange = (e) => {
@@ -66,6 +139,8 @@ const StudentSignUp = () => {
                   />
                 </div>
               </div>
+              {errors.fistName && <span className="text-xs text-red-600">First Name is required</span>}
+              {errors.lastName && <span className="text-xs text-red-600">Last Name is required</span>}
               {/* Email Address field */}
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-1">Email</label>
@@ -77,6 +152,7 @@ const StudentSignUp = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
+              {errors.email && <span className="text-xs text-red-600">Email Address is required</span>}
               {/* Password field */}
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-1">Login Password</label>
@@ -91,6 +167,7 @@ const StudentSignUp = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
+              {errors.password && <span className="text-xs text-red-600">Password is required</span>}
               {/* Confirm Password field */}
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-1">Confirm Password</label>
@@ -105,6 +182,12 @@ const StudentSignUp = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
+              {errors.confirmPassword && <span className="text-xs text-red-600">Confirm Password is required</span>}
+              {passwordMismatchError && (
+                <div className="text-red-500 text-sm mb-2">
+                  Passwords do not match. Please make sure both passwords are the same.
+                </div>
+              )}
               {/* Terms and condition checkbox  */}
               <div className="form-control">
                 <label className="flex gap-4 text-sm mb-2">
@@ -140,20 +223,8 @@ const StudentSignUp = () => {
               <hr />
             </div>
             <div className="flex justify-center items-center gap-5">
-              <button>
-                <BsFacebook className="w-8 h-8"></BsFacebook>
-              </button>
-              <button>
+              <button onClick={handleGoogleSignUp}>
                 <FcGoogle className="w-8 h-8"></FcGoogle>
-              </button>
-              <button>
-                <FaLinkedin className="w-8 h-8"></FaLinkedin>
-              </button>
-              <button>
-                <FaTwitterSquare className="w-8 h-8"></FaTwitterSquare>
-              </button>
-              <button>
-                <FaGithub className="w-8 h-8"></FaGithub>
               </button>
             </div>
           </div>

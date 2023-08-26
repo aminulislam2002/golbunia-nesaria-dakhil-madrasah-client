@@ -30,6 +30,7 @@ import AddNotice from "../Pages/Dashboard/AdminDashboard/ManageNotices/AddNotice
 import UpdateNotice from "../Pages/Dashboard/AdminDashboard/ManageNotices/UpdateNotice/UpdateNotice";
 import AllTeachers from "../Pages/Dashboard/AdminDashboard/ManageTeachers/AllTeachers/AllTeachers";
 import AllStudents from "../Pages/Dashboard/AdminDashboard/ManageStudents/AllStudents/AllStudents";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "history-of-madrasah",
-        element: <HistoryOfMadrasah></HistoryOfMadrasah>,
+        element: <PrivateRoute><HistoryOfMadrasah></HistoryOfMadrasah></PrivateRoute>,
       },
       {
         path: "mission-and-vision",

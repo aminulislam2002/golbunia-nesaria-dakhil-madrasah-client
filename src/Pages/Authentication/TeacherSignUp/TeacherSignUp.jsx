@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import { FaLinkedin, FaTwitterSquare, FaGithub } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const TeacherSignUp = () => {
   const [isAgreed, setIsAgreed] = useState(false);
+  const [passwordMismatchError, setPasswordMismatchError] = useState(false);
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -16,47 +18,10 @@ const TeacherSignUp = () => {
     reset,
   } = useForm();
 
-  const Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener("mouseenter", Swal.stopTimer);
-      toast.addEventListener("mouseleave", Swal.resumeTimer);
-    },
-  });
+  const { createUserWithEmail, updateUserProfileName, createUserWithGoogle, user } = useContext(AuthContext);
 
   const predefinedTeacherIds = ["abc1", "abc2", "abc3", "abc4", "abc5", "abc6", "abc7", "abc8", "abc9", "abc10"];
 
-  const handleFacebookSignUp = async () => {
-    const { value: userId } = await Swal.fire({
-      title: "Enter your Teacher ID:",
-      input: "text",
-      inputPlaceholder: "Teacher ID",
-      showCancelButton: true,
-      confirmButtonText: "Login",
-      cancelButtonText: "Cancel",
-    });
-
-    if (userId) {
-      if (predefinedTeacherIds.includes(userId)) {
-        Swal.fire({
-          icon: "success",
-          title: "Validation Successful",
-        });
-        console.log("Yes you are valid!");
-        // Authentication code is here
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Validation Failed",
-          text: "Invalid Teacher ID",
-        });
-      }
-    }
-  };
   const handleGoogleSignUp = async () => {
     const { value: userId } = await Swal.fire({
       title: "Enter your Teacher ID:",
@@ -72,90 +37,29 @@ const TeacherSignUp = () => {
         Swal.fire({
           icon: "success",
           title: "Validation Successful",
+          showConfirmButton: false,
+          timer: 1000,
         });
-        console.log("Yes you are valid!");
         // Authentication code is here
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Validation Failed",
-          text: "Invalid Teacher ID",
-        });
-      }
-    }
-  };
-  const handleLinkedinSignUp = async () => {
-    const { value: userId } = await Swal.fire({
-      title: "Enter your Teacher ID:",
-      input: "text",
-      inputPlaceholder: "Teacher ID",
-      showCancelButton: true,
-      confirmButtonText: "Login",
-      cancelButtonText: "Cancel",
-    });
-
-    if (userId) {
-      if (predefinedTeacherIds.includes(userId)) {
-        Swal.fire({
-          icon: "success",
-          title: "Validation Successful",
-        });
-        console.log("Yes you are valid!");
-        // Authentication code is here
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Validation Failed",
-          text: "Invalid Teacher ID",
-        });
-      }
-    }
-  };
-  const handleTwitterSignUp = async () => {
-    const { value: userId } = await Swal.fire({
-      title: "Enter your Teacher ID:",
-      input: "text",
-      inputPlaceholder: "Teacher ID",
-      showCancelButton: true,
-      confirmButtonText: "Login",
-      cancelButtonText: "Cancel",
-    });
-
-    if (userId) {
-      if (predefinedTeacherIds.includes(userId)) {
-        Swal.fire({
-          icon: "success",
-          title: "Validation Successful",
-        });
-        console.log("Yes you are valid!");
-        // Authentication code is here
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Validation Failed",
-          text: "Invalid Teacher ID",
-        });
-      }
-    }
-  };
-  const handleGithubSignUp = async () => {
-    const { value: userId } = await Swal.fire({
-      title: "Enter your Teacher ID:",
-      input: "text",
-      inputPlaceholder: "Teacher ID",
-      showCancelButton: true,
-      confirmButtonText: "Login",
-      cancelButtonText: "Cancel",
-    });
-
-    if (userId) {
-      if (predefinedTeacherIds.includes(userId)) {
-        Swal.fire({
-          icon: "success",
-          title: "Validation Successful",
-        });
-        console.log("Yes you are valid!");
-        // Authentication code is here
+        createUserWithGoogle()
+          .then(() => {
+            Swal.fire({
+              icon: "success",
+              title: `${user.displayName} Login Successful`,
+              showConfirmButton: false,
+              timer: 3000,
+            });
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log(error);
+            Swal.fire({
+              icon: "warning",
+              title: `${user.displayName} Login Failed`,
+              showConfirmButton: false,
+              timer: 3000,
+            });
+          });
       } else {
         Swal.fire({
           icon: "error",
@@ -168,13 +72,52 @@ const TeacherSignUp = () => {
 
   const onSubmit = (data) => {
     if (predefinedTeacherIds.includes(data.teacherId)) {
-      Toast.fire({
-        icon: "success",
-        title: "Signed in successfully",
-      });
-      console.log("onSubmit function called");
-      console.log(data);
-      // Authentication code is here
+      if (data.password !== data.confirmPassword) {
+        setPasswordMismatchError(true);
+      } else {
+        setPasswordMismatchError(false);
+        const userData = {
+          name: `${data.fistName} ${data.lastName}`,
+          email: data.email,
+          password: data.password,
+          role: "teacher",
+        };
+
+        // Continue with your registration logic here
+        createUserWithEmail(data.email, data.password)
+          .then((result) => {
+            console.log("CURRENT USER INFORMATION:", result.user);
+            updateUserProfileName(userData.name)
+              .then(() => {
+                Swal.fire({
+                  icon: "success",
+                  title: `${userData.name} Login Successful`,
+                  showConfirmButton: false,
+                  timer: 3000,
+                });
+                reset();
+                navigate("/");
+              })
+              .catch((error) => {
+                console.log(error);
+                Swal.fire({
+                  icon: "warning",
+                  title: `${userData.name} Login Failed`,
+                  showConfirmButton: false,
+                  timer: 3000,
+                });
+              });
+          })
+          .catch((error) => {
+            console.log(error);
+            Swal.fire({
+              icon: "success",
+              title: `${userData.name} Login Failed`,
+              showConfirmButton: false,
+              timer: 3000,
+            });
+          });
+      }
     } else {
       Swal.fire({
         title: "Sorry!",
@@ -182,8 +125,6 @@ const TeacherSignUp = () => {
         icon: "warning",
         confirmButtonText: "Okay",
       });
-      // Clear the form
-      reset();
     }
   };
 
@@ -235,6 +176,8 @@ const TeacherSignUp = () => {
                   />
                 </div>
               </div>
+              {errors.fistName && <span className="text-xs text-red-600">First Name is required</span>}
+              {errors.lastName && <span className="text-xs text-red-600">Last Name is required</span>}
               {/* Email Address field */}
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-1">Email</label>
@@ -246,6 +189,7 @@ const TeacherSignUp = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
+              {errors.email && <span className="text-xs text-red-600">Email Address is required</span>}
               {/* Teacher id number field */}
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-1">Teacher ID</label>
@@ -257,6 +201,7 @@ const TeacherSignUp = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
+              {errors.teacherId && <span className="text-xs text-red-600">Teacher ID is required</span>}
               {/* Password field */}
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-1">Login Password</label>
@@ -271,6 +216,7 @@ const TeacherSignUp = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
+              {errors.password && <span className="text-xs text-red-600">Password is required</span>}
               {/* Confirm Password field */}
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-1">Confirm Password</label>
@@ -285,6 +231,12 @@ const TeacherSignUp = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
+              {errors.confirmPassword && <span className="text-xs text-red-600">Confirm Password is required</span>}
+              {passwordMismatchError && (
+                <div className="text-red-500 text-sm mb-2">
+                  Passwords do not match. Please make sure both passwords are the same.
+                </div>
+              )}
               {/* Terms and condition checkbox  */}
               <div className="form-control">
                 <label className="flex gap-4 text-sm mb-2">
@@ -326,20 +278,8 @@ const TeacherSignUp = () => {
               <hr />
             </div>
             <div className="flex justify-center items-center gap-5">
-              <button onClick={handleFacebookSignUp}>
-                <BsFacebook className="w-8 h-8"></BsFacebook>
-              </button>
               <button onClick={handleGoogleSignUp}>
                 <FcGoogle className="w-8 h-8"></FcGoogle>
-              </button>
-              <button onClick={handleLinkedinSignUp}>
-                <FaLinkedin className="w-8 h-8"></FaLinkedin>
-              </button>
-              <button onClick={handleTwitterSignUp}>
-                <FaTwitterSquare className="w-8 h-8"></FaTwitterSquare>
-              </button>
-              <button onClick={handleGithubSignUp}>
-                <FaGithub className="w-8 h-8"></FaGithub>
               </button>
             </div>
           </div>

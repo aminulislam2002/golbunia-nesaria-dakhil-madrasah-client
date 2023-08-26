@@ -1,19 +1,45 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import { FaLinkedin, FaTwitterSquare, FaGithub } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const { signIn, user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("onSubmit function called");
-    console.log(data);
+    signIn(data.email, data.password)
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: `${user.displayName} Login Successful`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "warning",
+          title: `${user.displayName} Login Failed`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
   };
 
   return (
@@ -48,6 +74,7 @@ const Login = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
+              {errors.email && <span className="text-xs text-red-600">Email Address is required</span>}
               {/* Password field */}
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
@@ -61,6 +88,7 @@ const Login = () => {
                   className="appearance-none border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
+              {errors.password && <span className="text-xs text-red-600">Password is required</span>}
               {/* Forgot password button */}
               <div className="flex justify-end items-end mb-2 text-sm">
                 <Link to="" className="text-blue-500">
@@ -68,7 +96,7 @@ const Login = () => {
                 </Link>
               </div>
               {/* Sign In button field */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mb-2">
                 <button
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded w-full focus:outline-none focus:shadow-outline"
                   type="submit"
@@ -77,13 +105,6 @@ const Login = () => {
                 </button>
               </div>
             </form>
-            {/* Sign up route */}
-            <div className="py-4 text-sm flex justify-center items-center gap-1">
-              <p className="text-center text-gray-500">Do not have an account?</p>
-              <Link to="register-account" className="text-blue-500">
-                Create new account
-              </Link>
-            </div>
             {/* Social Login */}
             <div className="grid grid-cols-3 items-center justify-center mb-2">
               <hr />
@@ -92,19 +113,7 @@ const Login = () => {
             </div>
             <div className="flex justify-center items-center gap-5">
               <button>
-                <BsFacebook className="w-8 h-8"></BsFacebook>
-              </button>
-              <button>
                 <FcGoogle className="w-8 h-8"></FcGoogle>
-              </button>
-              <button>
-                <FaLinkedin className="w-8 h-8"></FaLinkedin>
-              </button>
-              <button>
-                <FaTwitterSquare className="w-8 h-8"></FaTwitterSquare>
-              </button>
-              <button>
-                <FaGithub className="w-8 h-8"></FaGithub>
               </button>
             </div>
           </div>

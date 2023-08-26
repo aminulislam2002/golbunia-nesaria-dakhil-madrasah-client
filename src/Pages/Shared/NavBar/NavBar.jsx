@@ -1,13 +1,36 @@
 import { Link } from "react-router-dom";
 import { AiOutlineDown, AiOutlineMenu } from "react-icons/ai";
 import { PiSignOutBold } from "react-icons/pi";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
-  // const userName = "Aminul Islam";
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: `${user.displayName} Logout Successful`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "warning",
+          title: `${user.displayName} Logout Failed`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
+  };
+
   const profileImage =
     "https://img.freepik.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?size=626&ext=jpg&ga=GA1.2.235952763.1681062999&semt=ais";
-
-  const isUser = true;
 
   const navOptions = (
     <>
@@ -142,7 +165,7 @@ const NavBar = () => {
             LOGIN
           </label>
           <ul tabIndex={0} className="dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-blue-950 text-white">
-            {isUser ? (
+            {user ? (
               <>
                 <Link to="/dashboard/profile">
                   <div className="flex justify-center items-center gap-1">
@@ -156,7 +179,7 @@ const NavBar = () => {
                 </Link>
                 <div className="flex justify-center items-center gap-1">
                   <PiSignOutBold className="w-7 h-7"></PiSignOutBold>
-                  <button className="w-full text-left">
+                  <button onClick={handleLogOut} className="w-full text-left">
                     <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3">Log Out</li>
                   </button>
                 </div>
