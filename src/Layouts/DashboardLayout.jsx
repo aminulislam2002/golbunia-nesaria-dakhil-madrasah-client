@@ -6,6 +6,7 @@ const DashboardLayout = () => {
   const isAdmin = true;
   const isTeacher = false;
   const isStudent = false;
+  const user = "Aminul Islam";
 
   const optionsOne = (
     <>
@@ -19,14 +20,14 @@ const DashboardLayout = () => {
           Manage Notices
         </li>
       </Link>
-      <Link to="/dashboard">
+      <Link to="/dashboard/manageTeachers">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
+          Manage Teachers
         </li>
       </Link>
-      <Link to="/dashboard">
+      <Link to="/dashboard/manageStudents">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
+          Manage Students
         </li>
       </Link>
       <Link to="/dashboard">
@@ -103,7 +104,7 @@ const DashboardLayout = () => {
                 </label>
               </div>
               <div className="px-2 w-auto lg:w-full">
-                <div className="ms-2 text-lg font-semibold text-white">Filter as your choice</div>
+                <div className="ms-2 text-lg font-semibold text-yellow-500">{user}</div>
               </div>
             </div>
             <div className="flex-none hidden lg:block mt-4">

@@ -28,6 +28,8 @@ import UpdateEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/UpdateEv
 import AllNotice from "../Pages/Dashboard/AdminDashboard/ManageNotices/AllNotice/AllNotice";
 import AddNotice from "../Pages/Dashboard/AdminDashboard/ManageNotices/AddNotice/AddNotice";
 import UpdateNotice from "../Pages/Dashboard/AdminDashboard/ManageNotices/UpdateNotice/UpdateNotice";
+import AllTeachers from "../Pages/Dashboard/AdminDashboard/ManageTeachers/AllTeachers/AllTeachers";
+import AllStudents from "../Pages/Dashboard/AdminDashboard/ManageStudents/AllStudents/AllStudents";
 
 export const router = createBrowserRouter([
   {
@@ -107,6 +109,14 @@ export const router = createBrowserRouter([
       {
         path: "updateNotice",
         element: <UpdateNotice></UpdateNotice>,
+      },
+      {
+        path: "manageTeachers",
+        element: <AllTeachers></AllTeachers>,
+      },
+      {
+        path: "manageStudents",
+        element: <AllStudents></AllStudents>,
       },
     ],
   },

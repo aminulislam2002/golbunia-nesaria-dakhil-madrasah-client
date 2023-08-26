@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import { AiOutlineDown, AiOutlineMenu } from "react-icons/ai";
-import { MdDarkMode, MdAccountCircle } from "react-icons/md";
-import { AiFillPlusSquare } from "react-icons/ai";
 import { PiSignOutBold } from "react-icons/pi";
-import { FcSettings } from "react-icons/fc";
 
 const NavBar = () => {
-  const userName = "Aminul Islam";
+  // const userName = "Aminul Islam";
   const profileImage =
     "https://img.freepik.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?size=626&ext=jpg&ga=GA1.2.235952763.1681062999&semt=ais";
+
   const isUser = true;
 
   const navOptions = (
@@ -25,9 +23,6 @@ const NavBar = () => {
         </div>
         <div className="absolute z-50 hidden top-full w-52 bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
-            <Link>
-              <li className="hover:bg-white hover:text-black ps-2 rounded">At A Glance</li>
-            </Link>
             <Link to="/history-of-madrasah">
               <li className="hover:bg-white hover:text-black ps-2 rounded">History of Madrasah</li>
             </Link>
@@ -36,6 +31,9 @@ const NavBar = () => {
             </Link>
             <Link to="/photos-gallery">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Photo Gallery</li>
+            </Link>
+            <Link to="our-students">
+              <li className="hover:bg-white hover:text-black ps-2 rounded">Our Students</li>
             </Link>
             <Link to="authority-and-committee">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Committee</li>
@@ -67,12 +65,6 @@ const NavBar = () => {
             <Link>
               <li className="hover:bg-white hover:text-black ps-2 rounded">News</li>
             </Link>
-            <Link>
-              <li className="hover:bg-white hover:text-black ps-2 rounded">Resources</li>
-            </Link>
-            <Link>
-              <li className="hover:bg-white hover:text-black ps-2 rounded">Rover Scut</li>
-            </Link>
             <Link to="/students-routines">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
             </Link>
@@ -84,24 +76,6 @@ const NavBar = () => {
       </li>
       <li className="relative group text-white">
         <div className="flex">
-          <p>CLASSES</p>
-          <span className="group-hover:rotate-180">
-            <AiOutlineDown></AiOutlineDown>
-          </span>
-        </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
-          <ul>
-            <Link>
-              <li className="hover:bg-white hover:text-black ps-2 rounded">One</li>
-            </Link>
-          </ul>
-        </div>
-      </li>
-      <li className="text-white">
-        <Link>BLOG</Link>
-      </li>
-      <li className="relative group text-white">
-        <div className="flex">
           <p>LINKS</p>
           <span className="group-hover:rotate-180">
             <AiOutlineDown></AiOutlineDown>
@@ -110,16 +84,16 @@ const NavBar = () => {
         <div className="absolute z-50 hidden top-full w-60  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/eSIF">
-              <li className="hover:bg-white hover:text-black ps-2 rounded">eSIF</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">e S I F</li>
             </Link>
             <Link to="/eFF">
-              <li className="hover:bg-white hover:text-black ps-2 rounded">eFF</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">e F F</li>
             </Link>
             <Link to="/eTIF">
-              <li className="hover:bg-white hover:text-black ps-2 rounded">eTIF</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">e T I F</li>
             </Link>
             <Link to="/eRPS">
-              <li className="hover:bg-white hover:text-black ps-2 rounded">eRPS</li>
+              <li className="hover:bg-white hover:text-black ps-2 rounded">e R P S</li>
             </Link>
             <Link>
               <li className="hover:bg-white hover:text-black ps-2 rounded">Madrasah Education Board</li>
