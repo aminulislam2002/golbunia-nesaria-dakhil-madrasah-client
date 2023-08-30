@@ -47,6 +47,7 @@ const StudentSignUp = () => {
       setPasswordMismatchError(true);
     } else {
       setPasswordMismatchError(false);
+
       const userData = {
         name: `${data.fistName} ${data.lastName}`,
         email: data.email,
@@ -54,20 +55,37 @@ const StudentSignUp = () => {
         role: "student",
       };
 
+      // Remove the password property before saving to MongoDB
+      const { password, ...userDataToSave } = userData;
+
       // Continue with your registration logic here
       createUserWithEmail(data.email, data.password)
         .then((result) => {
           console.log("CURRENT USER INFORMATION:", result.user);
           updateUserProfileName(userData.name)
             .then(() => {
-              Swal.fire({
-                icon: "success",
-                title: `${userData.name} Login Successful`,
-                showConfirmButton: false,
-                timer: 3000,
-              });
-              reset();
-              navigate("/");
+              // User information saved db logic here
+              fetch("http://localhost:5000/users", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userDataToSave),
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log(data);
+                  if (data.insertedId) {
+                    reset();
+                    Swal.fire({
+                      icon: "success",
+                      title: `${userData.name} Login Successful`,
+                      showConfirmButton: false,
+                      timer: 3000,
+                    });
+                    navigate("/");
+                  }
+                });
             })
             .catch((error) => {
               console.log(error);
