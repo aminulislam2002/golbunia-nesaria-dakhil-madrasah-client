@@ -1,9 +1,11 @@
 import { BiMessageAdd } from "react-icons/bi";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllNotice = () => {
+  const notices = useLoaderData();
+  console.log(notices);
   return (
     <div>
       <div className="w-full">
@@ -20,110 +22,31 @@ const AllNotice = () => {
           </Link>
         </div>
         <div className="overflow-y-auto max-h-[70vh]">
-          <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-            <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 flex justify-center items-center">
-              <div className="w-11/12">
-                <h2 className="text-xl font-semibold">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste obcaecati in asperiores provident dignissimos
-                  dolorum?
-                </h2>
-                <p className="text-sm text-gray-600 mt-2">Published Date:</p>
-                <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
-                  Read More
-                </button>
-              </div>
-              <div className="w-1/12">
-                <div className="flex flex-col-reverse justify-center items-center gap-10">
-                  <button>
-                    <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
+          {notices.map((notice) => (
+            <div key={notice._id} className="notice-list overflow-y-auto max-h-[80vh] bg-white">
+              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 flex justify-center items-center">
+                <div className="w-11/12">
+                  <h2 className="text-xl font-semibold">{notice?.noticeHeadline}</h2>
+                  <p className="text-sm text-gray-600 mt-2">Published Date:{notice.publishedDateTime}</p>
+                  <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
+                    Read More
                   </button>
-                  <Link to="/dashboard/updateNotice">
+                </div>
+                <div className="w-1/12">
+                  <div className="flex flex-col-reverse justify-center items-center gap-10">
                     <button>
-                      <FiEdit className="w-7 h-7 text-blue-500"></FiEdit>
+                      <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
                     </button>
-                  </Link>
+                    <Link to="/dashboard/updateNotice">
+                      <button>
+                        <FiEdit className="w-7 h-7 text-blue-500"></FiEdit>
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>{" "}
-          <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-            <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 flex justify-center items-center">
-              <div className="w-11/12">
-                <h2 className="text-xl font-semibold">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste obcaecati in asperiores provident dignissimos
-                  dolorum?
-                </h2>
-                <p className="text-sm text-gray-600 mt-2">Published Date:</p>
-                <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
-                  Read More
-                </button>
-              </div>
-              <div className="w-1/12">
-                <div className="flex flex-col-reverse justify-center items-center gap-10">
-                  <button>
-                    <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
-                  </button>
-                  <Link to="/dashboard/updateNotice">
-                    <button>
-                      <FiEdit className="w-7 h-7 text-blue-500"></FiEdit>
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>{" "}
-          <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-            <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 flex justify-center items-center">
-              <div className="w-11/12">
-                <h2 className="text-xl font-semibold">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste obcaecati in asperiores provident dignissimos
-                  dolorum?
-                </h2>
-                <p className="text-sm text-gray-600 mt-2">Published Date:</p>
-                <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
-                  Read More
-                </button>
-              </div>
-              <div className="w-1/12">
-                <div className="flex flex-col-reverse justify-center items-center gap-10">
-                  <button>
-                    <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
-                  </button>
-                  <Link to="/dashboard/updateNotice">
-                    <button>
-                      <FiEdit className="w-7 h-7 text-blue-500"></FiEdit>
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>{" "}
-          <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-            <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 flex justify-center items-center">
-              <div className="w-11/12">
-                <h2 className="text-xl font-semibold">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste obcaecati in asperiores provident dignissimos
-                  dolorum?
-                </h2>
-                <p className="text-sm text-gray-600 mt-2">Published Date:</p>
-                <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
-                  Read More
-                </button>
-              </div>
-              <div className="w-1/12">
-                <div className="flex flex-col-reverse justify-center items-center gap-10">
-                  <button>
-                    <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
-                  </button>
-                  <Link to="/dashboard/updateNotice">
-                    <button>
-                      <FiEdit className="w-7 h-7 text-blue-500"></FiEdit>
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

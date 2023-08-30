@@ -43,7 +43,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "history-of-madrasah",
-        element: <PrivateRoute><HistoryOfMadrasah></HistoryOfMadrasah></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <HistoryOfMadrasah></HistoryOfMadrasah>
+          </PrivateRoute>
+        ),
       },
       {
         path: "mission-and-vision",
@@ -90,6 +94,7 @@ export const router = createBrowserRouter([
       {
         path: "manageEvents",
         element: <AllEvent></AllEvent>,
+        loader: () => fetch("http://localhost:5000/events"),
       },
       {
         path: "addEvent",
@@ -102,6 +107,7 @@ export const router = createBrowserRouter([
       {
         path: "manageNotices",
         element: <AllNotice></AllNotice>,
+        loader: () => fetch("http://localhost:5000/notices"),
       },
       {
         path: "addNotice",
