@@ -1,14 +1,41 @@
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const AddNotice = () => {
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data); // You can submit the data to your backend here
+    fetch("http://localhost:5000/notices", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged === true) {
+          Swal.fire({
+            icon: "success",
+            title: "Notice Added Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          reset();
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Failed to add notice!",
+          });
+        }
+      });
   };
 
   return (
