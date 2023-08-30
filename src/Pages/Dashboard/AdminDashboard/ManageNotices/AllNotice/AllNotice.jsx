@@ -2,10 +2,36 @@ import { BiMessageAdd } from "react-icons/bi";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AllNotice = () => {
   const notices = useLoaderData();
   console.log(notices);
+
+  const handleDeleteNotice = (_id) => {
+    fetch(`http://localhost:5000/notices/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "Notice delete Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Failed to delete an notice!",
+          });
+        }
+      });
+  };
+
   return (
     <div>
       <div className="w-full">
@@ -34,7 +60,7 @@ const AllNotice = () => {
                 </div>
                 <div className="w-1/12">
                   <div className="flex flex-col-reverse justify-center items-center gap-10">
-                    <button>
+                    <button onClick={() => handleDeleteNotice(notice._id)}>
                       <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
                     </button>
                     <Link to="/dashboard/updateNotice">
