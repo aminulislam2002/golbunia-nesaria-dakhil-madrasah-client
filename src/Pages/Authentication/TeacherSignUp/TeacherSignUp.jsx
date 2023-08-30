@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
@@ -10,6 +10,8 @@ const TeacherSignUp = () => {
   const [passwordMismatchError, setPasswordMismatchError] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -42,14 +44,25 @@ const TeacherSignUp = () => {
         });
         // Authentication code is here
         createUserWithGoogle()
-          .then(() => {
-            Swal.fire({
-              icon: "success",
-              title: `${user.displayName} Login Successful`,
-              showConfirmButton: false,
-              timer: 3000,
-            });
-            navigate("/");
+          .then((result) => {
+            const loggedInUser = result.user;
+            const saveUser = {
+              name: loggedInUser.displayName,
+              email: loggedInUser.email,
+              photo: loggedInUser.photoURL,
+              role: "teacher",
+            };
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(saveUser),
+            })
+              .then((res) => res.json())
+              .then(() => {
+                navigate(from, { replace: true });
+              });
           })
           .catch((error) => {
             console.log(error);
@@ -85,7 +98,6 @@ const TeacherSignUp = () => {
 
         // Remove the password property before saving to MongoDB
         const { password, ...userDataToSave } = userData;
-        
 
         // Registration logic here
         createUserWithEmail(data.email, data.password)
