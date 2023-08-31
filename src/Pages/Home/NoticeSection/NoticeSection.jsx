@@ -5,7 +5,7 @@ const NoticeSection = () => {
   const [allNoticesData, setAllNoticesData] = useState([]);
 
   useEffect(() => {
-    fetch("notices.json")
+    fetch("http://localhost:5000/notices")
       .then((res) => res.json())
       .then((data) => setAllNoticesData(data));
   }, []);
@@ -18,11 +18,15 @@ const NoticeSection = () => {
             <h1 className="text-3xl font-semibold text-blue-950">NOTICE BOARD</h1>
           </div>
           <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-            {allNoticesData.map((notice, id) => (
-              <div key={id} className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5">
-                <h2 className="text-xl font-semibold">{notice.notice_subject}</h2>
-                <p className="text-sm text-gray-600 mt-2">
-                  Published Date: {`${notice.date[0]} ${notice.date[1]} ${notice.date[2]}`}
+            {allNoticesData.map((notice) => (
+              <div
+                key={notice._id}
+                className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5"
+              >
+                <h2 className="text-xl font-semibold">{notice.noticeHeadline}</h2>
+                <p className="text-sm text-gray-500 mt-2">
+                  Published Date & Time: {notice.publishedDateTime.slice(8, 10)}-{notice.publishedDateTime.slice(5, 7)}-
+                  {notice.publishedDateTime.slice(0, 4)} {notice.publishedDateTime.slice(11, 16)}
                 </p>
                 <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
                   Read More

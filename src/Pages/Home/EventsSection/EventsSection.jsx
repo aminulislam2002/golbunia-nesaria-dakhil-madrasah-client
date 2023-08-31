@@ -5,7 +5,7 @@ const EventsSection = () => {
   const [upcomingEventsData, setUpcomingEventsData] = useState([]);
 
   useEffect(() => {
-    fetch("events.json")
+    fetch("http://localhost:5000/events")
       .then((res) => res.json())
       .then((data) => setUpcomingEventsData(data));
   }, []);
@@ -15,28 +15,29 @@ const EventsSection = () => {
       {/* Section Heading */}
       <div className="text-center mb-8">
         <h1 className="text-3xl font-semibold text-blue-950">UPCOMING EVENTS</h1>
-        
       </div>
 
       {/* Event Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {upcomingEventsData.map((upcomingEventData, id) => (
-          <div key={id}>
-            <div className="card w-full bg-gray-200 border border-gray-200 shadow-md hover:shadow-xl rounded-lg">
+        {upcomingEventsData.map((upcomingEventData) => (
+          <div key={upcomingEventData._id}>
+            <div className="card w-full h-full bg-gray-200 border border-gray-200 shadow-md hover:shadow-xl rounded-lg">
               <img
-                src={upcomingEventData.images[0]}
+                src={upcomingEventData.eventImage}
                 className="h-56 md:h-64 w-full object-cover rounded-t-lg"
                 alt="Event Image"
               />
-              <div className="px-5 py-4 flex gap-8">
-                <div>
-                  <div className="text-xl font-extrabold text-yellow-500">{upcomingEventData.event_date[0]}</div>
-                  <div className="font-bold text-gray-800">{upcomingEventData.event_date[1]}</div>
-                  <div className="font-bold text-gray-600">{upcomingEventData.event_date[2]}</div>
+              <div className="px-5 py-4 flex gap-5">
+                <div className="w-1/3">
+                  <div className="text-lg font-extrabold text-gray-950">
+                    {upcomingEventData.eventDateTime.slice(8, 10)}-{upcomingEventData.eventDateTime.slice(5, 7)}-
+                    {upcomingEventData.eventDateTime.slice(0, 4)}
+                  </div>
+                  <div className="font-bold text-gray-500">Time: {upcomingEventData.eventDateTime.slice(11, 16)}</div>
                 </div>
-                <div>
-                  <Link to={`/event/${id}`} className="font-bold text-sm text-blue-900 hover:text-yellow-600">
-                    {upcomingEventData.event_name}
+                <div className="w-2/3">
+                  <Link to={`/event/${upcomingEventData._id}`} className="font-bold text-sm text-blue-900 hover:text-yellow-600">
+                    {upcomingEventData.eventTitle.slice(0, 100)}...
                   </Link>
                 </div>
               </div>

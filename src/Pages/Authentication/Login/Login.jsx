@@ -6,7 +6,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { signIn, user } = useContext(AuthContext);
+  const { signIn, user, createUserWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -30,6 +30,38 @@ const Login = () => {
         });
         reset();
         navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "warning",
+          title: `${user.displayName} Login Failed`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    createUserWithGoogle()
+      .then((result) => {
+        const loggedInUser = result.user;
+        const saveUser = {
+          name: loggedInUser.displayName,
+          email: loggedInUser.email,
+          photo: loggedInUser.photoURL,
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -112,7 +144,7 @@ const Login = () => {
               <hr />
             </div>
             <div className="flex justify-center items-center gap-5">
-              <button>
+              <button onClick={() => handleGoogleSignIn()}>
                 <FcGoogle className="w-8 h-8"></FcGoogle>
               </button>
             </div>
