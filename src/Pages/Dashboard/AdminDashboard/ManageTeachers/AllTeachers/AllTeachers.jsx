@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { FcViewDetails } from "react-icons/fc";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 
@@ -66,9 +67,14 @@ const AllTeachers = () => {
                   <th>{teacher.name}</th>
                   <th>{teacher.email}</th>
                   <th>
-                    <button onClick={() => handleDeleteTeacher(teacher._id)}>
-                      <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
-                    </button>
+                    <div>
+                      <button>
+                        <FcViewDetails className="w-8 h-8"></FcViewDetails>
+                      </button>
+                      <button onClick={() => handleDeleteTeacher(teacher._id)}>
+                        <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
+                      </button>
+                    </div>
                   </th>
                 </tr>
               ))}
