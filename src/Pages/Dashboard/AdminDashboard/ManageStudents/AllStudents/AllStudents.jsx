@@ -1,21 +1,41 @@
-import { useEffect, useState } from "react";
 import { BsFillSendFill } from "react-icons/bs";
 import { FcViewDetails } from "react-icons/fc";
 import { MdDelete, MdEmail } from "react-icons/md";
+import { useQuery } from "react-query";
+import Swal from "sweetalert2";
 
 const AllStudents = () => {
-  const [students, setStudents] = useState([]);
+  const { data: students = [], refetch } = useQuery(["students"], async () => {
+    const res = await fetch("http://localhost:5000/users/students?role=student");
+    return res.json();
+  });
 
-  useEffect(() => {
-    fetch("http://localhost:5000/users/students?role=teacher")
+  console.log(students);
+
+  const handleDeleteAdmin = (_id) => {
+    fetch(`http://localhost:5000/users/${_id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
-        setStudents(data);
-      })
-      .catch((error) => {
-        console.log(error);
+        console.log(data);
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "This student delete Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          refetch();
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Failed to delete an teacher!",
+          });
+        }
       });
-  }, []);
+  };
 
   return (
     <div>
@@ -46,7 +66,7 @@ const AllStudents = () => {
                     <button>
                       <FcViewDetails className="w-5 h-5"></FcViewDetails>
                     </button>
-                    <button>
+                    <button onClick={() => handleDeleteAdmin(student._id)}>
                       <MdDelete className="w-5 h-5 text-red-500"></MdDelete>
                     </button>
                     <button>

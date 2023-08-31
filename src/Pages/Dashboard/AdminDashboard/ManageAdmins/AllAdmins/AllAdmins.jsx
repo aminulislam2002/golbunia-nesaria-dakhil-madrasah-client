@@ -3,16 +3,16 @@ import { MdDelete } from "react-icons/md";
 import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 
-const AllTeachers = () => {
-  const { data: teachers = [], refetch } = useQuery(["teachers"], async () => {
-    const res = await fetch("http://localhost:5000/users/teachers?role=teacher");
+const AllAdmins = () => {
+  const { data: admins = [], refetch } = useQuery(["admins"], async () => {
+    const res = await fetch("http://localhost:5000/users/admins?role=admin");
     return res.json();
   });
 
-  console.log(teachers);
+  console.log(admins);
 
-  const handleMakeAdmin = (user) => {
-    fetch(`http://localhost:5000/users/makeAdmin/${user._id}`, {
+  const handleRemoveAdmin = (user) => {
+    fetch(`http://localhost:5000/users/removeAdmin/${user._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -31,7 +31,7 @@ const AllTeachers = () => {
       });
   };
 
-  const handleDeleteTeacher = (_id) => {
+  const handleDeleteAdmin = (_id) => {
     fetch(`http://localhost:5000/users/${_id}`, {
       method: "DELETE",
     })
@@ -41,7 +41,7 @@ const AllTeachers = () => {
         if (data.deletedCount > 0) {
           Swal.fire({
             icon: "success",
-            title: "This teacher delete Successfully",
+            title: "This admin delete Successfully",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -59,7 +59,7 @@ const AllTeachers = () => {
   return (
     <div>
       <div>
-        <h1 className="text-3xl font-semibold text-blue-950 text-center">MANAGE TEACHERS</h1>
+        <h1 className="text-3xl font-semibold text-blue-950 text-center uppercase">MANAGE admins</h1>
       </div>
       <div>
         <div className="overflow-x-auto">
@@ -76,15 +76,15 @@ const AllTeachers = () => {
             </thead>
             <tbody>
               {/* Row */}
-              {teachers.map((teacher, index) => (
-                <tr key={teacher._id}>
+              {admins.map((admin, index) => (
+                <tr key={admin._id}>
                   <td>{index}</td>
-                  <td>{teacher.name}</td>
-                  <td>{teacher.email}</td>
+                  <td>{admin.name}</td>
+                  <td>{admin.email}</td>
                   <td>
-                    {teacher.role === "teacher" && (
-                      <button onClick={() => handleMakeAdmin(teacher)} className="btn btn-xs btn-outline btn-primary">
-                        Make Admin
+                    {admin.role === "admin" && (
+                      <button onClick={() => handleRemoveAdmin(admin)} className="btn btn-xs btn-outline btn-primary">
+                        Remove Admin
                       </button>
                     )}
                   </td>
@@ -93,7 +93,7 @@ const AllTeachers = () => {
                       <button>
                         <FcViewDetails className="w-8 h-8"></FcViewDetails>
                       </button>
-                      <button onClick={() => handleDeleteTeacher(teacher._id)}>
+                      <button onClick={() => handleDeleteAdmin(admin._id)}>
                         <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
                       </button>
                     </div>
@@ -108,4 +108,4 @@ const AllTeachers = () => {
   );
 };
 
-export default AllTeachers;
+export default AllAdmins;

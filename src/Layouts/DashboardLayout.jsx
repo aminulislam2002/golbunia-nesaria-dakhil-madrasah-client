@@ -24,6 +24,11 @@ const DashboardLayout = () => {
           Manage Notices
         </li>
       </ActiveLink>
+      <ActiveLink to="/dashboard/manageAdmins">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Manage Admins
+        </li>
+      </ActiveLink>
       <ActiveLink to="/dashboard/manageTeachers">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Teachers
@@ -32,11 +37,6 @@ const DashboardLayout = () => {
       <ActiveLink to="/dashboard/manageStudents">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Students
-        </li>
-      </ActiveLink>
-      <ActiveLink to="/dashboard/abc">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
         </li>
       </ActiveLink>
     </>

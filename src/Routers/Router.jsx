@@ -31,6 +31,7 @@ import UpdateNotice from "../Pages/Dashboard/AdminDashboard/ManageNotices/Update
 import AllTeachers from "../Pages/Dashboard/AdminDashboard/ManageTeachers/AllTeachers/AllTeachers";
 import AllStudents from "../Pages/Dashboard/AdminDashboard/ManageStudents/AllStudents/AllStudents";
 import PrivateRoute from "./PrivateRoute";
+import AllAdmins from "../Pages/Dashboard/AdminDashboard/ManageAdmins/AllAdmins/AllAdmins";
 
 export const router = createBrowserRouter([
   {
@@ -82,7 +83,7 @@ export const router = createBrowserRouter([
         element: <NoticeSection></NoticeSection>,
       },
     ],
-  },
+  }, 
   {
     path: "dashboard",
     element: (
@@ -120,6 +121,10 @@ export const router = createBrowserRouter([
       {
         path: "updateNotice",
         element: <UpdateNotice></UpdateNotice>,
+      },
+      {
+        path: "manageAdmins",
+        element: <AllAdmins></AllAdmins>
       },
       {
         path: "manageTeachers",
