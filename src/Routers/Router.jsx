@@ -21,7 +21,7 @@ import StudentSignUp from "../Pages/Authentication/StudentSignUp/StudentSignUp";
 import TeacherSignUp from "../Pages/Authentication/TeacherSignUp/TeacherSignUp";
 import Login from "../Pages/Authentication/Login/Login";
 import DashboardLayout from "../Layouts/DashboardLayout";
-import Profile from "../Pages/Dashboard/Profile/Profile";
+import Profile from "../Pages/Dashboard/ManageProfiles/Profile/Profile";
 import AllEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/AllEvent/AllEvent";
 import AddEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/AddEvent/AddEvent";
 import UpdateEvent from "../Pages/Dashboard/AdminDashboard/ManageEvents/UpdateEvent/UpdateEvent";

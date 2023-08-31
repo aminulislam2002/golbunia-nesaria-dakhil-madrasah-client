@@ -85,13 +85,35 @@ const DashboardLayout = () => {
                 </label>
               </div>
               <div className="px-2 w-auto lg:w-full">
-                <ActiveLink to="/dashboard/profile">
-                  <div className="ms-2 text-lg font-semibold text-yellow-500">{user.displayName}</div>
-                </ActiveLink>
+                <div className="ms-2 text-lg font-semibold text-yellow-500">
+                  {user.displayName}
+                  <span>
+                    {isAdmin && (
+                      <>
+                        <span className="text-black bg-white text-sm ms-1 px-3 font-bold rounded-full">Admin</span>
+                      </>
+                    )}
+                    {isTeacher && (
+                      <>
+                        <span className="text-black bg-white text-sm ms-1 px-3 font-bold rounded-full">Teacher</span>
+                      </>
+                    )}
+                    {isStudent && (
+                      <>
+                        <span className="text-black bg-white text-sm ms-1 px-3 font-bold rounded-full">Student</span>
+                      </>
+                    )}
+                  </span>
+                </div>
               </div>
             </div>
             <div className="flex-none hidden lg:block mt-4">
               <ul className="menu-vertical">
+                <ActiveLink to="/dashboard/profile">
+                  <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+                    Profile
+                  </li>
+                </ActiveLink>
                 {isAdmin && <> {adminOptions} </>}
                 {isTeacher && <> {teacherOptions} </>}
                 {isStudent && <> {studentOptions} </>}
