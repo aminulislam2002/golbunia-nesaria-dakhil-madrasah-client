@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import { GrMenu } from "react-icons/gr";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
+import ActiveLink from "../Components/ActiveLink/ActiveLink";
 
 const DashboardLayout = () => {
   const isAdmin = true;
@@ -10,41 +11,31 @@ const DashboardLayout = () => {
 
   const optionsOne = (
     <>
-      <Link to="/dashboard/manageEvents">
+      <ActiveLink to="/dashboard/manageEvents">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Events
         </li>
-      </Link>
-      <Link to="/dashboard/manageNotices">
+      </ActiveLink>
+      <ActiveLink to="/dashboard/manageNotices">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Notices
         </li>
-      </Link>
-      <Link to="/dashboard/manageTeachers">
+      </ActiveLink>
+      <ActiveLink to="/dashboard/manageTeachers">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Teachers
         </li>
-      </Link>
-      <Link to="/dashboard/manageStudents">
+      </ActiveLink>
+      <ActiveLink to="/dashboard/manageStudents">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Students
         </li>
-      </Link>
-      <Link to="/dashboard">
+      </ActiveLink>
+      <ActiveLink to="/dashboard/abc">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Route
         </li>
-      </Link>
-      <Link to="/dashboard">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
-        </li>
-      </Link>
-      <Link to="/dashboard">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
-        </li>
-      </Link>
+      </ActiveLink>
     </>
   );
 
