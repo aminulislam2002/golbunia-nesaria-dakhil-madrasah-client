@@ -29,9 +29,6 @@ const NavBar = () => {
       });
   };
 
-  const profileImage =
-    "https://img.freepik.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?size=626&ext=jpg&ga=GA1.2.235952763.1681062999&semt=ais";
-
   const navOptions = (
     <>
       <li className="text-white">
@@ -169,10 +166,10 @@ const NavBar = () => {
               <>
                 <Link to="/dashboard/profile">
                   <div className="flex justify-center items-center gap-1">
-                    <img src={profileImage} className="w-7 h-7 rounded-full" alt="" />
+                    <img src={user.photoURL} className="w-7 h-7 rounded-full" alt="" />
                     <button className="w-full text-left">
                       <li className="bg-blue-900 hover:bg-white hover:text-black rounded py-2 my-1 px-3">
-                        View Your Profile
+                        {user.displayName}
                       </li>
                     </button>
                   </div>

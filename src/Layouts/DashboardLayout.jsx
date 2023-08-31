@@ -2,12 +2,15 @@ import { Link, Outlet } from "react-router-dom";
 import { GrMenu } from "react-icons/gr";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
 import ActiveLink from "../Components/ActiveLink/ActiveLink";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const DashboardLayout = () => {
+  const { user } = useContext(AuthContext);
+
   const isAdmin = true;
   const isTeacher = false;
   const isStudent = false;
-  const user = "Aminul Islam";
 
   const optionsOne = (
     <>
@@ -95,7 +98,9 @@ const DashboardLayout = () => {
                 </label>
               </div>
               <div className="px-2 w-auto lg:w-full">
-                <div className="ms-2 text-lg font-semibold text-yellow-500">{user}</div>
+                <ActiveLink to="/dashboard/profile">
+                  <div className="ms-2 text-lg font-semibold text-yellow-500">{user.displayName}</div>
+                </ActiveLink>
               </div>
             </div>
             <div className="flex-none hidden lg:block mt-4">

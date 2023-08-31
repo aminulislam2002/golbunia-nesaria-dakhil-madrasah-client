@@ -53,7 +53,11 @@ const AllEvent = () => {
               <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 flex justify-center items-center">
                 <div className="w-11/12">
                   <h2 className="text-xl font-semibold">{event.eventTitle}</h2>
-                  <p className="text-sm text-gray-600 mt-2">Published Date: {event.eventDateTime}</p>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Event Date: {event.eventDateTime.slice(8, 10)}-{event.eventDateTime.slice(5, 7)}-
+                    {event.eventDateTime.slice(0, 4)}
+                  </p>
+                  <p className="text-sm text-gray-600 mt-2">Event Time: {event.eventDateTime.slice(11, 16)}</p>
                   <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
                     Read More
                   </button>

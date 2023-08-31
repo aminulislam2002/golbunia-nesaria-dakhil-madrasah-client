@@ -96,22 +96,20 @@ const TeacherSignUp = () => {
           role: "teacher",
         };
 
-        // Remove the password property before saving to MongoDB
-        const { password, ...userDataToSave } = userData;
-
         // Registration logic here
         createUserWithEmail(data.email, data.password)
           .then((result) => {
             console.log("CURRENT USER INFORMATION:", result.user);
             updateUserProfileName(userData.name)
               .then(() => {
+                const saveUserData = { name: userData.name, email: userData.email, role: userData.role };
                 // User information saved db logic here
                 fetch("http://localhost:5000/users", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
                   },
-                  body: JSON.stringify(userDataToSave),
+                  body: JSON.stringify(saveUserData),
                 })
                   .then((res) => res.json())
                   .then((data) => {
