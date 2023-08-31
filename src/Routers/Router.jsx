@@ -44,11 +44,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "history-of-madrasah",
-        element: (
-          <PrivateRoute>
-            <HistoryOfMadrasah></HistoryOfMadrasah>
-          </PrivateRoute>
-        ),
+        element: <HistoryOfMadrasah></HistoryOfMadrasah>,
       },
       {
         path: "mission-and-vision",
@@ -83,7 +79,7 @@ export const router = createBrowserRouter([
         element: <NoticeSection></NoticeSection>,
       },
     ],
-  }, 
+  },
   {
     path: "dashboard",
     element: (
@@ -124,7 +120,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "manageAdmins",
-        element: <AllAdmins></AllAdmins>
+        element: <AllAdmins></AllAdmins>,
       },
       {
         path: "manageTeachers",

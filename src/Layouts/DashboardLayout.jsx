@@ -4,15 +4,22 @@ import NavBar from "../Pages/Shared/NavBar/NavBar";
 import ActiveLink from "../Components/ActiveLink/ActiveLink";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import useAdmin from "../Hooks/useAdmin";
+import useTeacher from "../Hooks/useTeacher";
+import useStudent from "../Hooks/useStudent";
 
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
 
-  const isAdmin = true;
-  const isTeacher = false;
-  const isStudent = false;
+  const [isAdmin] = useAdmin();
+  const [isTeacher] = useTeacher();
+  const [isStudent] = useStudent();
 
-  const optionsOne = (
+  console.log("Is this Admin", isAdmin);
+  console.log("Is this Teacher", isTeacher);
+  console.log("Is this Student", isStudent);
+
+  const adminOptions = (
     <>
       <ActiveLink to="/dashboard/manageEvents">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
@@ -42,41 +49,21 @@ const DashboardLayout = () => {
     </>
   );
 
-  const optionsTwo = (
+  const teacherOptions = (
     <>
       <Link to="/dashboard">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
-        </li>
-      </Link>
-      <Link to="/dashboard">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
-        </li>
-      </Link>
-      <Link to="/dashboard">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
+          This is Teacher
         </li>
       </Link>
     </>
   );
 
-  const optionsThree = (
+  const studentOptions = (
     <>
       <Link to="/dashboard">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
-        </li>
-      </Link>
-      <Link to="/dashboard">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
-        </li>
-      </Link>
-      <Link to="/dashboard">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Route
+          This is Student
         </li>
       </Link>
     </>
@@ -105,9 +92,9 @@ const DashboardLayout = () => {
             </div>
             <div className="flex-none hidden lg:block mt-4">
               <ul className="menu-vertical">
-                {isAdmin && <> {optionsOne} </>}
-                {isTeacher && <> {optionsTwo} </>}
-                {isStudent && <> {optionsThree} </>}
+                {isAdmin && <> {adminOptions} </>}
+                {isTeacher && <> {teacherOptions} </>}
+                {isStudent && <> {studentOptions} </>}
               </ul>
             </div>
           </div>
@@ -120,9 +107,9 @@ const DashboardLayout = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay overflow-x-auto max-h-[100vh]"></label>
           <ul className="p-4 w-52 bg-blue-950 overflow-y-auto">
-            {isAdmin && <> {optionsOne} </>}
-            {isTeacher && <> {optionsTwo} </>}
-            {isStudent && <> {optionsThree} </>}
+            {isAdmin && <> {adminOptions} </>}
+            {isTeacher && <> {teacherOptions} </>}
+            {isStudent && <> {studentOptions} </>}
           </ul>
         </div>
       </div>
