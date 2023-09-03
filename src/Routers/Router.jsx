@@ -32,6 +32,8 @@ import AllTeachers from "../Pages/Dashboard/AdminDashboard/ManageTeachers/AllTea
 import AllStudents from "../Pages/Dashboard/AdminDashboard/ManageStudents/AllStudents/AllStudents";
 import PrivateRoute from "./PrivateRoute";
 import AllAdmins from "../Pages/Dashboard/AdminDashboard/ManageAdmins/AllAdmins/AllAdmins";
+import UpdateStudentProfile from "../Pages/Dashboard/ManageProfiles/UpdateStudentProfile/UpdateStudentProfile";
+import PageNotFound from "../Components/PageNotFound/PageNotFound";
 
 export const router = createBrowserRouter([
   {
@@ -91,6 +93,11 @@ export const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile></Profile>,
+      },
+      {
+        path: "profile/update-student-profile/:id",
+        element: <UpdateStudentProfile></UpdateStudentProfile>,
+        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`),
       },
       {
         path: "manageEvents",
@@ -179,5 +186,9 @@ export const router = createBrowserRouter([
         element: <StudentsResult></StudentsResult>,
       },
     ],
+  },
+  {
+    path: "/*",
+    element: <PageNotFound></PageNotFound>,
   },
 ]);

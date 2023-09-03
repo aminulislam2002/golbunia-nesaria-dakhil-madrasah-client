@@ -9,7 +9,7 @@ const AllStudents = () => {
     const res = await fetch("http://localhost:5000/users/students?role=student");
     return res.json();
   });
-
+ 
   console.log(students);
 
   const handleDeleteAdmin = (_id) => {
@@ -48,6 +48,8 @@ const AllStudents = () => {
               <th>email</th>
               <th>Father Name</th>
               <th>Mother Name</th>
+              <th>Class</th>
+              <th>Roll</th>
               <th>Date of Birth</th>
               <th>Action</th>
             </tr>
@@ -60,6 +62,8 @@ const AllStudents = () => {
                 <td>{student.email}</td>
                 <td>{student.fatherName}</td>
                 <td>{student.motherName}</td>
+                <td>{student.class}</td>
+                <td>{student.roll}</td>
                 <td>{student.birthdayDate}</td>
                 <td>
                   <div>

@@ -18,7 +18,7 @@ const TeachersSection = () => {
   };
 
   useEffect(() => {
-    fetch("teachers.json")
+    fetch("http://localhost:5000/users/teachers?role=teacher")
       .then((res) => res.json())
       .then((data) => setTeachersData(data));
   }, []);
@@ -35,7 +35,7 @@ const TeachersSection = () => {
             <Link to={`/teacher/${id}`} className="hover:no-underline">
               <div className="card w-full glass p-4 rounded-lg shadow-lg bg-slate-200">
                 <div className="flex justify-center items-center mb-4">
-                  <img src={teacherData.image} alt={teacherData.name} className="w-32 h-32 md:w-[150px] md:h-[150px] " />
+                  <img src={teacherData.photo} alt={teacherData.name} className="w-32 h-32 md:w-[150px] md:h-[150px] " />
                 </div>
                 <div>
                   <h2 className="font-bold text-center text-gray-800 text-lg">{teacherData.name}</h2>
@@ -44,11 +44,11 @@ const TeachersSection = () => {
                 <div className="mt-4">
                   <div className="flex justify-center items-center gap-1">
                     <MdEmail className="text-blue-500" />
-                    <p>{teacherData.contact?.email}</p>
+                    <p>{teacherData?.email}</p>
                   </div>
                   <div className="flex justify-center items-center gap-1">
                     <IoIosCall className="text-blue-500" />
-                    <p>{teacherData.contact?.phone}</p>
+                    <p>{teacherData?.phone}</p>
                   </div>
                 </div>
               </div>

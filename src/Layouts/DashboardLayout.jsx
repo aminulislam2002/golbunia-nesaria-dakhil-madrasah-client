@@ -15,9 +15,9 @@ const DashboardLayout = () => {
   const [isTeacher] = useTeacher();
   const [isStudent] = useStudent();
 
-  console.log("Is this Admin", isAdmin);
-  console.log("Is this Teacher", isTeacher);
-  console.log("Is this Student", isStudent);
+  // console.log("Is this Admin", isAdmin);
+  // console.log("Is this Teacher", isTeacher);
+  // console.log("Is this Student", isStudent);
 
   const adminOptions = (
     <>
@@ -129,6 +129,11 @@ const DashboardLayout = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay overflow-x-auto max-h-[100vh]"></label>
           <ul className="p-4 w-52 bg-blue-950 overflow-y-auto">
+            <ActiveLink to="/dashboard/profile">
+              <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+                Profile
+              </li>
+            </ActiveLink>
             {isAdmin && <> {adminOptions} </>}
             {isTeacher && <> {teacherOptions} </>}
             {isStudent && <> {studentOptions} </>}
