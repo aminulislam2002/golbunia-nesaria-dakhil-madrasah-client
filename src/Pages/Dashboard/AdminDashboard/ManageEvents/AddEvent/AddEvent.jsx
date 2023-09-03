@@ -10,7 +10,7 @@ const AddEvent = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/events", {
+    fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/events", {
       method: "POST",
       headers: {
         "content-type": "application/json",

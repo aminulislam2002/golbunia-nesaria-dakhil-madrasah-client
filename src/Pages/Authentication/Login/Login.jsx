@@ -51,7 +51,7 @@ const Login = () => {
           email: loggedInUser.email,
           photo: loggedInUser.photoURL,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

@@ -5,7 +5,7 @@ const EventsSection = () => {
   const [upcomingEventsData, setUpcomingEventsData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/events")
+    fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/events")
       .then((res) => res.json())
       .then((data) => setUpcomingEventsData(data));
   }, []);
@@ -36,7 +36,10 @@ const EventsSection = () => {
                   <div className="font-bold text-gray-500">Time: {upcomingEventData.eventDateTime.slice(11, 16)}</div>
                 </div>
                 <div className="w-2/3">
-                  <Link to={`/event/${upcomingEventData._id}`} className="font-bold text-sm text-blue-900 hover:text-yellow-600">
+                  <Link
+                    to={`/event/${upcomingEventData._id}`}
+                    className="font-bold text-sm text-blue-900 hover:text-yellow-600"
+                  >
                     {upcomingEventData.eventTitle.slice(0, 100)}...
                   </Link>
                 </div>

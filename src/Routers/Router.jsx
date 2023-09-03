@@ -97,12 +97,12 @@ export const router = createBrowserRouter([
       {
         path: "profile/update-student-profile/:id",
         element: <UpdateStudentProfile></UpdateStudentProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`),
+        loader: ({ params }) => fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/${params.id}`),
       },
       {
         path: "manageEvents",
         element: <AllEvent></AllEvent>,
-        loader: () => fetch("http://localhost:5000/events"),
+        loader: () => fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/events"),
       },
       {
         path: "addEvent",
@@ -115,7 +115,7 @@ export const router = createBrowserRouter([
       {
         path: "manageNotices",
         element: <AllNotice></AllNotice>,
-        loader: () => fetch("http://localhost:5000/notices"),
+        loader: () => fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/notices"),
       },
       {
         path: "addNotice",

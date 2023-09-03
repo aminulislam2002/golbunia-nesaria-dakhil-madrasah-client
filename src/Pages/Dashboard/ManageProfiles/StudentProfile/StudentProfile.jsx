@@ -7,7 +7,7 @@ const StudentProfile = () => {
   const { user } = useContext(AuthContext);
 
   const { data: currentUser = {} } = useQuery(["currentUser"], async () => {
-    const res = await fetch(`http://localhost:5000/user/${user.email}`);
+    const res = await fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/user/${user.email}`);
     return res.json();
   });
 
@@ -45,7 +45,8 @@ const StudentProfile = () => {
           <span className="text-black text-sm ms-1">({currentUser.nickName})</span>
         </h1>
         <p className="mb-2">
-          <span className="text-gray-800 font-bold">Email:</span> <span className="text-black ms-1">{currentUser.email}</span>
+          <span className="text-gray-800 font-bold">Email:</span>{" "}
+          <span className="text-black ms-1">{currentUser.email}</span>
         </p>
         <p className="mb-2">
           <span className="text-gray-800 font-bold">Mobile Number:</span>
@@ -75,7 +76,8 @@ const StudentProfile = () => {
           <span className="text-red-600"> {currentUser.bloodGroup}</span>
         </p>
         <p className="mb-2">
-          <span className="text-gray-800 font-bold">Class:</span> <span className="text-black ms-1">{currentUser.class}</span>
+          <span className="text-gray-800 font-bold">Class:</span>{" "}
+          <span className="text-black ms-1">{currentUser.class}</span>
         </p>
         <p className="mb-2">
           <span className="text-gray-800 font-bold">Roll:</span> <span className="text-black ms-1">{currentUser.roll}</span>

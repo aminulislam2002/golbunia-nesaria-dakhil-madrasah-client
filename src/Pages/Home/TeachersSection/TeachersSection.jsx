@@ -18,7 +18,7 @@ const TeachersSection = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/users/teachers?role=teacher")
+    fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/teachers?role=teacher")
       .then((res) => res.json())
       .then((data) => setTeachersData(data));
   }, []);

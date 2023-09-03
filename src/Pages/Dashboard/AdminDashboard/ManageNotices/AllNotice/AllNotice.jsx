@@ -9,7 +9,7 @@ const AllNotice = () => {
   console.log(notices);
 
   const handleDeleteNotice = (_id) => {
-    fetch(`http://localhost:5000/notices/${_id}`, {
+    fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/notices/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -54,9 +54,9 @@ const AllNotice = () => {
                 <div className="w-11/12">
                   <h2 className="text-xl font-semibold">{notice?.noticeHeadline}</h2>
                   <p className="text-sm text-gray-500 mt-2">
-                  Published Date & Time: {notice.publishedDateTime.slice(8, 10)}-{notice.publishedDateTime.slice(5, 7)}-
-                  {notice.publishedDateTime.slice(0, 4)} {notice.publishedDateTime.slice(11, 16)}
-                </p>
+                    Published Date & Time: {notice.publishedDateTime.slice(8, 10)}-{notice.publishedDateTime.slice(5, 7)}-
+                    {notice.publishedDateTime.slice(0, 4)} {notice.publishedDateTime.slice(11, 16)}
+                  </p>
                   <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
                     Read More
                   </button>

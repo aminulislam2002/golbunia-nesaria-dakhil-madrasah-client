@@ -8,7 +8,7 @@ const UpdateStudentProfile = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/user/student/${user._id}`, {
+    fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/user/student/${user._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

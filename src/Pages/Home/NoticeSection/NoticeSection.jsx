@@ -5,7 +5,7 @@ const NoticeSection = () => {
   const [allNoticesData, setAllNoticesData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/notices")
+    fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/notices")
       .then((res) => res.json())
       .then((data) => setAllNoticesData(data));
   }, []);
