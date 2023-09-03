@@ -53,7 +53,7 @@ const DashboardLayout = () => {
     <>
       <Link to="/dashboard">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          This is Teacher
+          {/* This is Teacher */}
         </li>
       </Link>
     </>
@@ -63,7 +63,7 @@ const DashboardLayout = () => {
     <>
       <Link to="/dashboard">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          This is Student
+          {/* This is Student */}
         </li>
       </Link>
     </>

@@ -45,25 +45,29 @@ const StudentProfile = () => {
           <span className="text-black text-sm ms-1">({currentUser.nickName})</span>
         </h1>
         <p className="mb-2">
-          <span className="text-gray-800 font-bold">Email:</span> <span className="text-black">{currentUser.email}</span>
+          <span className="text-gray-800 font-bold">Email:</span> <span className="text-black ms-1">{currentUser.email}</span>
         </p>
         <p className="mb-2">
           <span className="text-gray-800 font-bold">Mobile Number:</span>
-          <span className="text-black">{currentUser.mobileNumber}</span>
+          <span className="text-black ms-1">{currentUser.mobileNumber}</span>
         </p>
         <p className="mb-2">
           <span className="text-gray-800 font-bold">Father Name:</span>
-          <span className="text-black">{currentUser.fatherName}</span>
+          <span className="text-black ms-1">{currentUser.fatherName}</span>
         </p>
         <p className="mb-2">
           <span className="text-gray-800 font-bold">Mother Name:</span>
-          <span className="text-black">{currentUser.motherName}</span>
+          <span className="text-black ms-1">{currentUser.motherName}</span>
         </p>
         <p className="mb-2">
           <span className="text-gray-800 font-bold">Date of Birth:</span>
-          <span className="text-black">
-            {currentUser.birthdayDate.slice(8, 10)}-{currentUser.birthdayDate.slice(5, 7)}-
-            {currentUser.birthdayDate.slice(0, 4)}
+          <span className="text-black ms-1">
+            {currentUser?.birthdayDate
+              ? `${currentUser.birthdayDate.slice(8, 10)}-${currentUser.birthdayDate.slice(
+                  5,
+                  7
+                )}-${currentUser.birthdayDate.slice(0, 4)}`
+              : "N/A"}
           </span>
         </p>
         <p className="mb-2">
@@ -71,10 +75,10 @@ const StudentProfile = () => {
           <span className="text-red-600"> {currentUser.bloodGroup}</span>
         </p>
         <p className="mb-2">
-          <span className="text-gray-800 font-bold">Class:</span> <span className="text-black">{currentUser.class}</span>
+          <span className="text-gray-800 font-bold">Class:</span> <span className="text-black ms-1">{currentUser.class}</span>
         </p>
         <p className="mb-2">
-          <span className="text-gray-800 font-bold">Roll:</span> <span className="text-black">{currentUser.roll}</span>
+          <span className="text-gray-800 font-bold">Roll:</span> <span className="text-black ms-1">{currentUser.roll}</span>
         </p>
       </div>
 

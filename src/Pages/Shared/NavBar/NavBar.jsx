@@ -147,7 +147,15 @@ const NavBar = () => {
             {navOptions}
           </ul>
         </div>
-        <div className="text-xl font-bold text-white hidden lg:block w-full">Golbunia Nesaria Dakhil Madrasah</div>
+        <div>
+          <span className="lg:text-xl font-bold text-white w-full">Golbunia Nesaria Dakhil Madrasah</span>
+          <p>
+            <span className="uppercase text-white text-sm me-1">ESTD:</span>
+            <span className="text-white text-sm m-0 me-5">1984</span>
+            <span className="uppercase text-white text-sm m-0 me-1">EIIN:</span>
+            <span className="text-white text-sm m-0 me-1">102671</span>
+          </p>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex justify-center items-center lg:w-8/12">
         {/* Use a mobile-friendly menu icon here for small screens */}
