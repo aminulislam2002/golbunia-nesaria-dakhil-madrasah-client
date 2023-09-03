@@ -14,7 +14,6 @@ const Home = () => {
       <MadrasahInNumbers></MadrasahInNumbers>
       <EventsSection></EventsSection>
       <NoticeSection></NoticeSection>
-      <h1>This is home page</h1>
     </div>
   );
 };

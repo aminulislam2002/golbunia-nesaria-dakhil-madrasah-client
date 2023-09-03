@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "event_name": "Enjoy gourmet dining, live music, and a silent auction featuring exclusive items.",
+    "event_date": ["10", "AUG", "2023"],
+    "images": [
+      "https://img.freepik.com/free-photo/cute-stylish-children-dark-space-beautiful-teen-girls-boy-standing-together_155003-15170.jpg?size=626&ext=jpg&uid=R93922666&ga=GA1.2.235952763.1681062999&semt=ais",
+      "event_image2.jpg",
+      "event_image3.jpg"
+    ],
+    "description": "Join us for our Annual Charity Gala, a night of elegance and philanthropy. This year, we're raising funds for local children's hospitals. Enjoy gourmet dining, live music, and a silent auction featuring exclusive items."
+  },
+  {
+    "id": "2",
+    "event_name": "Explore cutting-edge technologies, attend insightful talks by industry leaders.",
+    "event_date": ["15", "SEP", "2023"],
+    "images": [
+      "https://img.freepik.com/free-photo/happy-kids-playing-city-s-street-sunny-summer-s-day-front-modern-building-group-happy-childrens-teenagers-having-fun-together-concept-friendship-childhood-summer-holidays_155003-25113.jpg?size=626&ext=jpg&uid=R93922666&ga=GA1.2.235952763.1681062999&semt=ais",
+      "tech_event_image2.jpg",
+      "tech_event_image3.jpg"
+    ],
+    "description": "Don't miss the Tech Innovation Summit, where visionaries and tech enthusiasts come together. Explore cutting-edge technologies, attend insightful talks by industry leaders, and network with like-minded professionals."
+  },
+  {
+    "id": "3",
+    "event_name": "Experience the world of art at our 'Colors of Creativity' exhibition.",
+    "event_date": ["25", "NOV", "2023"],
+    "images": [
+      "https://img.freepik.com/free-photo/group-happy-children-walking-school-autumn_1098-13971.jpg?size=626&ext=jpg&uid=R93922666&ga=GA1.2.235952763.1681062999&semt=ais",
+      "art_event_image2.jpg",
+      "art_event_image3.jpg"
+    ],
+    "description": "Experience the world of art at our 'Colors of Creativity' exhibition. Marvel at captivating paintings, sculptures, and multimedia installations created by renowned and emerging artists. A journey into the realm of imagination awaits."
+  }
+]

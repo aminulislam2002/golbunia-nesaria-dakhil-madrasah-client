@@ -49,12 +49,12 @@ const EventsSection = () => {
         ))}
       </div>
 
-      {/* View All Button */}
+      {/* View All Button
       <div className="flex justify-center items-center mt-6">
         <Link to="/events" className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 font-semibold text-base">
           VIEW ALL EVENTS
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,18 +1,20 @@
 import { MdOutlineFacebook } from "react-icons/md";
 import { AiFillInstagram, AiFillTwitterCircle, AiFillYoutube } from "react-icons/ai";
-import { FaHashtag } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
+
+import logo from "../../../assets/image/logo.png"
 
 const MainFooter = () => {
   return (
     <div>
       <footer className="footer p-10 bg-gray-900 text-white ">
         <div>
-          <FaHashtag className="w-16 h-16"></FaHashtag>
+          <img className="w-20 h-20" src={logo} alt="" />
           <p>
             Golbunia Nesaria Dakhil Madrasah
             <br />
-            Prirojpur, Bangladesh, Since 1992.
+            Prirojpur, Bangladesh, Since 1984.
           </p>
         </div>
         <div>
