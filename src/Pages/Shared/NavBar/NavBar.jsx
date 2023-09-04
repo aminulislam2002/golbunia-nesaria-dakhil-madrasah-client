@@ -103,16 +103,16 @@ const NavBar = () => {
         </div>
         <div className="absolute z-50 hidden top-full w-60  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
-            <Link to="/eSIF">
+            <Link to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e S I F</li>
             </Link>
-            <Link to="/eFF">
+            <Link to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e F F</li>
             </Link>
-            <Link to="/eTIF">
+            <Link to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e T I F</li>
             </Link>
-            <Link to="/eRPS">
+            <Link to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e R P S</li>
             </Link>
             <Link>

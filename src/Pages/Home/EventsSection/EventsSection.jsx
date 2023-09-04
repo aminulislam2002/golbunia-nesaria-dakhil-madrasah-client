@@ -5,7 +5,7 @@ const EventsSection = () => {
   const [upcomingEventsData, setUpcomingEventsData] = useState([]);
 
   useEffect(() => {
-    fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/events")
+    fetch("https://madrasah-server.vercel.app/events")
       .then((res) => res.json())
       .then((data) => setUpcomingEventsData(data));
   }, []);

@@ -6,14 +6,14 @@ import Swal from "sweetalert2";
 
 const AllStudents = () => {
   const { data: students = [], refetch } = useQuery(["students"], async () => {
-    const res = await fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/students?role=student");
+    const res = await fetch("https://madrasah-server.vercel.app/users/students?role=student");
     return res.json();
   });
 
   console.log(students);
 
   const handleDeleteAdmin = (_id) => {
-    fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/${_id}`, {
+    fetch(`https://madrasah-server.vercel.app/users/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

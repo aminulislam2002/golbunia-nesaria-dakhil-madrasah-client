@@ -5,14 +5,14 @@ import Swal from "sweetalert2";
 
 const AllAdmins = () => {
   const { data: admins = [], refetch } = useQuery(["admins"], async () => {
-    const res = await fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/admins?role=admin");
+    const res = await fetch("https://madrasah-server.vercel.app/users/admins?role=admin");
     return res.json();
   });
 
   console.log(admins);
 
   const handleRemoveAdmin = (user) => {
-    fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/removeAdmin/${user._id}`, {
+    fetch(`https://madrasah-server.vercel.app/users/removeAdmin/${user._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -32,7 +32,7 @@ const AllAdmins = () => {
   };
 
   const handleDeleteAdmin = (_id) => {
-    fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/${_id}`, {
+    fetch(`https://madrasah-server.vercel.app/users/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

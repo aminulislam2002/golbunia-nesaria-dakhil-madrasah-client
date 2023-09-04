@@ -11,8 +11,8 @@ const Home = () => {
       <HomePageBgImage></HomePageBgImage>
       <TopBanner></TopBanner>
       <TeachersSection></TeachersSection>
-      <MadrasahInNumbers></MadrasahInNumbers>
       <EventsSection></EventsSection>
+      <MadrasahInNumbers></MadrasahInNumbers>
       <NoticeSection></NoticeSection>
     </div>
   );

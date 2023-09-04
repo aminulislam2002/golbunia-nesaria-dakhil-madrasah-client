@@ -33,7 +33,7 @@ const AddEvent = () => {
           const newItem = { eventTitle, eventDescription, eventDateTime, eventImage: imgURL };
 
           // Send a POST request to your server to save the event data
-          fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/events", {
+          fetch("https://madrasah-server.vercel.app/events", {
             method: "POST",
             headers: {
               "Content-Type": "application/json", // Correct the content type header

@@ -7,7 +7,7 @@ const StudentProfile = () => {
   const { user } = useContext(AuthContext);
 
   const { data: currentUser = {} } = useQuery(["currentUser"], async () => {
-    const res = await fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/user/${user.email}`);
+    const res = await fetch(`https://madrasah-server.vercel.app/user/${user.email}`);
     return res.json();
   });
 

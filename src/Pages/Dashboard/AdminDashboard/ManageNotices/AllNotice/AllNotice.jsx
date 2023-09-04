@@ -9,7 +9,7 @@ const AllNotice = () => {
   console.log(notices);
 
   const handleDeleteNotice = (_id) => {
-    fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/notices/${_id}`, {
+    fetch(`https://madrasah-server.vercel.app/notices/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

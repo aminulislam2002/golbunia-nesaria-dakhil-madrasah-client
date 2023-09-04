@@ -5,14 +5,14 @@ import Swal from "sweetalert2";
 
 const AllTeachers = () => {
   const { data: teachers = [], refetch } = useQuery(["teachers"], async () => {
-    const res = await fetch("https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/teachers?role=teacher");
+    const res = await fetch("https://madrasah-server.vercel.app/users/teachers?role=teacher");
     return res.json();
   });
 
   console.log(teachers);
 
   const handleMakeAdmin = (user) => {
-    fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/makeAdmin/${user._id}`, {
+    fetch(`https://madrasah-server.vercel.app/users/makeAdmin/${user._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -32,7 +32,7 @@ const AllTeachers = () => {
   };
 
   const handleDeleteTeacher = (_id) => {
-    fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/users/${_id}`, {
+    fetch(`https://madrasah-server.vercel.app/users/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

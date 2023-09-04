@@ -9,7 +9,7 @@ const AllEvent = () => {
   console.log(events);
 
   const handleDeleteEvent = (_id) => {
-    fetch(`https://golbunia-nesaria-dakhil-madrasah-server.vercel.app/events/${_id}`, {
+    fetch(`https://madrasah-server.vercel.app/events/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
