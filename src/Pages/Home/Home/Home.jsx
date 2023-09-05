@@ -9,6 +9,7 @@ import MadrasahPhotoGallery from "../MadrasahPhotoGallery/MadrasahPhotoGallery";
 import MadrasahDetails from "../MadrasahDetails/MadrasahDetails";
 import AboutMadrasahSection from "../AboutMadrasahSection/AboutMadrasahSection";
 import PrincipalWordAndBoardLinks from "../PrincipalWordAndBoardLinks/PrincipalWordAndBoardLinks";
+import MadrasahOverviewAndLinks from "../MadrasahOverviewAndLinks/MadrasahOverviewAndLinks";
 
 const Home = () => {
   return (
@@ -19,8 +20,9 @@ const Home = () => {
       <TeachersSection></TeachersSection>
       <AboutMadrasahSection></AboutMadrasahSection>
       <PrincipalWordAndBoardLinks></PrincipalWordAndBoardLinks>
+      <MadrasahOverviewAndLinks></MadrasahOverviewAndLinks>
       <MadrasahInformation></MadrasahInformation>
-      <EventsSection></EventsSection>
+      {/* <EventsSection></EventsSection> */}
       <MadrasahInNumbers></MadrasahInNumbers>
       <MadrasahPhotoGallery></MadrasahPhotoGallery>
       {/* <NoticeSection></NoticeSection> */}
