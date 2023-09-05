@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { IoIosCall } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { BsFacebook } from "react-icons/bs";
+import { FaHome, FaWhatsappSquare } from "react-icons/fa";
+import { MdEmail, MdCall } from "react-icons/md";
 
 const TeachersSection = () => {
   const [showAllTeachersData, setShowAllTeachersData] = useState(false);
   const [teachersData, setTeachersData] = useState([]);
 
-  const dataToShow = showAllTeachersData ? teachersData : teachersData.slice(0, 6);
+  const dataToShow = showAllTeachersData ? teachersData : teachersData.slice(0, 8);
 
   const handleSeeMoreClick = () => {
     setShowAllTeachersData(true);
@@ -16,6 +16,12 @@ const TeachersSection = () => {
   const handleSeeLessClick = () => {
     setShowAllTeachersData(false);
   };
+
+  // useEffect(() => {
+  //   fetch("teachers.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setTeachersData(data));
+  // }, []);
 
   useEffect(() => {
     fetch("https://madrasah-server.vercel.app/users/teachers?role=teacher")
@@ -29,30 +35,40 @@ const TeachersSection = () => {
         <h1 className="text-3xl font-semibold text-blue-950">MEET OUR TEACHERS</h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {dataToShow.map((teacherData, id) => (
-          <div key={id}>
-            <Link to={`/teacher/${id}`} className="hover:no-underline">
-              <div className="card w-full glass p-4 rounded-lg shadow-lg bg-slate-200">
-                <div className="flex justify-center items-center mb-4">
-                  <img src={teacherData.photo} alt={teacherData.name} className="w-32 h-32 md:w-[150px] md:h-[150px] " />
-                </div>
-                <div>
-                  <h2 className="font-bold text-center text-gray-800 text-lg">{teacherData.name}</h2>
-                  <p className="font-semibold text-center text-blue-500">{teacherData.position}</p>
-                </div>
-                <div className="mt-4">
-                  <div className="flex justify-center items-center gap-1">
-                    <MdEmail className="text-blue-500" />
-                    <p>{teacherData?.email}</p>
-                  </div>
-                  <div className="flex justify-center items-center gap-1">
-                    <IoIosCall className="text-blue-500" />
-                    <p>{teacherData?.phone}</p>
-                  </div>
-                </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {dataToShow.map((teacher) => (
+          <div key={teacher.id} className="bg-white rounded-lg shadow-md p-6">
+            <img src={teacher.photo} alt={teacher.name} className="w-full h-48 object-cover rounded-md mb-4" />
+            <h2 className="text-xl font-semibold">{teacher.name}</h2>
+            <p className="text-gray-600">{teacher.position}</p>
+            <div className="mt-2">
+              <div className="flex justify-start items-center gap-1">
+                <FaHome className="text-blue-500 text-xl" />
+                <span className="text-gray-700">{teacher.address}</span>
               </div>
-            </Link>
+            </div>
+            <div className="mt-2">
+              <div className="flex justify-start items-center gap-1">
+                <MdEmail className="text-cyan-500 text-xl" />
+                <span className="text-gray-700">{teacher.email}</span>
+              </div>
+              <div className="flex justify-start items-center gap-1">
+                <MdCall className="text-green-500 text-xl" />
+                <span className="text-gray-700">{teacher.mobileNumber}</span>
+              </div>
+            </div>
+            <div className="mt-2">
+              <div className="flex justify-center items-center space-x-4">
+                <button className="flex items-center bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
+                  <FaWhatsappSquare className="text-xl" />
+                  WhatsApp
+                </button>
+                <button className="flex items-center bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                  <BsFacebook className="text-xl" />
+                  Facebook
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </div>

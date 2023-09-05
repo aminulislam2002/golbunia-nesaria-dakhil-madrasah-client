@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
-const UpdateStudentProfile = () => {
+const UpdateTeacherProfile = () => {
   const user = useLoaderData();
 
   const { register, handleSubmit } = useForm();
@@ -77,6 +77,19 @@ const UpdateStudentProfile = () => {
             />
           </div>
 
+          {/* Edit your position filed */}
+          <div>
+            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Position:</label>
+            <input
+              type="text"
+              {...register("position")}
+              name="position"
+              placeholder="Enter your position"
+              defaultValue={user?.position}
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+
           {/* Edit father name field  */}
           <div>
             <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Father Name:</label>
@@ -142,7 +155,7 @@ const UpdateStudentProfile = () => {
             />
           </div>
 
-          {/* Edit your madrasah filed */}
+          {/* Edit your madrasah name filed */}
           <div>
             <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Madrasah Name:</label>
             <input
@@ -151,32 +164,6 @@ const UpdateStudentProfile = () => {
               name="madrasahName"
               placeholder="Enter your madrasah"
               defaultValue={user?.madrasahName}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-
-          {/* Edit your class filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your class:</label>
-            <input
-              type="text"
-              {...register("class")}
-              name="class"
-              placeholder="Enter your class"
-              defaultValue={user?.class}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-
-          {/* Edit your roll filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Roll:</label>
-            <input
-              type="number"
-              {...register("roll")}
-              name="roll"
-              placeholder="Enter your roll"
-              defaultValue={user?.roll}
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
@@ -208,4 +195,4 @@ const UpdateStudentProfile = () => {
   );
 };
 
-export default UpdateStudentProfile;
+export default UpdateTeacherProfile;

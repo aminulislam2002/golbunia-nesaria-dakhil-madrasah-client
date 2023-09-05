@@ -34,6 +34,7 @@ import PrivateRoute from "./PrivateRoute";
 import AllAdmins from "../Pages/Dashboard/AdminDashboard/ManageAdmins/AllAdmins/AllAdmins";
 import UpdateStudentProfile from "../Pages/Dashboard/ManageProfiles/UpdateStudentProfile/UpdateStudentProfile";
 import PageNotFound from "../Components/PageNotFound/PageNotFound";
+import UpdateTeacherProfile from "../Pages/Dashboard/ManageProfiles/UpdateTeacherProfile/UpdateTeacherProfile";
 
 export const router = createBrowserRouter([
   {
@@ -97,6 +98,11 @@ export const router = createBrowserRouter([
       {
         path: "profile/update-student-profile/:id",
         element: <UpdateStudentProfile></UpdateStudentProfile>,
+        loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/users/${params.id}`),
+      },
+      {
+        path: "profile/update-teacher-profile/:id",
+        element: <UpdateTeacherProfile></UpdateTeacherProfile>,
         loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/users/${params.id}`),
       },
       {

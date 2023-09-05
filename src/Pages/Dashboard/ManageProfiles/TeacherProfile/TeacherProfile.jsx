@@ -15,25 +15,16 @@ const TeacherProfile = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen p-4">
-      {/* Student Cover Photo */}
-      <div className="bg-gray-800 h-52 rounded-lg mb-4">
-        {/* <img src="" className="h-52 w-full" alt="" /> */}
-        {/* Add your cover photo here */}
-      </div>
+      <div className="bg-gray-800 h-52 rounded-lg mb-4"></div>
 
-      {/* Profile Picture */}
       <div className="flex justify-center items-center -mt-24">
-        <img
-          src={currentUser.photo} // Replace with the actual profile picture URL
-          alt="Profile"
-          className="w-48 h-48 rounded-full border-4 border-blue-600"
-        />
+        <img src={currentUser.photo} alt="Profile" className="w-48 h-48 rounded-full border-4 border-blue-600" />
       </div>
 
       <div className="bg-white px-4 py-2 my-2 rounded-lg shadow">
         <h1>
-          <span className="text-gray-950 me-1 font-bold">Bio:</span>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Earum, quae.
+          <span className="text-gray-950 me-1 font-bold">Bio:</span>
+          {currentUser.bio}
         </h1>
       </div>
 
@@ -45,7 +36,11 @@ const TeacherProfile = () => {
           <span className="text-black text-sm ms-1">({currentUser.nickName})</span>
         </h1>
         <p className="mb-2">
-          <span className="text-gray-800 font-bold">Email:</span>{" "}
+          <span className="text-gray-800 font-bold">Position:</span>
+          <span className="text-black ms-1">{currentUser.position}</span>
+        </p>
+        <p className="mb-2">
+          <span className="text-gray-800 font-bold">Email:</span>
           <span className="text-black ms-1">{currentUser.email}</span>
         </p>
         <p className="mb-2">
@@ -75,17 +70,10 @@ const TeacherProfile = () => {
           <span className="text-gray-800 font-bold">Blood Group:</span>
           <span className="text-red-600"> {currentUser.bloodGroup}</span>
         </p>
-        <p className="mb-2">
-          <span className="text-gray-800 font-bold">Class:</span>{" "}
-          <span className="text-black ms-1">{currentUser.class}</span>
-        </p>
-        <p className="mb-2">
-          <span className="text-gray-800 font-bold">Roll:</span> <span className="text-black ms-1">{currentUser.roll}</span>
-        </p>
       </div>
 
       <div className="flex justify-center items-center mt-10">
-        <Link to={`update-student-profile/${currentUser._id}`}>
+        <Link to={`update-teacher-profile/${currentUser._id}`}>
           <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md">
             Edit public details
           </button>
