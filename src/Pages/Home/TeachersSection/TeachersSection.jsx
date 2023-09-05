@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { BsFacebook } from "react-icons/bs";
-import { FaHome, FaWhatsappSquare } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { MdEmail, MdCall } from "react-icons/md";
 
 const TeachersSection = () => {
@@ -17,17 +16,17 @@ const TeachersSection = () => {
     setShowAllTeachersData(false);
   };
 
-  // useEffect(() => {
-  //   fetch("teachers.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setTeachersData(data));
-  // }, []);
-
   useEffect(() => {
-    fetch("https://madrasah-server.vercel.app/users/teachers?role=teacher")
+    fetch("teachers.json")
       .then((res) => res.json())
       .then((data) => setTeachersData(data));
   }, []);
+
+  // useEffect(() => {
+  //   fetch("https://madrasah-server.vercel.app/users/teachers?role=teacher")
+  //     .then((res) => res.json())
+  //     .then((data) => setTeachersData(data));
+  // }, []);
 
   return (
     <div className="container mx-auto py-10">
@@ -55,18 +54,6 @@ const TeachersSection = () => {
               <div className="flex justify-start items-center gap-1">
                 <MdCall className="text-green-500 text-xl" />
                 <span className="text-gray-700">{teacher.mobileNumber}</span>
-              </div>
-            </div>
-            <div className="mt-2">
-              <div className="flex justify-center items-center space-x-4">
-                <button className="flex items-center bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
-                  <FaWhatsappSquare className="text-xl" />
-                  WhatsApp
-                </button>
-                <button className="flex items-center bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-                  <BsFacebook className="text-xl" />
-                  Facebook
-                </button>
               </div>
             </div>
           </div>
