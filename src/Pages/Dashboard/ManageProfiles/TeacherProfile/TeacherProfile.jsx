@@ -70,6 +70,9 @@ const TeacherProfile = () => {
           <span className="text-gray-800 font-bold">Blood Group:</span>
           <span className="text-red-600"> {currentUser.bloodGroup}</span>
         </p>
+        <p className="mb-2">
+          <span className="text-gray-800 font-bold">Address:</span> <span className="text-black ms-1">{currentUser.address}</span>
+        </p>
       </div>
 
       <div className="flex justify-center items-center mt-10">

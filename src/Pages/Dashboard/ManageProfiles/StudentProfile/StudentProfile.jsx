@@ -32,8 +32,8 @@ const StudentProfile = () => {
 
       <div className="bg-white px-4 py-2 my-2 rounded-lg shadow">
         <h1>
-          <span className="text-gray-950 me-1 font-bold">Bio:</span>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Earum, quae.
+          <span className="text-gray-950 me-1 font-bold">Bio:</span>
+          {currentUser.bio}
         </h1>
       </div>
 
@@ -76,11 +76,14 @@ const StudentProfile = () => {
           <span className="text-red-600"> {currentUser.bloodGroup}</span>
         </p>
         <p className="mb-2">
-          <span className="text-gray-800 font-bold">Class:</span>{" "}
+          <span className="text-gray-800 font-bold">Class:</span>
           <span className="text-black ms-1">{currentUser.class}</span>
         </p>
         <p className="mb-2">
           <span className="text-gray-800 font-bold">Roll:</span> <span className="text-black ms-1">{currentUser.roll}</span>
+        </p>
+        <p className="mb-2">
+          <span className="text-gray-800 font-bold">Address:</span> <span className="text-black ms-1">{currentUser.address}</span>
         </p>
       </div>
 
