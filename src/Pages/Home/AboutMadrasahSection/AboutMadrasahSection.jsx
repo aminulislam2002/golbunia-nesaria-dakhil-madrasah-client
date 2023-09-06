@@ -59,7 +59,7 @@ const AboutMadrasahSection = () => {
         </div>
         <div className="md:col-span-4">
           <div className="w-full py-3 bg-green-500">
-            <h1 className="text-2xl text-center">প্রতিষ্ঠান প্রধান</h1>
+            <h1 className="text-2xl text-center">সুপার</h1>
           </div>
           <div className="shadow-emerald-300 shadow-lg py-3">
             <img
@@ -69,7 +69,7 @@ const AboutMadrasahSection = () => {
             />
             <h1 className="text-center py-2">মো: মোশারেফ হোসেন</h1>
             <p className="text-center py-2">
-              <span className="">Contact Number:</span> +880 173-086705
+              <span className="">Contact Number:</span> +880 1732-086705
             </p>
           </div>
           <div>

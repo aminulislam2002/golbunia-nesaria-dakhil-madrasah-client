@@ -18,8 +18,7 @@ const TeachersSection = () => {
   };
 
   useEffect(() => {
-    // Simulating data fetching with a JSON file for demonstration
-    fetch("teachers.json")
+    fetch("/teachers.json")
       .then((res) => res.json())
       .then((data) => setTeachersData(data));
   }, []);
