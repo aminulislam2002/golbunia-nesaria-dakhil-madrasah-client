@@ -2,6 +2,31 @@ import image from "../../../assets/image/overview.jpg";
 import principal from "../../../assets/image/principal.jpg";
 
 const AboutMadrasahSection = () => {
+  // Get the current day as a number (0 = Sunday, 1 = Monday, etc.)
+  const currentDay = new Date().getDay();
+
+  // Define a CSS class to change the background color for the current day
+  const dayClasses = [
+    "text-green-600 font-semibold", // Sunday
+    "text-green-600 font-semibold", // Monday
+    "text-green-600 font-semibold", // Tuesday
+    "text-green-600 font-semibold", // Wednesday
+    "text-green-600 font-semibold", // Thursday
+    "text-red-600 font-semibold", // Friday
+    "text-red-600 font-semibold", // Saturday
+  ];
+
+  // Define the opening hours for each day
+  const openingHours = [
+    "10:00 AM - 4:00 PM", // Sunday
+    "10:00 AM - 4:00 PM", // Monday
+    "10:00 AM - 4:00 PM", // Tuesday
+    "10:00 AM - 4:00 PM", // Wednesday
+    "10:00 AM - 2:00 PM", // Thursday
+    "Closed", // Friday
+    "Closed", // Saturday
+  ];
+
   return (
     <div className="container mx-auto py-10 px-3 bg-gray-100">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
@@ -54,25 +79,25 @@ const AboutMadrasahSection = () => {
             <div className="bg-gray-100 p-4 rounded-lg shadow-md">
               <div className="grid grid-cols-2 gap-2">
                 <div className="text-gray-600">Sunday:</div>
-                <div className="text-green-600 font-semibold">10:00 AM - 4:00 PM</div>
+                <div className={currentDay === 0 ? dayClasses[currentDay] : ""}>{openingHours[0]}</div>
 
                 <div className="text-gray-600">Monday:</div>
-                <div className="text-green-600 font-semibold">10:00 AM - 4:00 PM</div>
+                <div className={currentDay === 1 ? dayClasses[currentDay] : ""}>{openingHours[1]}</div>
 
                 <div className="text-gray-600">Tuesday:</div>
-                <div className="text-green-600 font-semibold">10:00 AM - 4:00 PM</div>
+                <div className={currentDay === 2 ? dayClasses[currentDay] : ""}>{openingHours[2]}</div>
 
                 <div className="text-gray-600">Wednesday:</div>
-                <div className="text-green-600 font-semibold">10:00 AM - 4:00 PM</div>
+                <div className={currentDay === 3 ? dayClasses[currentDay] : ""}>{openingHours[3]}</div>
 
                 <div className="text-gray-600">Thursday:</div>
-                <div className="text-red-600 font-semibold">10:00 AM - 2:00 PM</div>
+                <div className={currentDay === 4 ? dayClasses[currentDay] : ""}>{openingHours[4]}</div>
 
                 <div className="text-gray-600">Friday:</div>
-                <div className="text-red-600 font-semibold">Closed</div>
+                <div className={currentDay === 5 ? dayClasses[currentDay] : ""}>{openingHours[5]}</div>
 
                 <div className="text-gray-600">Saturday:</div>
-                <div className="text-red-600 font-semibold">Closed</div>
+                <div className={currentDay === 6 ? dayClasses[currentDay] : ""}>{openingHours[6]}</div>
               </div>
             </div>
           </div>
