@@ -29,11 +29,10 @@ import photo14 from "../../../assets/image/photo14.jpg";
 const MadrasahPhotoGallery = () => {
   return (
     <div className="py-10">
-      <div>
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-semibold text-blue-950 uppercase">PHOTO GALLERY</h1>
-        </div>
+      <div className="w-6/12 mx-auto py-3 bg-green-500">
+        <h1 className="text-2xl text-center uppercase">PHOTO GALLERY</h1>
       </div>
+
       <>
         <Swiper
           effect={"coverflow"}

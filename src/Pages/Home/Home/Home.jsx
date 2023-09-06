@@ -1,7 +1,5 @@
-import EventsSection from "../EventsSection/EventsSection";
 import HomePageBgImage from "../HomePageBgImage/HomePageBgImage";
 import MadrasahInNumbers from "../MadrasahInNumbers/MadrasahInNumbers";
-import NoticeSection from "../NoticeSection/NoticeSection";
 import TeachersSection from "../TeachersSection/TeachersSection";
 import TopBanner from "../TopBanner/TopBanner";
 import MadrasahInformation from "../MadrasahInformation/MadrasahInformation";
@@ -10,10 +8,11 @@ import MadrasahDetails from "../MadrasahDetails/MadrasahDetails";
 import AboutMadrasahSection from "../AboutMadrasahSection/AboutMadrasahSection";
 import PrincipalWordAndBoardLinks from "../PrincipalWordAndBoardLinks/PrincipalWordAndBoardLinks";
 import MadrasahOverviewAndLinks from "../MadrasahOverviewAndLinks/MadrasahOverviewAndLinks";
+import AddressLocationInformation from "../AddressLocationInformation/AddressLocationInformation";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-gray-100">
       <HomePageBgImage></HomePageBgImage>
       <TopBanner></TopBanner>
       <MadrasahDetails></MadrasahDetails>
@@ -22,10 +21,9 @@ const Home = () => {
       <PrincipalWordAndBoardLinks></PrincipalWordAndBoardLinks>
       <MadrasahOverviewAndLinks></MadrasahOverviewAndLinks>
       <MadrasahInformation></MadrasahInformation>
-      {/* <EventsSection></EventsSection> */}
       <MadrasahInNumbers></MadrasahInNumbers>
       <MadrasahPhotoGallery></MadrasahPhotoGallery>
-      {/* <NoticeSection></NoticeSection> */}
+      <AddressLocationInformation></AddressLocationInformation>
     </div>
   );
 };

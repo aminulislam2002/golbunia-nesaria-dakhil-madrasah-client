@@ -111,49 +111,49 @@ const MadrasahOverviewAndLinks = () => {
           </div>
           <div className="shadow-emerald-300 shadow-lg py-3">
             <ul>
-              <li className="mb-3 border-b">
-                <Link to="/" className="hover:underline px-5">
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link to="/" className="hover:underline hover:text-red-500 px-5">
                   ই.এম.আই.এস সেল
                 </Link>
               </li>
-              <li className="mb-3 border-b">
-                <Link to="/" className="hover:underline px-5">
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link to="/" className="hover:underline hover:text-red-500 px-5">
                   ই.এস.আই.এফ
                 </Link>
               </li>
-              <li className="mb-3 border-b">
-                <Link to="/" className="hover:underline px-5">
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link to="/" className="hover:underline hover:text-red-500 px-5">
                   ই.এফ.এফ
                 </Link>
               </li>
-              <li className="mb-3 border-b">
-                <Link to="/" className="hover:underline px-5">
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link to="/" className="hover:underline hover:text-red-500 px-5">
                   ই.টি.আই.এফ
                 </Link>
               </li>
-              <li className="mb-3 border-b">
-                <Link to="/" className="hover:underline px-5">
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link to="/" className="hover:underline hover:text-red-500 px-5">
                   ই.আর.পি.এস
                 </Link>
               </li>
-              <li className="mb-3 border-b">
-                <Link to="/" className="hover:underline px-5">
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link to="/" className="hover:underline hover:text-red-500 px-5">
                   শিক্ষা মন্ত্রনালয়
                 </Link>
               </li>
-              <li className="mb-3 border-b">
-                <Link to="/" className="hover:underline px-5">
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link to="/" className="hover:underline hover:text-red-500 px-5">
                   শিক্ষক বাতায়ন
                 </Link>
               </li>
-              <li className="mb-3 border-b">
-                <Link to="/" className="hover:underline px-5">
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link to="/" className="hover:underline hover:text-red-500 px-5">
                   বাংলা সংবাদ পত্র
                 </Link>
               </li>
 
-              <li className="mb-3 border-b">
-                <Link to="/" className="hover:underline px-5">
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link to="/" className="hover:underline hover:text-red-500 px-5">
                   ব্যানবেইস
                 </Link>
               </li>

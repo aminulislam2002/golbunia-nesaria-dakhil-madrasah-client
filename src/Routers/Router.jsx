@@ -11,10 +11,6 @@ import HistoryOfMadrasah from "../Pages/AboutUs/HistoryOfMadrasah/HistoryOfMadra
 import MissionAndVision from "../Pages/AboutUs/MissionAndVision/MissionAndVision";
 import PhotosGallery from "../Pages/AboutUs/PhotosGallery/PhotosGallery";
 import AuthorityAndCommittee from "../Pages/AboutUs/AuthorityAndCommittee/AuthorityAndCommittee";
-import Esif from "../Pages/Links/ESIF/ESIF.JSX";
-import Eff from "../Pages/Links/Eff/Eff";
-import Etif from "../Pages/Links/Etif/Etif";
-import Erps from "../Pages/Links/Erps/Erps";
 import NoticeSection from "../Pages/Home/NoticeSection/NoticeSection";
 import LoginSignUpLayout from "../Layouts/LoginSignUpLayout";
 import StudentSignUp from "../Pages/Authentication/StudentSignUp/StudentSignUp";
@@ -60,22 +56,6 @@ export const router = createBrowserRouter([
       {
         path: "authority-and-committee",
         element: <AuthorityAndCommittee></AuthorityAndCommittee>,
-      },
-      {
-        path: "eSIF",
-        element: <Esif></Esif>,
-      },
-      {
-        path: "eFF",
-        element: <Eff></Eff>,
-      },
-      {
-        path: "eTIF",
-        element: <Etif></Etif>,
-      },
-      {
-        path: "Erps",
-        element: <Erps></Erps>,
       },
       {
         path: "notice-board",

@@ -41,7 +41,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-52 bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-52 bg-green-600 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/history-of-madrasah">
               <li className="hover:bg-white hover:text-black ps-2 rounded">History of Madrasah</li>
@@ -68,7 +68,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48  bg-green-600 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/notice-board">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -101,7 +101,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-60  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-60  bg-green-600 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e S I F</li>
@@ -137,24 +137,18 @@ const NavBar = () => {
   );
 
   return (
-    <div className="navbar bg-blue-950 fixed top-0 z-50">
+    <div className="navbar bg-green-600 fixed top-0 z-50">
       <div className="navbar-start flex lg:w-3/12">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <AiOutlineMenu className="text-white"></AiOutlineMenu>
           </label>
-          <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-blue-950 rounded-box w-52">
+          <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-green-600 rounded-box w-52">
             {navOptions}
           </ul>
         </div>
         <div>
           <span className="lg:text-xl font-bold text-white w-full">Golbunia Nesaria Dakhil Madrasah</span>
-          <p>
-            <span className="uppercase text-white text-sm me-1">ESTD:</span>
-            <span className="text-white text-sm m-0 me-5">1984</span>
-            <span className="uppercase text-white text-sm m-0 me-1">EIIN:</span>
-            <span className="text-white text-sm m-0 me-1">102671</span>
-          </p>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex justify-center items-center lg:w-8/12">
@@ -169,7 +163,7 @@ const NavBar = () => {
           <label tabIndex={0} className="bg-yellow-500 hover:bg-yellow-600 text-blue-950 py-1 px-5 rounded font-semibold">
             LOGIN
           </label>
-          <ul tabIndex={0} className="dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-blue-950 text-white">
+          <ul tabIndex={0} className="dropdown-content z-[1] p-2 shadow rounded-box w-52 mt-4 bg-green-600 text-white">
             {user ? (
               <>
                 <Link to="/dashboard/profile">
