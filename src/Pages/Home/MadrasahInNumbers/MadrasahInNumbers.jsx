@@ -46,7 +46,7 @@ const MadrasahInNumbers = () => {
           <div className="text-center">
             <GiTeacher className="w-16 h-16 md:w-40 md:h-40 p-2 md:p-4 bg-green-500 text-white rounded-full border"></GiTeacher>
             <div className="text-lg md:text-2xl font-bold text-white mt-4">Teachers</div>
-            <div className="text-lg md:text-2xl font-bold">10+</div>
+            <div className="text-lg md:text-2xl font-bold">13</div>
           </div>
         </div>
 
@@ -70,7 +70,7 @@ const MadrasahInNumbers = () => {
           <div className="text-center">
             <BsPeopleFill className="w-16 h-16 md:w-40 md:h-40 p-2 md:p-4 bg-pink-500 text-white rounded-full border"></BsPeopleFill>
             <div className="text-lg md:text-2xl font-bold text-white mt-4">Staffs</div>
-            <div className="text-lg md:text-2xl font-bold">2</div>
+            <div className="text-lg md:text-2xl font-bold">4</div>
           </div>
         </div>
       </div>
