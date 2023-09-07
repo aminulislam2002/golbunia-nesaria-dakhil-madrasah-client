@@ -22,8 +22,8 @@ const MadrasahInformation = () => {
 
   return (
     <div className="container mx-auto py-10 lg:py-20">
-      <div className="lg:flex flex-col lg:flex-row justify-center items-center gap-5">
-        <div className="w-full lg:w-8/12">
+      <div className="lg:flex flex-col lg:flex-row justify-center items-start gap-5">
+        <div className="w-full lg:w-8/12 h-full">
           <div className="grid grid-cols-2 gap-5">
             {/* About Madrasah */}
             <div>
@@ -181,7 +181,7 @@ const MadrasahInformation = () => {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-4/12 mx-auto">
+        <div className="w-full lg:w-4/12 h-full">
           <div className="text-center mb-0">
             <h1 className="text-3xl font-semibold text-blue-950 bg-green-500 py-5 flex justify-center items-center uppercase gap-3">
               <span>

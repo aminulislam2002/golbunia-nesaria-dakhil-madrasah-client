@@ -30,7 +30,7 @@ const MadrasahInNumbers = () => {
           <div className="text-center">
             <IoIosPeople className="w-16 h-16 md:w-40 md:h-40 p-2 md:p-4 bg-blue-500 text-white rounded-full border"></IoIosPeople>
             <div className="text-lg md:text-2xl font-bold text-white mt-4">Students</div>
-            <div className="text-lg md:text-2xl font-bold">500+</div>
+            <div className="text-lg md:text-2xl font-bold">300+</div>
           </div>
         </div>
 
