@@ -33,7 +33,7 @@ const AboutMadrasahSection = () => {
         <div className="md:col-span-8">
           <div>
             <div className="w-full py-3 bg-green-500">
-              <h1 className="text-2xl text-center">প্রতিষ্ঠান পরিচিতি</h1>
+              <h1 className="text-2xl text-center text-white">প্রতিষ্ঠান পরিচিতি</h1>
             </div>
             <div>
               <img src={image} className="w-full" alt="" />
@@ -59,7 +59,7 @@ const AboutMadrasahSection = () => {
         </div>
         <div className="md:col-span-4">
           <div className="w-full py-3 bg-green-500">
-            <h1 className="text-2xl text-center">সুপার</h1>
+            <h1 className="text-2xl text-center text-white">সুপার</h1>
           </div>
           <div className="shadow-emerald-300 shadow-lg py-3">
             <img
@@ -74,7 +74,7 @@ const AboutMadrasahSection = () => {
           </div>
           <div>
             <div className="w-full py-3 bg-green-500">
-              <h1 className="text-2xl text-center">Opening Hours</h1>
+              <h1 className="text-2xl text-center text-white">Opening Hours</h1>
             </div>
             <div className="bg-gray-100 p-4 rounded-lg shadow-md">
               <div className="grid grid-cols-2 gap-2">

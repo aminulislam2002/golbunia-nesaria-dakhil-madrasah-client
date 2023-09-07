@@ -6,7 +6,7 @@ const PrincipalWordAndBoardLinks = () => {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
         <div className="md:col-span-8">
           <div className="w-full py-3 bg-green-500">
-            <h1 className="text-2xl text-center">গুরুত্বপূর্ণ কিছু বাণী</h1>
+            <h1 className="text-2xl text-center text-white">গুরুত্বপূর্ণ কিছু বাণী</h1>
           </div>
           <div>
             <p className="mt-2">
@@ -37,7 +37,7 @@ const PrincipalWordAndBoardLinks = () => {
         </div>
         <div className="md:col-span-4">
           <div className="w-full py-3 bg-green-500">
-            <h1 className="text-2xl text-center">শিক্ষা বোর্ডের লিংক</h1>
+            <h1 className="text-2xl text-center text-white">শিক্ষা বোর্ডের লিংক</h1>
           </div>
           <div className="shadow-emerald-300 shadow-lg py-3">
             <ul>

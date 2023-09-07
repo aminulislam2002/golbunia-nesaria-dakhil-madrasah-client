@@ -30,7 +30,7 @@ const MadrasahPhotoGallery = () => {
   return (
     <div className="py-10">
       <div className="w-6/12 mx-auto py-3 bg-green-500">
-        <h1 className="text-2xl text-center uppercase">PHOTO GALLERY</h1>
+        <h1 className="text-2xl text-center uppercase text-white">PHOTO GALLERY</h1>
       </div>
 
       <>

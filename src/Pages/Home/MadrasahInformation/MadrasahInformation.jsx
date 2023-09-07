@@ -28,7 +28,7 @@ const MadrasahInformation = () => {
             {/* About Madrasah */}
             <div>
               <div className="bg-green-500 lg:px-5 py-4 mb-1">
-                <h1 className="lg:text-lg text-center">মাদ্রাসা সম্পর্কে</h1>
+                <h1 className="lg:text-lg text-center text-white">মাদ্রাসা সম্পর্কে</h1>
               </div>
               <div className="lg:flex gap-3">
                 <div className="flex justify-center items-start">
@@ -61,7 +61,7 @@ const MadrasahInformation = () => {
             {/* Admission and Contact */}
             <div>
               <div className="bg-green-500 lg:px-5 py-4 mb-1">
-                <h1 className="lg:text-lg text-center">ভর্তি ও যোগাযোগ</h1>
+                <h1 className="lg:text-lg text-center text-white">ভর্তি ও যোগাযোগ</h1>
               </div>
               <div className="lg:flex gap-3">
                 <div className="flex justify-center items-start">
@@ -82,7 +82,7 @@ const MadrasahInformation = () => {
             {/* Services for students */}
             <div>
               <div className="bg-green-500 lg:px-5 py-4 mb-1">
-                <h1 className="lg:text-lg text-center">ছাত্রদের জন্য সেবাসমূহ</h1>
+                <h1 className="lg:text-lg text-center text-white">ছাত্রদের জন্য সেবাসমূহ</h1>
               </div>
               <div className="lg:flex gap-3">
                 <div className="flex justify-center items-start">
@@ -115,7 +115,7 @@ const MadrasahInformation = () => {
             {/* Teachers / Staffs */}
             <div>
               <div className="bg-green-500 lg:px-5 py-4 mb-1">
-                <h1 className="lg:text-lg text-center">শিক্ষক / কর্মচারী</h1>
+                <h1 className="lg:text-lg text-center text-white">শিক্ষক / কর্মচারী</h1>
               </div>
               <div className="lg:flex gap-3">
                 <div className="flex justify-center items-start">
@@ -140,7 +140,7 @@ const MadrasahInformation = () => {
             {/* Results */}
             <div>
               <div className="bg-green-500 lg:px-5 py-4 mb-1">
-                <h1 className="lg:text-lg text-center">ফলাফল</h1>
+                <h1 className="lg:text-lg text-center text-white">ফলাফল</h1>
               </div>
               <div className="lg:flex gap-3">
                 <div className="flex justify-center items-start">
@@ -165,7 +165,7 @@ const MadrasahInformation = () => {
             {/* Managing Committee */}
             <div>
               <div className="bg-green-500 lg:px-5 py-4 mb-1">
-                <h1 className="lg:text-lg text-center">ম্যানেজিং কমিটি</h1>
+                <h1 className="lg:text-lg text-center text-white">ম্যানেজিং কমিটি</h1>
               </div>
               <div className="lg:flex gap-3">
                 <div className="flex justify-center items-start">
@@ -184,7 +184,7 @@ const MadrasahInformation = () => {
         <div className="w-full lg:w-4/12 h-full">
           <div>
             <div className="bg-green-500 lg:px-5 py-4 mb-1">
-              <h1 className="lg:text-lg text-center">নোটিশ বোর্ড</h1>
+              <h1 className="lg:text-lg text-center text-white">নোটিশ বোর্ড</h1>
             </div>
             <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
               <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
