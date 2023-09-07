@@ -29,8 +29,8 @@ import photo14 from "../../../assets/image/photo14.jpg";
 const MadrasahPhotoGallery = () => {
   return (
     <div className="py-10">
-      <div className="w-6/12 mx-auto py-3 bg-green-500">
-        <h1 className="text-2xl text-center uppercase text-white">PHOTO GALLERY</h1>
+      <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500">
+        <h1 className="text-lg lg:text-2xl text-center uppercase text-white">PHOTO GALLERY</h1>
       </div>
 
       <>

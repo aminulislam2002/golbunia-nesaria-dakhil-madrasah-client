@@ -184,7 +184,7 @@ const MadrasahInformation = () => {
         <div className="w-full lg:w-4/12 h-full">
           <div>
             <div className="bg-green-500 lg:px-5 py-4 mb-1">
-              <h1 className="lg:text-lg text-center text-white">নোটিশ বোর্ড</h1>
+              <h1 className="text-lg lg:text-2xl text-center text-white">নোটিশ বোর্ড</h1>
             </div>
             <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
               <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">

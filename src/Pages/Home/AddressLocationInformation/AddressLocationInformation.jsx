@@ -9,7 +9,7 @@ const AddressLocationInformation = () => {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
         <div className="md:col-span-6">
           <div className="w-full py-3 bg-green-500">
-            <h1 className="text-2xl text-center text-white">প্রতিষ্ঠানের মেইলিং ঠিকানা</h1>
+            <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠানের মেইলিং ঠিকানা</h1>
           </div>
           <div className="bg-white p-4 rounded shadow-lg mt-4">
             <div className="py-1 px-3 hover:bg-green-500">
@@ -48,7 +48,7 @@ const AddressLocationInformation = () => {
         </div>
         <div className="md:col-span-6">
           <div className="w-full py-3 bg-green-500">
-            <h1 className="text-2xl text-center text-white">প্রতিষ্ঠানের গুগল ম্যাপ এর লোকেশন</h1>
+            <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠানের গুগল ম্যাপ এর লোকেশন</h1>
           </div>
           {/* Google Maps Embed */}
           <div className="map-container mt-4">
