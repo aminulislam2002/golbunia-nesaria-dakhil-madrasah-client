@@ -21,6 +21,9 @@ const VideoWithMadrasah = () => {
 
   return (
     <div className="container mx-auto py-10 lg:py-20">
+      <div className="w-full lg:w-6/12 mx-auto py-3 mb-10 bg-green-500">
+        <h1 className="text-lg lg:text-2xl text-center uppercase text-white">Video GALLERY</h1>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {videos.map((video, index) => (
           <div className="md:col-span-1" key={index}>
