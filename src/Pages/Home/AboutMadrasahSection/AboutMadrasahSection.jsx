@@ -64,7 +64,7 @@ const AboutMadrasahSection = () => {
           <div className="shadow-emerald-300 shadow-lg py-3">
             <img
               src={principal}
-              className="rounded-full w-48 h-48 mx-auto border-4 border-green-500 mt-3-3"
+              className="w-48 h-48 mx-auto border-4 border-green-500 mt-3-3"
               alt="Principal's Photo"
             />
             <h1 className="text-center py-2">মো: মোশারেফ হুসাইন</h1>
