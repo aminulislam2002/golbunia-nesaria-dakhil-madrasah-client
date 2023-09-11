@@ -8,7 +8,7 @@ const MainFooter = () => {
   return (
     <div>
       {/* Footer for Large Screens */}
-      <footer className="text-black lg:pt-20 pb-10 bg-gray-300 hidden lg:block">
+      <footer className="lg:pt-20 pb-10 bg-blue-950 text-white hidden lg:block">
         <div className="grid grid-cols-12">
           {/* Left Section */}
           <div className="col-span-3 p-6">
@@ -94,7 +94,7 @@ const MainFooter = () => {
       </footer>
 
       {/* Footer for Mobile and Tablet */}
-      <footer className="text-black lg:hidden">
+      <footer className="lg:hidden bg-blue-950 text-white">
         <div className="p-6">
           <img className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto" src={logo} alt="Madrasah Logo" />
           <p className="text-lg font-semibold text-green-500 text-center mt-4">Golbunia Nesaria Dakhil Madrasah</p>

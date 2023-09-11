@@ -38,7 +38,7 @@ const TeachersSection = () => {
             <div className="bg-blue-200 rounded- p-2 mx-auto">
               <BiSolidUserRectangle className="w-full h-40 object-cover rounded-full" />
             </div>
-            <h2 className="text-xl font-semibold mt-4 text-gray-900">{teacher.name}</h2>
+            <h2 className="lg:text-lg font-semibold mt-4 text-gray-900">{teacher.name}</h2>
             <p className="text-sm text-gray-600">{teacher.position}</p>
             <div className="mt-2">
               <div className="flex items-center gap-1">
