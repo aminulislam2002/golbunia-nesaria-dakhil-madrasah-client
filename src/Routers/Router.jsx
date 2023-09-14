@@ -32,6 +32,7 @@ import News from "../Pages/Academics/News/News";
 import MadrasahInformation from "../Pages/Home/MadrasahInformation/MadrasahInformation";
 import StudentsRoutine from "../Pages/Students/StudentsRoutine/StudentsRoutine";
 import ClassSyllabus from "../Pages/Students/ClassSyllabus/ClassSyllabus";
+import ForgotPasswordField from "../Pages/Authentication/ForgotPasswordField/ForgotPasswordField";
 
 export const router = createBrowserRouter([
   {
@@ -170,6 +171,10 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login></Login>,
+      },
+      {
+        path: "forgot-password",
+        element: <ForgotPasswordField></ForgotPasswordField>,
       },
     ],
   },

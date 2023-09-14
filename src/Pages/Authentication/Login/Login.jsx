@@ -111,7 +111,7 @@ const Login = () => {
           {errors.password && <span className="text-xs text-red-600">Password is required</span>}
           {/* Forgot password button */}
           <div className="flex justify-end items-end mb-2 text-sm">
-            <Link to="/authentication/forgot-password" className="text-blue-500">
+            <Link to="/login-register/forgot-password" className="text-blue-500">
               Forgot password?
             </Link>
           </div>

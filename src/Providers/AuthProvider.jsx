@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, deleteUser, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, deleteUser, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 
 export const AuthContext = createContext(null)
@@ -49,6 +49,11 @@ const AuthProvider = ({children}) => {
         return deleteUser(user)
     }
 
+    // Send a password reset email
+    const resetPassword = (email) =>{
+        setLoading(true)
+        return sendPasswordResetEmail(auth, email)
+    }
 
     // Manage user
     useEffect(()=>{
@@ -70,7 +75,8 @@ const AuthProvider = ({children}) => {
         signIn,
         logOut,
         createUserWithGoogle,
-        deleteAnUser
+        deleteAnUser,
+        resetPassword
     }
 
     return (
