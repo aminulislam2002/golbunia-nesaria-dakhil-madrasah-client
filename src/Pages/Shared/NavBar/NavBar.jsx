@@ -13,10 +13,7 @@ const NavBar = () => {
 
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isAcademicsDropdownOpen, setIsAcademicsDropdownOpen] = useState(false);
-  const [isAdmissionDropdownOpen, setIsAdmissionDropdownOpen] = useState(false);
   const [isStudentsDropdownOpen, setIsStudentsDropdownOpen] = useState(false);
-  const [isFacilitiesDropdownOpen, setIsFacilitiesDropdownOpen] = useState(false);
-  const [isResultsDropdownOpen, setIsResultsDropdownOpen] = useState(false);
   const [isOthersDropdownOpen, setIsOthersDropdownOpen] = useState(false);
 
   useEffect(() => {
@@ -45,10 +42,7 @@ const NavBar = () => {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
     // Close other dropdowns
     setIsAcademicsDropdownOpen(false);
-    setIsAdmissionDropdownOpen(false);
     setIsStudentsDropdownOpen(false);
-    setIsFacilitiesDropdownOpen(false);
-    setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
   };
 
@@ -56,21 +50,7 @@ const NavBar = () => {
     setIsAcademicsDropdownOpen(!isAcademicsDropdownOpen);
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
-    setIsAdmissionDropdownOpen(false);
     setIsStudentsDropdownOpen(false);
-    setIsFacilitiesDropdownOpen(false);
-    setIsResultsDropdownOpen(false);
-    setIsOthersDropdownOpen(false);
-  };
-
-  const toggleAdmissionDropdown = () => {
-    setIsAdmissionDropdownOpen(!isAdmissionDropdownOpen);
-    // Close other dropdowns
-    setIsAboutDropdownOpen(false);
-    setIsAcademicsDropdownOpen(false);
-    setIsStudentsDropdownOpen(false);
-    setIsFacilitiesDropdownOpen(false);
-    setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
   };
 
@@ -79,31 +59,6 @@ const NavBar = () => {
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
     setIsAcademicsDropdownOpen(false);
-    setIsAdmissionDropdownOpen(false);
-    setIsFacilitiesDropdownOpen(false);
-    setIsResultsDropdownOpen(false);
-    setIsOthersDropdownOpen(false);
-  };
-
-  const toggleFacilitiesDropdown = () => {
-    setIsFacilitiesDropdownOpen(!isFacilitiesDropdownOpen);
-    // Close other dropdowns
-    setIsAboutDropdownOpen(false);
-    setIsAcademicsDropdownOpen(false);
-    setIsAdmissionDropdownOpen(false);
-    setIsStudentsDropdownOpen(false);
-    setIsResultsDropdownOpen(false);
-    setIsOthersDropdownOpen(false);
-  };
-
-  const toggleResultsDropdown = () => {
-    setIsResultsDropdownOpen(!isResultsDropdownOpen);
-    // Close other dropdowns
-    setIsAboutDropdownOpen(false);
-    setIsAcademicsDropdownOpen(false);
-    setIsAdmissionDropdownOpen(false);
-    setIsStudentsDropdownOpen(false);
-    setIsFacilitiesDropdownOpen(false);
     setIsOthersDropdownOpen(false);
   };
 
@@ -112,19 +67,13 @@ const NavBar = () => {
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
     setIsAcademicsDropdownOpen(false);
-    setIsAdmissionDropdownOpen(false);
     setIsStudentsDropdownOpen(false);
-    setIsFacilitiesDropdownOpen(false);
-    setIsResultsDropdownOpen(false);
   };
 
   const closeDropdowns = () => {
     setIsAboutDropdownOpen(false);
     setIsAcademicsDropdownOpen(false);
-    setIsAdmissionDropdownOpen(false);
     setIsStudentsDropdownOpen(false);
-    setIsFacilitiesDropdownOpen(false);
-    setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
   };
 
@@ -218,51 +167,6 @@ const NavBar = () => {
         </div>
       </li>
 
-      {/* Admission Dropdown */}
-      <li
-        className={`relative group text-white ${isAdmissionDropdownOpen ? "dropdown-open" : ""}`}
-        onMouseEnter={toggleAdmissionDropdown}
-        onMouseLeave={closeDropdowns}
-        onClick={() => {
-          if (isAdmissionDropdownOpen) {
-            closeDropdowns(); // Close the dropdown
-          } else {
-            toggleAdmissionDropdown(); // Toggle open the dropdown
-          }
-        }}
-      >
-        <div className="flex justify-start items-center">
-          <p>Admission</p>
-          <span className={`${isAdmissionDropdownOpen ? "rotate-180" : "rotate-0"}`}>
-            <AiOutlineDown />
-          </span>
-        </div>
-        <div
-          className={`absolute z-50 ${
-            isAdmissionDropdownOpen ? "block" : "hidden"
-          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
-        >
-          {/* Dropdown content */}
-          <ul>
-            <Link to="/students-results">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Result</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Events</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">News</li>
-            </Link>
-            <Link to="/students-routines">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
-            </Link>
-            <Link to="/help-for-admission">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Help</li>
-            </Link>
-          </ul>
-        </div>
-      </li>
-
       {/* Students Dropdown */}
       <li
         className={`relative group text-white ${isStudentsDropdownOpen ? "dropdown-open" : ""}`}
@@ -297,84 +201,6 @@ const NavBar = () => {
             </Link>
             <Link to="/classes-syllabus">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Class Syllabus</li>
-            </Link>
-          </ul>
-        </div>
-      </li>
-
-      {/* Facilities Dropdown */}
-      <li
-        className={`relative group text-white ${isFacilitiesDropdownOpen ? "dropdown-open" : ""}`}
-        onMouseEnter={toggleFacilitiesDropdown}
-        onMouseLeave={closeDropdowns}
-        onClick={() => {
-          if (isFacilitiesDropdownOpen) {
-            closeDropdowns(); // Close the dropdown
-          } else {
-            toggleFacilitiesDropdown(); // Toggle open the dropdown
-          }
-        }}
-      >
-        <div className="flex justify-start items-center">
-          <p>Facilities</p>
-          <span className={`${isFacilitiesDropdownOpen ? "rotate-180" : "rotate-0"}`}>
-            <AiOutlineDown />
-          </span>
-        </div>
-        <div
-          className={`absolute z-50 ${
-            isFacilitiesDropdownOpen ? "block" : "hidden"
-          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
-        >
-          {/* Dropdown content */}
-          <ul>
-            <Link to="/science-lab">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Science Lab</li>
-            </Link>
-            <Link to="/computer-lab">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Computer Lab</li>
-            </Link>
-          </ul>
-        </div>
-      </li>
-
-      {/* Results Dropdown */}
-      <li
-        className={`relative group text-white ${isResultsDropdownOpen ? "dropdown-open" : ""}`}
-        onMouseEnter={toggleResultsDropdown}
-        onMouseLeave={closeDropdowns}
-        onClick={() => {
-          if (isResultsDropdownOpen) {
-            closeDropdowns(); // Close the dropdown
-          } else {
-            toggleResultsDropdown(); // Toggle open the dropdown
-          }
-        }}
-      >
-        <div className="flex justify-start items-center">
-          <p>Results</p>
-          <span className={`${isResultsDropdownOpen ? "rotate-180" : "rotate-0"}`}>
-            <AiOutlineDown />
-          </span>
-        </div>
-        <div
-          className={`absolute z-50 ${
-            isResultsDropdownOpen ? "block" : "hidden"
-          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
-        >
-          {/* Dropdown content */}
-          <ul>
-            <Link to="/class-nine-result">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Nine-09</li>
-            </Link>
-            <Link to="/class-ten-result">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Ten-10</li>
-            </Link>
-            <Link to="/class-eleven-result">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Eleven-11</li>
-            </Link>
-            <Link to="/class-twelve-result">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Twelve-12</li>
             </Link>
           </ul>
         </div>

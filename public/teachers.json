@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/src/assets/image/teachers/principal.jpg",
+    "image": "/src/assets/teachers/principal.jpg",
     "name": "মো: মোশারেফ হোসেন",
     "position": "সুপার",
     "mobileNumber": "০১৭৩২০৮৬৭০৫",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "image": "/src/assets/image/teachers/nasir-uddin.jpg",
+    "image": "/src/assets/teachers/nasir-uddin.jpg",
     "name": "মাওঃ মোঃ নেছারউদ্দিন",
     "position": "সহঃ সুপার",
     "mobileNumber": "০১৭১৮৫৫৫৮৪৮",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "image": "/src/assets/image/teachers/sk-mosaref.jpg",
+    "image": "/src/assets/teachers/sk-mosaref.jpg",
     "name": "এস কে মোশাররফ হোসেন",
     "position": "সহঃ শিক্ষক (শরীর চর্চা)    ",
     "mobileNumber": "০১৭৩৮৭৬১৬৬৫",
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "image": "/src/assets/image/teachers/abdur-rahim.jpg",
+    "image": "/src/assets/teachers/abdur-rahim.jpg",
     "name": "মাওঃ মোঃ আঃ রাহিম",
     "position": "সহঃ মৌলভী    ",
     "mobileNumber": "০১৭৩৮৪১৫৩০১",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "image": "/src/assets/image/teachers/nasir-uddin.jpg",
+    "image": "/src/assets/teachers/nasir-uddin.jpg",
     "name": "মাওঃমোঃ নাসির উদ্দিন",
     "position": "সহঃ মৌলভী",
     "mobileNumber": "০১৭৪৫৪৬৪৫১৬",
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "image": "/src/assets/image/teachers/ruhul-amin.jpg",
+    "image": "/src/assets/teachers/ruhul-amin.jpg",
     "name": "মাঃ মোঃ রুহুল আমিন",
     "position": "সহঃ মৌলভী",
     "mobileNumber": "০১৭৫৯৬৩৮৬৯৮",
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "image": "/src/assets/image/teachers/sahidul-islam.jpg",
+    "image": "/src/assets/teachers/sahidul-islam.jpg",
     "name": "মোঃ শহিদুল ইসলাম",
     "position": "সহঃ শিক্ষক",
     "mobileNumber": "০১৭১৪৯০৬৪৪৯",
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "image": "/src/assets/image/teachers/khaleda-akter.jpg",
+    "image": "/src/assets/teachers/khaleda-akter.jpg",
     "name": "খালেদা আক্তার",
     "position": "I.C.T",
     "mobileNumber": "০১৭৭৭৫৩১১২১",
@@ -65,7 +65,7 @@
   },
   {
     "id": 9,
-    "image": "/src/assets/image/teachers/asma.jpg",
+    "image": "/src/assets/teachers/asma.jpg",
     "name": "আচমা আক্তার",
     "position": "সহঃ শিক্ষক",
     "mobileNumber": "০১৬৩৮৭৬০৫৩২",
@@ -87,7 +87,7 @@
   },
   {
     "id": 12,
-    "image": "/src/assets/image/teachers/abbas-ali.jpg",
+    "image": "/src/assets/teachers/abbas-ali.jpg",
     "name": "মোঃ আব্বাস মিয়া",
     "position": "এবঃ কারী",
     "mobileNumber": "০১৭৪৭৭৩১৪৩৪",
@@ -95,7 +95,7 @@
   },
   {
     "id": 13,
-    "image": "/src/assets/image/teachers/jashim-uddin.jpg",
+    "image": "/src/assets/teachers/jashim-uddin.jpg",
     "name": "মোঃ জসিম উদ্দিন",
     "position": "অফিস সহঃ",
     "mobileNumber": "",

@@ -42,27 +42,27 @@ const PrincipalWordAndBoardLinks = () => {
           <div className="shadow-emerald-300 shadow-lg py-3">
             <ul>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://dshe.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তর
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://bteb.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   বাংলাদেশ কারিগরি শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://barisalboard.portal.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   বরিশাল শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://bmeb.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   মাদ্রাসা শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://www.nu.ac.bd/" className="hover:underline hover:text-red-500 px-5">
                   জাতীয় বিশ্ব বিদ্যালয়
                 </Link>
               </li>

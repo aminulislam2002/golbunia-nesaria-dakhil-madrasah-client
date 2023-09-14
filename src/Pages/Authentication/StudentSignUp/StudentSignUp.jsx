@@ -230,7 +230,7 @@ const StudentSignUp = () => {
             {/* Sign up route */}
             <div className="py-4 text-sm flex justify-center items-center gap-1">
               <p className="text-center text-gray-500">Already have an account?</p>
-              <Link to="/authentication/login" className="text-blue-500">
+              <Link to="/login-register/login" className="text-blue-500">
                 Sign in
               </Link>
             </div>

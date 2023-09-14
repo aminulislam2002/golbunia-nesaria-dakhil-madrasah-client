@@ -19,7 +19,7 @@ const PhotosGallery = () => {
   };
 
   return (
-    <div className="mt-16">
+    <div>
       <h1 className="uppercase text-2xl font-bold text-center py-10 ">Madrasah Photos Gallery</h1>
       <div className="image-gallery">
         {images.map((image, index) => (

@@ -1,6 +1,6 @@
 const HistoryOfMadrasah = () => {
   return (
-    <div className="mt-16">
+    <div>
       <h1>The history of madrasah data is commit soon</h1>
     </div>
   );

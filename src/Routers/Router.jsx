@@ -1,17 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home/Home/Home";
-import StudentsRoutineLayout from "../Layouts/StudentsRoutineLayout";
-import StudentsRoutines from "../Pages/Academics/StudentsRoutines/StudentsRoutines";
-import ClassesSyllabusLayout from "../Layouts/ClassesSyllabusLayout";
-import ClassesSyllabus from "../Pages/Academics/ClassesSyllabus/ClassesSyllabus";
-import StudentsResultsLayout from "../Layouts/StudentsResultsLayout";
-import StudentsResult from "../Pages/Academics/StudentsResult/StudentsResult";
 import HistoryOfMadrasah from "../Pages/AboutUs/HistoryOfMadrasah/HistoryOfMadrasah";
 import MissionAndVision from "../Pages/AboutUs/MissionAndVision/MissionAndVision";
 import PhotosGallery from "../Pages/AboutUs/PhotosGallery/PhotosGallery";
 import AuthorityAndCommittee from "../Pages/AboutUs/AuthorityAndCommittee/AuthorityAndCommittee";
-import NoticeSection from "../Pages/Home/NoticeSection/NoticeSection";
 import LoginSignUpLayout from "../Layouts/LoginSignUpLayout";
 import StudentSignUp from "../Pages/Authentication/StudentSignUp/StudentSignUp";
 import TeacherSignUp from "../Pages/Authentication/TeacherSignUp/TeacherSignUp";
@@ -32,6 +25,13 @@ import UpdateStudentProfile from "../Pages/Dashboard/ManageProfiles/UpdateStuden
 import PageNotFound from "../Components/PageNotFound/PageNotFound";
 import UpdateTeacherProfile from "../Pages/Dashboard/ManageProfiles/UpdateTeacherProfile/UpdateTeacherProfile";
 import UpdateAdminProfile from "../Pages/Dashboard/ManageProfiles/UpdateAdminProfile/UpdateAdminProfile";
+import OurStudents from "../Pages/AboutUs/OurStudents/OurStudents";
+import StudentProtocol from "../Pages/Academics/StudentProtocol/StudentProtocol";
+import Events from "../Pages/Academics/Events/Events";
+import News from "../Pages/Academics/News/News";
+import MadrasahInformation from "../Pages/Home/MadrasahInformation/MadrasahInformation";
+import StudentsRoutine from "../Pages/Students/StudentsRoutine/StudentsRoutine";
+import ClassSyllabus from "../Pages/Students/ClassSyllabus/ClassSyllabus";
 
 export const router = createBrowserRouter([
   {
@@ -59,8 +59,32 @@ export const router = createBrowserRouter([
         element: <AuthorityAndCommittee></AuthorityAndCommittee>,
       },
       {
+        path: "our-students",
+        element: <OurStudents></OurStudents>,
+      },
+      {
+        path: "student-protocol",
+        element: <StudentProtocol></StudentProtocol>,
+      },
+      {
+        path: "events",
+        element: <Events></Events>,
+      },
+      {
+        path: "news",
+        element: <News></News>,
+      },
+      {
         path: "notice-board",
-        element: <NoticeSection></NoticeSection>,
+        element: <MadrasahInformation></MadrasahInformation>,
+      },
+      {
+        path: "students-routines",
+        element: <StudentsRoutine></StudentsRoutine>,
+      },
+      {
+        path: "classes-syllabus",
+        element: <ClassSyllabus></ClassSyllabus>,
       },
     ],
   },
@@ -146,36 +170,6 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login></Login>,
-      },
-    ],
-  },
-  {
-    path: "students-routines",
-    element: <StudentsRoutineLayout></StudentsRoutineLayout>,
-    children: [
-      {
-        path: "",
-        element: <StudentsRoutines></StudentsRoutines>,
-      },
-    ],
-  },
-  {
-    path: "classes-syllabus",
-    element: <ClassesSyllabusLayout></ClassesSyllabusLayout>,
-    children: [
-      {
-        path: "",
-        element: <ClassesSyllabus></ClassesSyllabus>,
-      },
-    ],
-  },
-  {
-    path: "students-results",
-    element: <StudentsResultsLayout></StudentsResultsLayout>,
-    children: [
-      {
-        path: "",
-        element: <StudentsResult></StudentsResult>,
       },
     ],
   },
