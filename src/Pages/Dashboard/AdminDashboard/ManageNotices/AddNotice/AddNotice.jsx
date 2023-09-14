@@ -10,7 +10,7 @@ const AddNotice = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("https://madrasah-server.vercel.app/notices", {
+    fetch("http://localhost:5000/notices", {
       method: "POST",
       headers: {
         "content-type": "application/json",

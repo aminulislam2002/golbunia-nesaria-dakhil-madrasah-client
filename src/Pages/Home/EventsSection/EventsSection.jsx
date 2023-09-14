@@ -5,7 +5,7 @@ const EventsSection = () => {
   const [upcomingEventsData, setUpcomingEventsData] = useState([]);
 
   useEffect(() => {
-    fetch("https://madrasah-server.vercel.app/events")
+    fetch("http://localhost:5000/events")
       .then((res) => res.json())
       .then((data) => setUpcomingEventsData(data));
   }, []);

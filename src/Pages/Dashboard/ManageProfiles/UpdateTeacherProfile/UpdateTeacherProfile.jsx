@@ -1,14 +1,16 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 const UpdateTeacherProfile = () => {
   const user = useLoaderData();
 
+  const navigate = useNavigate();
+
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`https://madrasah-server.vercel.app/user/student/${user._id}`, {
+    fetch(`http://localhost:5000/userUpdate/${user._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -18,6 +20,7 @@ const UpdateTeacherProfile = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        navigate("/dashboard/profile");
         if (data.modifiedCount) {
           Swal.fire({
             position: "top-end",
@@ -151,19 +154,6 @@ const UpdateTeacherProfile = () => {
               name="birthdayDate"
               placeholder="Enter your birthday"
               defaultValue={user?.birthdayDate}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-
-          {/* Edit your madrasah name filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Madrasah Name:</label>
-            <input
-              type="text"
-              {...register("madrasahName")}
-              name="madrasahName"
-              placeholder="Enter your madrasah"
-              defaultValue={user?.madrasahName}
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>

@@ -9,7 +9,7 @@ const useAdmin = () => {
     queryKey: ["isAdmin", user?.email],
     enabled: !loading,
     queryFn: async () => {
-      const res = await fetch(`https://madrasah-server.vercel.app/users/admin/${user.email}`);
+      const res = await fetch(`http://localhost:5000/getAdmin/${user.email}`);
       const data = await res.json();
       return data.admin;
     },

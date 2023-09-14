@@ -52,7 +52,7 @@ const Login = () => {
           email: loggedInUser.email,
           photo: loggedInUser.photoURL,
         };
-        fetch("https://madrasah-server.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

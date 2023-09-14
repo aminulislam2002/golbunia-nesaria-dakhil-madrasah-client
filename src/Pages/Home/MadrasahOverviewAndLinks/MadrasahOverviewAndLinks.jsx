@@ -9,97 +9,97 @@ const MadrasahOverviewAndLinks = () => {
             <h1 className="text-lg lg:text-2xl text-center text-white">Golbunia Nesaria Dakhil Madrash basic info</h1>
           </div>
           <div className="p-4 bg-gray-100 rounded-lg shadow-md">
-            <div className="mb-4 border-t">
+            <div className="mb-3 border-t">
               <div className="flex justify-between items-start">
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">ALTERNATIVE NAME</h1>
-                  <h3 className="">Golbunia Nesaria Dakhil Madrash</h3>
+                  <h1 className="text-sm font-bold">ALTERNATIVE NAME</h1>
+                  <h3 className="text-xs">Golbunia Nesaria Dakhil Madrash</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">EIIN</h1>
-                  <h3 className="">102671</h3>
+                  <h1 className="text-sm font-bold">EIIN</h1>
+                  <h3 className="text-xs">102671</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">FOUNDED</h1>
-                  <h3 className="">01-01-1984</h3>
+                  <h1 className="text-sm font-bold">FOUNDED</h1>
+                  <h3 className="text-xs">01-01-1984</h3>
                 </div>
               </div>
             </div>
-            <div className="mb-4 border-t">
+            <div className="mb-3 border-t">
               <div className="flex justify-between items-start">
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">RECOGNITION</h1>
-                  <h3 className="">Recognized</h3>
+                  <h1 className="text-sm font-bold">RECOGNITION</h1>
+                  <h3 className="text-xs">Recognized</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">RECOGNITION DATE</h1>
-                  <h3 className="">01-01-1990</h3>
+                  <h1 className="text-sm font-bold">RECOGNITION DATE</h1>
+                  <h3 className="text-xs">01-01-1990</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">RECOGNITION LEVEL</h1>
-                  <h3 className="">Dakhil</h3>
+                  <h1 className="text-sm font-bold">RECOGNITION LEVEL</h1>
+                  <h3 className="text-xs">Dakhil</h3>
                 </div>
               </div>
             </div>
-            <div className="mb-4 border-t">
+            <div className="mb-3 border-t">
               <div className="flex justify-between items-start">
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">MPO LEVEL</h1>
-                  <h3 className="">Yes</h3>
+                  <h1 className="text-sm font-bold">MPO LEVEL</h1>
+                  <h3 className="text-xs">Yes</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">MPO NUMBER</h1>
-                  <h3 className="">5402082106</h3>
+                  <h1 className="text-sm font-bold">MPO NUMBER</h1>
+                  <h3 className="text-xs">5402082106</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">TYPE</h1>
-                  <h3 className="">Dakhil</h3>
+                  <h1 className="text-sm font-bold">TYPE</h1>
+                  <h3 className="text-xs">Dakhil</h3>
                 </div>
               </div>
             </div>
-            <div className="mb-4 border-t">
+            <div className="mb-3 border-t">
               <div className="flex justify-between items-start">
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">BOARD</h1>
-                  <h3 className="">Madrasah</h3>
+                  <h1 className="text-sm font-bold">BOARD</h1>
+                  <h3 className="text-xs">Madrasah</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">DISCIPLINES</h1>
-                  <h3 className="">Science</h3>
-                  <h3 className="">Business Studies</h3>
-                  <h3 className="">Humanities</h3>
+                  <h1 className="text-sm font-bold">DISCIPLINES</h1>
+                  <h3 className="text-xs">Science</h3>
+                  <h3 className="text-xs">Business Studies</h3>
+                  <h3 className="text-xs">Humanities</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">CO-EDUCATION</h1>
-                  <h3 className="">Combined</h3>
+                  <h1 className="text-sm font-bold">CO-EDUCATION</h1>
+                  <h3 className="text-xs">Combined</h3>
                 </div>
               </div>
             </div>
-            <div className="mb-4 border-t">
+            <div className="mb-3 border-t">
               <div className="flex justify-between items-start">
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">SHIFT</h1>
-                  <h3 className="">Day</h3>
+                  <h1 className="text-sm font-bold">SHIFT</h1>
+                  <h3 className="text-xs">Day</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">MANAGEMENT</h1>
-                  <h3 className="">Managing</h3>
+                  <h1 className="text-sm font-bold">MANAGEMENT</h1>
+                  <h3 className="text-xs">Managing</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">REGION</h1>
-                  <h3 className="">Grameen</h3>
+                  <h1 className="text-sm font-bold">REGION</h1>
+                  <h3 className="text-xs">Grameen</h3>
                 </div>
               </div>
             </div>
-            <div className="mb-4 border-t">
+            <div className="mb-3 border-t">
               <div className="flex justify-between items-start">
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">GEOGRAPHIC LOCATION</h1>
-                  <h3 className="">PlainLand</h3>
+                  <h1 className="text-sm font-bold">GEOGRAPHIC LOCATION</h1>
+                  <h3 className="text-xs">PlainLand</h3>
                 </div>
                 <div className="w-1/3">
-                  <h1 className="text-md font-bold">CONSTITUENCY NO</h1>
-                  <h3 className="">128</h3>
+                  <h1 className="text-sm font-bold">CONSTITUENCY NO</h1>
+                  <h3 className="text-xs">128</h3>
                 </div>
               </div>
             </div>

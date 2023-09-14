@@ -1,43 +1,56 @@
+import { useEffect, useState } from "react";
 import { FcViewDetails } from "react-icons/fc";
 import { MdDelete } from "react-icons/md";
-import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 
 const AllAdmins = () => {
-  const { data: admins = [], refetch } = useQuery(["admins"], async () => {
-    const res = await fetch("https://madrasah-server.vercel.app/users/admins?role=admin");
-    return res.json();
-  });
+  const [allAdminsData, setAllAdminsData] = useState([]);
 
-  console.log(admins);
+  useEffect(() => {
+    const admins = async () => {
+      const res = await fetch("http://localhost:5000/getAllAdmins");
+      const data = await res.json();
+      setAllAdminsData(data);
+    };
+    admins();
+  }, []);
 
-  const handleRemoveAdmin = (user) => {
-    fetch(`https://madrasah-server.vercel.app/users/removeAdmin/${user._id}`, {
+  const handleRemoveAdmin = (id) => {
+    fetch(`http://localhost:5000/removeAdmin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const remainingData = allAdminsData.filter((s) => s._id != id);
+        setAllAdminsData(remainingData);
         if (data.modifiedCount) {
-          refetch();
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: `${user.name} is an Admin Now!`,
+            title: "Successfully make a teacher!",
             showConfirmButton: false,
             timer: 1500,
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Failed to make a teacher!",
           });
         }
       });
   };
 
-  const handleDeleteAdmin = (_id) => {
-    fetch(`https://madrasah-server.vercel.app/users/${_id}`, {
+  const handleDeleteAdmin = (id) => {
+    fetch(`http://localhost:5000/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const remainingData = allAdminsData.filter((s) => s._id != id);
+        setAllAdminsData(remainingData);
         if (data.deletedCount > 0) {
           Swal.fire({
             icon: "success",
@@ -45,12 +58,11 @@ const AllAdmins = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          refetch();
         } else {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Failed to delete an teacher!",
+            text: "Failed to delete an admin!",
           });
         }
       });
@@ -58,8 +70,8 @@ const AllAdmins = () => {
 
   return (
     <div>
-      <div>
-        <h1 className="text-3xl font-semibold text-blue-950 text-center uppercase">MANAGE admins</h1>
+      <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500">
+        <h1 className="text-lg lg:text-2xl text-center uppercase text-white">Manage all admins</h1>
       </div>
       <div>
         <div className="overflow-x-auto">
@@ -67,7 +79,7 @@ const AllAdmins = () => {
             {/* head */}
             <thead>
               <tr>
-                <th></th>
+                <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Set Role</th>
@@ -76,14 +88,14 @@ const AllAdmins = () => {
             </thead>
             <tbody>
               {/* Row */}
-              {admins.map((admin, index) => (
+              {allAdminsData.map((admin, index) => (
                 <tr key={admin._id}>
-                  <td>{index}</td>
+                  <td>{index + 1}</td>
                   <td>{admin.name}</td>
                   <td>{admin.email}</td>
                   <td>
                     {admin.role === "admin" && (
-                      <button onClick={() => handleRemoveAdmin(admin)} className="btn btn-xs btn-outline btn-primary">
+                      <button onClick={() => handleRemoveAdmin(admin._id)} className="btn btn-xs btn-outline btn-primary">
                         Remove Admin
                       </button>
                     )}

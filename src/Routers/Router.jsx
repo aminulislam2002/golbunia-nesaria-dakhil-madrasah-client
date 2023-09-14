@@ -31,6 +31,7 @@ import AllAdmins from "../Pages/Dashboard/AdminDashboard/ManageAdmins/AllAdmins/
 import UpdateStudentProfile from "../Pages/Dashboard/ManageProfiles/UpdateStudentProfile/UpdateStudentProfile";
 import PageNotFound from "../Components/PageNotFound/PageNotFound";
 import UpdateTeacherProfile from "../Pages/Dashboard/ManageProfiles/UpdateTeacherProfile/UpdateTeacherProfile";
+import UpdateAdminProfile from "../Pages/Dashboard/ManageProfiles/UpdateAdminProfile/UpdateAdminProfile";
 
 export const router = createBrowserRouter([
   {
@@ -78,17 +79,22 @@ export const router = createBrowserRouter([
       {
         path: "profile/update-student-profile/:id",
         element: <UpdateStudentProfile></UpdateStudentProfile>,
-        loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/users/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
       },
       {
         path: "profile/update-teacher-profile/:id",
         element: <UpdateTeacherProfile></UpdateTeacherProfile>,
-        loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/users/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
+      },
+      {
+        path: "profile/update-admin-profile/:id",
+        element: <UpdateAdminProfile></UpdateAdminProfile>,
+        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
       },
       {
         path: "manageEvents",
         element: <AllEvent></AllEvent>,
-        loader: () => fetch("https://madrasah-server.vercel.app/events"),
+        loader: () => fetch("http://localhost:5000/events"),
       },
       {
         path: "addEvent",
@@ -101,7 +107,7 @@ export const router = createBrowserRouter([
       {
         path: "manageNotices",
         element: <AllNotice></AllNotice>,
-        loader: () => fetch("https://madrasah-server.vercel.app/notices"),
+        loader: () => fetch("http://localhost:5000/notices"),
       },
       {
         path: "addNotice",

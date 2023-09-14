@@ -32,7 +32,7 @@ const StudentSignUp = () => {
           photo: loggedInUser.photoURL,
           role: "student",
         };
-        fetch("https://madrasah-server.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -77,7 +77,7 @@ const StudentSignUp = () => {
             .then(() => {
               const saveUserData = { name: userData.name, email: userData.email, role: userData.role };
               // User information saved db logic here
-              fetch("https://madrasah-server.vercel.app/users", {
+              fetch("http://localhost:5000/users", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",

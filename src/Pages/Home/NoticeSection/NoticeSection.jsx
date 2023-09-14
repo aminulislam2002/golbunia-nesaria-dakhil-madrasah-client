@@ -5,7 +5,7 @@ const NoticeSection = () => {
   const [allNoticesData, setAllNoticesData] = useState([]);
 
   useEffect(() => {
-    fetch("https://madrasah-server.vercel.app/notices")
+    fetch("http://localhost:5000/notices")
       .then((res) => res.json())
       .then((data) => setAllNoticesData(data));
   }, []);

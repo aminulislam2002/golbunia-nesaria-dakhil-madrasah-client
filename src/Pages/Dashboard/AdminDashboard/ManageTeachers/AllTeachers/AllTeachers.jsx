@@ -1,43 +1,59 @@
+import { useEffect, useState } from "react";
 import { FcViewDetails } from "react-icons/fc";
 import { MdDelete } from "react-icons/md";
-import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 
 const AllTeachers = () => {
-  const { data: teachers = [], refetch } = useQuery(["teachers"], async () => {
-    const res = await fetch("https://madrasah-server.vercel.app/users/teachers?role=teacher");
-    return res.json();
-  });
+  const [allTeachersData, setAllTeachersData] = useState([]);
 
-  console.log(teachers);
+  useEffect(() => {
+    const teachers = async () => {
+      const res = await fetch("http://localhost:5000/getAllTeachers");
+      const data = await res.json();
+      setAllTeachersData(data);
+      console.log(data);
+    };
+    teachers();
+  }, []);
 
-  const handleMakeAdmin = (user) => {
-    fetch(`https://madrasah-server.vercel.app/users/makeAdmin/${user._id}`, {
+  console.log(allTeachersData);
+
+  const handleMakeAdmin = (id) => {
+    fetch(`http://localhost:5000/makeAdmin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const remainingData = allTeachersData.filter((s) => s._id != id);
+        setAllTeachersData(remainingData);
         if (data.modifiedCount) {
-          refetch();
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: `${user.name} is an Admin Now!`,
+            title: " Successfully make an admin!",
             showConfirmButton: false,
             timer: 1500,
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Failed to make an admin!",
           });
         }
       });
   };
 
-  const handleDeleteTeacher = (_id) => {
-    fetch(`https://madrasah-server.vercel.app/users/${_id}`, {
+  const handleDeleteTeacher = (id) => {
+    fetch(`http://localhost:5000/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const remainingData = allTeachersData.filter((s) => s._id != id);
+        setAllTeachersData(remainingData);
         if (data.deletedCount > 0) {
           Swal.fire({
             icon: "success",
@@ -45,7 +61,6 @@ const AllTeachers = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          refetch();
         } else {
           Swal.fire({
             icon: "error",
@@ -58,8 +73,8 @@ const AllTeachers = () => {
 
   return (
     <div>
-      <div>
-        <h1 className="text-3xl font-semibold text-blue-950 text-center">MANAGE TEACHERS</h1>
+      <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500">
+        <h1 className="text-lg lg:text-2xl text-center uppercase text-white">Manage all Teachers</h1>
       </div>
       <div>
         <div className="overflow-x-auto">
@@ -67,7 +82,7 @@ const AllTeachers = () => {
             {/* head */}
             <thead>
               <tr>
-                <th></th>
+                <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Set Role</th>
@@ -76,14 +91,14 @@ const AllTeachers = () => {
             </thead>
             <tbody>
               {/* Row */}
-              {teachers.map((teacher, index) => (
+              {allTeachersData.map((teacher, index) => (
                 <tr key={teacher._id}>
-                  <td>{index}</td>
+                  <td>{index + 1}</td>
                   <td>{teacher.name}</td>
                   <td>{teacher.email}</td>
                   <td>
                     {teacher.role === "teacher" && (
-                      <button onClick={() => handleMakeAdmin(teacher)} className="btn btn-xs btn-outline btn-primary">
+                      <button onClick={() => handleMakeAdmin(teacher._id)} className="btn btn-xs btn-outline btn-primary">
                         Make Admin
                       </button>
                     )}

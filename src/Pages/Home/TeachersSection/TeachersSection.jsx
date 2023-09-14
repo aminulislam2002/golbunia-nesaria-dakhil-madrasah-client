@@ -36,7 +36,15 @@ const TeachersSection = () => {
             className="bg-blue-100 text-gray-800 hover:bg-blue-200 hover:text-gray-900 rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:-translate-y-1"
           >
             <div className="bg-blue-200 rounded- p-2 mx-auto">
-              <BiSolidUserRectangle className="w-full h-40 object-cover rounded-full" />
+              {teacher?.image ? (
+                <>
+                  <img src={teacher?.image} className="w-full h-52 bg-cover bg-center rounded" alt="" />
+                </>
+              ) : (
+                <>
+                  <BiSolidUserRectangle className="w-full h-52 object-cover rounded-full" />
+                </>
+              )}
             </div>
             <h2 className="lg:text-lg font-semibold mt-4 text-gray-900">{teacher.name}</h2>
             <p className="text-sm text-gray-600">{teacher.position}</p>
