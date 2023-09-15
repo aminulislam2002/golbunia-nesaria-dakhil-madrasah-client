@@ -52,7 +52,20 @@ const PrincipalWordAndBoardLinks = () => {
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link target="_blank" to="https://barisalboard.portal.gov.bd/" className="hover:underline hover:text-red-500 px-5">
+                <Link
+                  target="_blank"
+                  to="https://dhakaeducationboard.gov.bd/"
+                  className="hover:underline hover:text-red-500 px-5"
+                >
+                  ঢাকা শিক্ষা বোর্ড
+                </Link>
+              </li>
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link
+                  target="_blank"
+                  to="https://barisalboard.portal.gov.bd/"
+                  className="hover:underline hover:text-red-500 px-5"
+                >
                   বরিশাল শিক্ষা বোর্ড
                 </Link>
               </li>

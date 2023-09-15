@@ -1,4 +1,4 @@
-import image from "../../../assets/image/principle-mea.jpg";
+import { Link } from "react-router-dom";
 
 const MadrasahOverviewAndLinks = () => {
   return (
@@ -106,87 +106,78 @@ const MadrasahOverviewAndLinks = () => {
           </div>
         </div>
         <div className="md:col-span-4">
-          <div className="shadow-emerald-300 shadow-lg py-2 text-center px-10">
-            <img
-              src={image}
-              className="w-44 h-44 mx-auto border-4 border-green-500 mt-3-3 rounded-full"
-              alt="Principal's Photo"
-            />
-            <div className="text-lg font-semibold py-2 flex justify-start items-center">
-              <div className="w-1/2 text-left">নামঃ</div>
-              <div className="w-1/2 text-left text-blue-500">মুশতারী তুবা</div>
-            </div>
-            <div className="text-lg font-semibold py-2 flex justify-start items-center">
-              <div className="w-1/2 text-left">পিতার নামঃ</div>
-              <div className="w-1/2 text-left text-blue-500">মোঃ নেছার উদ্দিন</div>
-            </div>
-            <div className="text-lg font-semibold py-2 flex justify-start items-center">
-              <div className="w-1/2 text-left">জন্ম তারিখঃ</div>
-              <div className="w-1/2 text-left text-blue-500">০১ মে, ২০১১ইং</div>
-            </div>
-            <div className="text-lg font-semibold py-2 flex justify-start items-center">
-              <div className="w-1/2 text-left">শ্রেণিঃ</div>
-              <div className="w-1/2 text-left text-blue-500">সপ্তম</div>
-            </div>
-            <div className="text-lg font-semibold py-2 flex justify-start items-center">
-              <div className="w-1/2 text-left">রোল নং</div>
-              <div className="w-1/2 text-left text-blue-500">০১</div>
-            </div>
-          </div>
-
-          {/* <div className="w-full py-3 bg-green-500">
+          <div className="w-full py-3 bg-green-500">
             <h1 className="text-lg ltext-2xl text-center text-white">গুরুত্বপূর্ণ লিংক</h1>
           </div>
           <div className="shadow-emerald-300 shadow-lg py-3">
             <ul>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link
+                  target="_blank"
+                  to="https://dme.gov.bd/site/page/2b185d62-70fe-4f3a-a505-e94561ce47ee/(%E0%A6%8F%E0%A6%AE,%E0%A6%87,%E0%A6%8F%E0%A6%AE,%E0%A6%86%E0%A6%87,%E0%A6%8F%E0%A6%B8)-%E0%A6%86%E0%A6%AC%E0%A7%87%E0%A6%A6%E0%A6%A8-"
+                  className="hover:underline hover:text-red-500 px-5"
+                >
                   ই.এম.আই.এস সেল
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  ই.এস.আই.এফ
+                <Link target="_blank" to="https://bmeb.gov.bd/" className="hover:underline hover:text-red-500 px-5">
+                  মাদ্রাসা শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  ই.এফ.এফ
+                <Link
+                  target="_blank"
+                  to="https://dhakaeducationboard.gov.bd/"
+                  className="hover:underline hover:text-red-500 px-5"
+                >
+                  ঢাকা শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  ই.টি.আই.এফ
+                <Link
+                  target="_blank"
+                  to="https://barisalboard.portal.gov.bd/"
+                  className="hover:underline hover:text-red-500 px-5"
+                >
+                  বরিশাল শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  ই.আর.পি.এস
-                </Link>
-              </li>
-              <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://moedu.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   শিক্ষা মন্ত্রনালয়
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://teachers.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   শিক্ষক বাতায়ন
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="/" className="hover:underline hover:text-red-500 px-5">
                   বাংলা সংবাদ পত্র
                 </Link>
               </li>
-
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  ব্যানবেইস
+                <Link
+                  target="_blank"
+                  to="http://www.educationboardresults.gov.bd/"
+                  className="hover:underline hover:text-red-500 px-5"
+                >
+                  এসএসসি / দাখিল বোর্ড ফলাফল
+                </Link>
+              </li>
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link
+                  target="_blank"
+                  to="https://dhakaeducationboard.portal.gov.bd/"
+                  className="hover:underline hover:text-red-500 px-5"
+                >
+                  মাধ্যমিক ও উচ্চ মাধ্যমিক শিক্ষা বোর্ড
                 </Link>
               </li>
             </ul>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

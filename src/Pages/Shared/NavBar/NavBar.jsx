@@ -36,7 +36,7 @@ const NavBar = () => {
   }, []);
 
   // Add the "fixed-navbar" class to the navbar when isScrolled is true
-  const navbarClass = isScrolled ? "navbar fixed-navbar bg-blue-950" : "navbar relative z-[19] bg-blue-950";
+  const navbarClass = isScrolled ? "navbar fixed-navbar bg-green-500" : "navbar relative z-[19] bg-green-500";
 
   const toggleAboutDropdown = () => {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
@@ -105,7 +105,7 @@ const NavBar = () => {
         <div
           className={`absolute z-50 ${
             isAboutDropdownOpen ? "block" : "hidden"
-          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+          } top-full w-52 bg-green-500 p-3 left-1/2 transform -translate-x-1/2`}
         >
           {/* Dropdown content */}
           <ul>
@@ -150,7 +150,7 @@ const NavBar = () => {
         <div
           className={`absolute z-50 ${
             isAcademicsDropdownOpen ? "block" : "hidden"
-          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+          } top-full w-52 bg-green-500 p-3 left-1/2 transform -translate-x-1/2`}
         >
           {/* Dropdown content */}
           <ul>
@@ -189,7 +189,7 @@ const NavBar = () => {
         <div
           className={`absolute z-50 ${
             isStudentsDropdownOpen ? "block" : "hidden"
-          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+          } top-full w-52 bg-green-500 p-3 left-1/2 transform -translate-x-1/2`}
         >
           {/* Dropdown content */}
           <ul>
@@ -228,38 +228,38 @@ const NavBar = () => {
         <div
           className={`absolute z-50 ${
             isOthersDropdownOpen ? "block" : "hidden"
-          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+          } top-full w-52 bg-green-500 p-3 left-1/2 transform -translate-x-1/2`}
         >
           {/* Dropdown content */}
           <ul>
-            <Link to="https://bmeb.gov.bd/">
+            <Link target="_blank" to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e S I F</li>
             </Link>
-            <Link to="https://bmeb.gov.bd/">
+            <Link target="_blank" to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e F F</li>
             </Link>
-            <Link to="https://bmeb.gov.bd/">
+            <Link target="_blank" to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e T I F</li>
             </Link>
-            <Link to="https://bmeb.gov.bd/">
+            <Link target="_blank" to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e R P S</li>
             </Link>
-            <Link to="https://bmeb.gov.bd/">
+            <Link target="_blank" to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Madrasah Education Board</li>
             </Link>
-            <Link to="https://moedu.gov.bd/">
+            <Link target="_blank" to="https://moedu.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Ministry Of Education</li>
             </Link>
-            <Link to="https://bangladesh.gov.bd/index.php">
+            <Link target="_blank" to="https://bangladesh.gov.bd/index.php">
               <li className="hover:bg-white hover:text-black ps-2 rounded">National Web Protal</li>
             </Link>
-            <Link to="https://dhakaeducationboard.gov.bd/">
+            <Link target="_blank" to="https://dhakaeducationboard.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Dhaka Education Board</li>
             </Link>
-            <Link to="https://barisalboard.portal.gov.bd/">
+            <Link target="_blank" to="https://barisalboard.portal.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Barisal Education Board</li>
             </Link>
-            <Link to="http://www.nctb.gov.bd/">
+            <Link target="_blank" to="http://www.nctb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">National Curriculum Textbook</li>
             </Link>
           </ul>
@@ -276,29 +276,20 @@ const NavBar = () => {
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <AiOutlineMenu className="text-white h-6 w-6"></AiOutlineMenu>
             </label>
-            <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-blue-950 rounded-box w-52">
+            <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-green-500 rounded-box w-52">
               {navOptions}
             </ul>
           </div>
-          {/* <div className="flex">
-            <img className="w-12 h-12" src={instituteLogo} alt="Institute Logo" />
-            <img className="w-10 h-10" src={govtLogo} alt="Government Logo" />
-          </div> */}
-
           <div>
             <span className="lg:text-xl font-bold text-white w-full">Golbunia Nesaria Dakhil Madrasah</span>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex justify-center items-center lg:w-8/12">
-          {/* Use a mobile-friendly menu icon here for small screens */}
           <div className="lg:hidden">
             <AiOutlineMenu className="text-2xl cursor-pointer" />
           </div>
           <ul className="flex justify-center items-center gap-8 menu-horizontal px-1">{navOptions}</ul>
         </div>
-        {/* <div className="navbar-end flex justify-end lg:justify-center items-center lg:w-2/12">
-          <button className="animated-button">Online Apply</button>
-        </div> */}
       </div>
     </>
   );

@@ -12,7 +12,7 @@ const MadrasahInNumbers = () => {
     <div className="my-20 bg-green-400">
       <div className="header-bg">
         <div className="text-center mb-5">
-          <h1 className="text-lg lg:text-2xl font-semibold text-black">Some facts of our Madrasah</h1>
+          <h1 className="text-lg lg:text-3xl font-semibold text-white pt-8 uppercase">Some facts of our Madrasah</h1>
           <p className="py-5 text-base text-white">
             <span className="font-bold text-lg">Address:</span>
             <span className="ms-1">Golbunia,</span>
@@ -46,7 +46,7 @@ const MadrasahInNumbers = () => {
           <div className="text-center">
             <GiTeacher className="w-16 h-16 md:w-32 md:h-32 p-2 md:p-4 bg-sky-500 text-white rounded-full border"></GiTeacher>
             <div className="text-lg md:text-2xl font-bold text-white mt-4">Teachers</div>
-            <div className="text-lg md:text-2xl font-bold">13</div>
+            <div className="text-lg md:text-2xl font-bold">15</div>
           </div>
         </div>
 

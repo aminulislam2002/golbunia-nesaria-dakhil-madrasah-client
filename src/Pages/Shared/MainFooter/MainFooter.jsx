@@ -16,7 +16,7 @@ const MainFooter = () => {
             <p className="text-lg font-semibold text-green-500 text-center mt-4">Golbunia Nesaria Dakhil Madrasah</p>
             <div className="mt-2">
               <IoMdCall className="w-4 h-4 text-green-500 inline-block"></IoMdCall>{" "}
-              <span className="text-sm lg:text-base">+880 173-086705</span>
+              <span className="text-sm lg:text-base">+880 1732-086705</span>
             </div>
             <div className="mt-2">
               <MdEmail className="w-4 h-4 text-green-500 inline-block"></MdEmail>

@@ -3,18 +3,22 @@ import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaHome } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 
-import image1 from "../../../assets/teachers/principal.jpg";
+import image1 from "../../../assets/photos/principal.jpg";
+import image2 from "../../../assets/photos/nesar-uddin.jpg";
+import image3 from "../../../assets/photos/mosaref-hossain.jpg";
+import image4 from "../../../assets/photos/abdur-rahim.jpg";
+import image5 from "../../../assets/photos/naisr-uddin.jpg";
+import image6 from "../../../assets/photos/ruhul-amin.jpg";
+import image7 from "../../../assets/photos/sahidul-islam.jpg";
+import image8 from "../../../assets/photos/khaleda-akter.jpg";
+import image9 from "../../../assets/photos/asma.jpg";
 
-import image3 from "../../../assets/teachers/sk-mosaref.jpg";
-import image4 from "../../../assets/teachers/abdur-rahim.jpg";
-import image5 from "../../../assets/teachers/nasir-uddin.jpg";
-import image6 from "../../../assets/teachers/ruhul-amin.jpg";
-import image7 from "../../../assets/teachers/sahidul-islam.jpg";
-import image8 from "../../../assets/teachers/khaleda-akter.jpg";
-import image9 from "../../../assets/teachers/asma.jpg";
+import image12 from "../../../assets/photos/abbas-mia.jpg";
+import image13 from "../../../assets/photos/jashim-uddin.jpg";
+import image14 from "../../../assets/photos/jamal-doptory.jpg";
+import image15 from "../../../assets/photos/monira-aya.jpg";
+import image16 from "../../../assets/photos/nirapotta-kormi.jpg";
 
-import image12 from "../../../assets/teachers/abbas-ali.jpg";
-import image13 from "../../../assets/teachers/jashim-uddin.jpg";
 
 const TeachersSection = () => {
   const allTeachersDataHere = [
@@ -28,11 +32,11 @@ const TeachersSection = () => {
     },
     {
       id: 2,
-
-      name: "মাওঃ মোঃ নেছারউদ্দিন",
+      image: image2,
+      name: "মোঃ নেছারউদ্দিন",
       position: "সহঃ সুপার",
       mobileNumber: "০১৭১৮৫৫৫৮৪৮",
-      address: "ভান্ডারিয়া, পিরোজপুর",
+      address: "মঠবাড়িয়া, পিরোজপুর",
     },
     {
       id: 3,
@@ -53,7 +57,7 @@ const TeachersSection = () => {
     {
       id: 5,
       image: image5,
-      name: "মাওঃমোঃ নাসির উদ্দিন",
+      name: "মাওঃ মোঃ নাসির উদ্দিন",
       position: "সহঃ মৌলভী",
       mobileNumber: "০১৭৪৫৪৬৪৫১৬",
       address: "ভান্ডারিয়া, পিরোজপুর",
@@ -64,7 +68,7 @@ const TeachersSection = () => {
       name: "মাঃ মোঃ রুহুল আমিন",
       position: "সহঃ মৌলভী",
       mobileNumber: "০১৭৫৯৬৩৮৬৯৮",
-      address: "ভান্ডারিয়া, পিরোজপুর",
+      address: "মঠবাড়িয়া, পিরোজপুর",
     },
     {
       id: 7,
@@ -72,7 +76,7 @@ const TeachersSection = () => {
       name: "মোঃ শহিদুল ইসলাম",
       position: "সহঃ শিক্ষক",
       mobileNumber: "০১৭১৪৯০৬৪৪৯",
-      address: "ভান্ডারিয়া, পিরোজপুর",
+      address: "মঠবাড়িয়া, পিরোজপুর",
     },
     {
       id: 8,
@@ -80,7 +84,7 @@ const TeachersSection = () => {
       name: "খালেদা আক্তার",
       position: "I.C.T",
       mobileNumber: "০১৭৭৭৫৩১১২১",
-      address: "ভান্ডারিয়া, পিরোজপুর",
+      address: "মঠবাড়িয়া, পিরোজপুর",
     },
     {
       id: 9,
@@ -88,7 +92,7 @@ const TeachersSection = () => {
       name: "আচমা আক্তার",
       position: "সহঃ শিক্ষক",
       mobileNumber: "০১৬৩৮৭৬০৫৩২",
-      address: "ভান্ডারিয়া, পিরোজপুর",
+      address: "কাউখালি, পিরোজপুর",
     },
     {
       id: 10,
@@ -102,7 +106,7 @@ const TeachersSection = () => {
       name: "মোঃ মশিউর রহমান",
       position: "জুনিয়র শিক্ষক",
       mobileNumber: "০১৭৫৪১৬৬৮৩২",
-      address: "ভান্ডারিয়া, পিরোজপুর",
+      address: "মঠবাড়িয়া, পিরোজপুর",
     },
     {
       id: 12,
@@ -117,6 +121,30 @@ const TeachersSection = () => {
       image: image13,
       name: "মোঃ জসিম উদ্দিন",
       position: "অফিস সহঃ",
+      mobileNumber: "",
+      address: "মঠবাড়িয়া, পিরোজপুর",
+    },
+    {
+      id: 14,
+      image: image14,
+      name: "মোঃ জামাল",
+      position: "দপ্তরী",
+      mobileNumber: "",
+      address: "ভান্ডারিয়া, পিরোজপুর",
+    },
+    {
+      id: 15,
+      image: image15,
+      name: "মনিরা",
+      position: "আয়া",
+      mobileNumber: "",
+      address: "ভান্ডারিয়া, পিরোজপুর",
+    },
+    {
+      id: 16,
+      image: image16,
+      name: "",
+      position: "নিরাপত্তা কর্মী",
       mobileNumber: "",
       address: "ভান্ডারিয়া, পিরোজপুর",
     },
@@ -150,12 +178,12 @@ const TeachersSection = () => {
         {dataToShow.map((teacher) => (
           <div
             key={teacher.id}
-            className="bg-blue-100 text-gray-800 hover:bg-blue-200 hover:text-gray-900 rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:-translate-y-1"
+            className="bg-blue-100 text-gray-800 hover:bg-blue-200 hover:text-gray-900 rounded-lg shadow-md p-6 mx-10 md:mx-0 transition duration-300 ease-in-out transform hover:-translate-y-1"
           >
             <div className="bg-blue-200 rounded- p-2 mx-auto">
               {teacher?.image ? (
                 <>
-                  <img src={teacher?.image} className="w-full h-52 bg-cover bg-center rounded" alt="" />
+                  <img src={teacher?.image} className="w-full lg:h-52 bg-cover bg-center rounded" alt="Teacher" />
                 </>
               ) : (
                 <>
@@ -183,14 +211,14 @@ const TeachersSection = () => {
       <div className="flex justify-center items-center mt-6">
         {!showAllTeachersData ? (
           <button
-            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-full md:w-auto font-semibold text-base rounded-lg shadow-md"
+            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-2/3 mx-auto md:w-auto font-semibold text-base rounded-lg shadow-md"
             onClick={handleSeeMoreClick}
           >
             VIEW ALL TEACHERS
           </button>
         ) : (
           <button
-            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-full md:w-auto font-semibold text-base rounded-lg shadow-md"
+            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-2/3 mx-auto md:w-auto font-semibold text-base rounded-lg shadow-md"
             onClick={handleSeeLessClick}
           >
             SEE LESS...
