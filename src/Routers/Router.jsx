@@ -104,22 +104,22 @@ export const router = createBrowserRouter([
       {
         path: "profile/update-student-profile/:id",
         element: <UpdateStudentProfile></UpdateStudentProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/getUserById/${params.id}`),
       },
       {
         path: "profile/update-teacher-profile/:id",
         element: <UpdateTeacherProfile></UpdateTeacherProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/getUserById/${params.id}`),
       },
       {
         path: "profile/update-admin-profile/:id",
         element: <UpdateAdminProfile></UpdateAdminProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/getUserById/${params.id}`),
       },
       {
         path: "manageEvents",
         element: <AllEvent></AllEvent>,
-        loader: () => fetch("http://localhost:5000/events"),
+        loader: () => fetch("https://madrasah-server.vercel.app/events"),
       },
       {
         path: "addEvent",
@@ -132,7 +132,7 @@ export const router = createBrowserRouter([
       {
         path: "manageNotices",
         element: <AllNotice></AllNotice>,
-        loader: () => fetch("http://localhost:5000/notices"),
+        loader: () => fetch("https://madrasah-server.vercel.app/notices"),
       },
       {
         path: "addNotice",

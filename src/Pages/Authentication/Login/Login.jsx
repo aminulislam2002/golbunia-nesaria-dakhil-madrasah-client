@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
@@ -8,9 +8,6 @@ import Swal from "sweetalert2";
 const Login = () => {
   const { signIn, user, createUserWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation();
-
-  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -29,7 +26,7 @@ const Login = () => {
           timer: 3000,
         });
         reset();
-        navigate(from, { replace: true });
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -39,7 +36,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 3000,
         });
-        navigate(from, { replace: true });
+        navigate("/");
       });
   };
 
@@ -52,7 +49,7 @@ const Login = () => {
           email: loggedInUser.email,
           photo: loggedInUser.photoURL,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://madrasah-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -61,7 +58,7 @@ const Login = () => {
         })
           .then((res) => res.json())
           .then(() => {
-            navigate(from, { replace: true });
+            navigate("/");
           });
       })
       .catch((error) => {
@@ -72,7 +69,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 3000,
         });
-        navigate(from, { replace: true });
+        navigate("/");
       });
   };
 

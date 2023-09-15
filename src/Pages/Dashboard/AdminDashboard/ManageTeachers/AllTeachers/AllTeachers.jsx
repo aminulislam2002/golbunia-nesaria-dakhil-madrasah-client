@@ -8,7 +8,7 @@ const AllTeachers = () => {
 
   useEffect(() => {
     const teachers = async () => {
-      const res = await fetch("http://localhost:5000/getAllTeachers");
+      const res = await fetch("https://madrasah-server.vercel.app/getAllTeachers");
       const data = await res.json();
       setAllTeachersData(data);
       console.log(data);
@@ -19,7 +19,7 @@ const AllTeachers = () => {
   console.log(allTeachersData);
 
   const handleMakeAdmin = (id) => {
-    fetch(`http://localhost:5000/makeAdmin/${id}`, {
+    fetch(`https://madrasah-server.vercel.app/makeAdmin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -46,7 +46,7 @@ const AllTeachers = () => {
   };
 
   const handleDeleteTeacher = (id) => {
-    fetch(`http://localhost:5000/deleteUser/${id}`, {
+    fetch(`https://madrasah-server.vercel.app/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

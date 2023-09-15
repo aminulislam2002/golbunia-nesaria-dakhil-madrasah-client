@@ -8,7 +8,7 @@ const AllAdmins = () => {
 
   useEffect(() => {
     const admins = async () => {
-      const res = await fetch("http://localhost:5000/getAllAdmins");
+      const res = await fetch("https://madrasah-server.vercel.app/getAllAdmins");
       const data = await res.json();
       setAllAdminsData(data);
     };
@@ -16,7 +16,7 @@ const AllAdmins = () => {
   }, []);
 
   const handleRemoveAdmin = (id) => {
-    fetch(`http://localhost:5000/removeAdmin/${id}`, {
+    fetch(`https://madrasah-server.vercel.app/removeAdmin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -43,7 +43,7 @@ const AllAdmins = () => {
   };
 
   const handleDeleteAdmin = (id) => {
-    fetch(`http://localhost:5000/deleteUser/${id}`, {
+    fetch(`https://madrasah-server.vercel.app/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -9,7 +9,7 @@ const PrincipalWordAndBoardLinks = () => {
             <h1 className="text-lg lg:text-2xl text-center text-white">গুরুত্বপূর্ণ কিছু বাণী</h1>
           </div>
           <div>
-            <p className="mt-2">
+            <div className="mt-2">
               <div className="mt-1">
                 <span className="font-bold">বাণী-১:</span> ইসলামিক কিছু উক্তি আল্লাহর কাছে আপনি প্রার্থনা করা বন্ধ করে দিলে
                 তিনি রাগান্বিত হন। অথচ আদম সন্তানের কাছে কিছু প্রার্থনা করলে সে রেগে যায়। - [ইমাম ইবনুল কাইয়্যিম
@@ -32,7 +32,7 @@ const PrincipalWordAndBoardLinks = () => {
                 আপনার ভালোবাসা ততোই কমতে থাকবে। দুনিয়া অর্জন নয়, দুনিয়া বিমুখীতাতেই রয়েছে দেহ ও মনের প্রশান্তি। - [উমার ইবনুল
                 খাত্তাব (রা)]
               </div>
-            </p>
+            </div>
           </div>
         </div>
         <div className="md:col-span-4">

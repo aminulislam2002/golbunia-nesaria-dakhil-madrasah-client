@@ -8,7 +8,7 @@ const AllStudents = () => {
 
   useEffect(() => {
     const students = async () => {
-      const res = await fetch("http://localhost:5000/getAllStudents");
+      const res = await fetch("https://madrasah-server.vercel.app/getAllStudents");
       const data = await res.json();
       setAllStudentsData(data);
     };
@@ -16,7 +16,7 @@ const AllStudents = () => {
   }, []);
 
   const handleDeleteStudent = (id) => {
-    fetch(`http://localhost:5000/deleteUser/${id}`, {
+    fetch(`https://madrasah-server.vercel.app/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
