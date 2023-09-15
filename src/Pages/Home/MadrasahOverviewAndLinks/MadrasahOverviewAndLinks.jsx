@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 const MadrasahOverviewAndLinks = () => {
   return (
-    <div className="container mx-auto py-10 px-3 bg-gray-100">
+    <div className="container mx-auto py-10 lg:py-20 px-3 bg-gray-100">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
         <div className="md:col-span-8">
           <div className="w-full py-3 bg-green-500">
             <h1 className="text-lg lg:text-2xl text-center text-white">Golbunia Nesaria Dakhil Madrash basic info</h1>
           </div>
-          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
+          <div className="p-5 bg-gray-100 rounded-lg shadow-md">
             <div className="mb-3 border-t">
               <div className="flex justify-between items-start">
                 <div className="w-1/3">
@@ -91,7 +91,7 @@ const MadrasahOverviewAndLinks = () => {
                 </div>
               </div>
             </div>
-            <div className="mb-3 border-t">
+            <div className="border-t">
               <div className="flex justify-between items-start">
                 <div className="w-1/3">
                   <h1 className="text-sm font-bold">GEOGRAPHIC LOCATION</h1>
@@ -109,19 +109,19 @@ const MadrasahOverviewAndLinks = () => {
           <div className="w-full py-3 bg-green-500">
             <h1 className="text-lg ltext-2xl text-center text-white">গুরুত্বপূর্ণ লিংক</h1>
           </div>
-          <div className="shadow-emerald-300 shadow-lg py-3">
+          <div className="p-5 shadow-md py-3">
             <ul>
               <li className="mb-3 hover:bg-green-500 border-b">
                 <Link
                   target="_blank"
                   to="https://dme.gov.bd/site/page/2b185d62-70fe-4f3a-a505-e94561ce47ee/(%E0%A6%8F%E0%A6%AE,%E0%A6%87,%E0%A6%8F%E0%A6%AE,%E0%A6%86%E0%A6%87,%E0%A6%8F%E0%A6%B8)-%E0%A6%86%E0%A6%AC%E0%A7%87%E0%A6%A6%E0%A6%A8-"
-                  className="hover:underline hover:text-red-500 px-5"
+                  className="hover:underline hover:text-red-500"
                 >
                   ই.এম.আই.এস সেল
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link target="_blank" to="https://bmeb.gov.bd/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://bmeb.gov.bd/" className="hover:underline hover:text-red-500">
                   মাদ্রাসা শিক্ষা বোর্ড
                 </Link>
               </li>
@@ -129,7 +129,7 @@ const MadrasahOverviewAndLinks = () => {
                 <Link
                   target="_blank"
                   to="https://dhakaeducationboard.gov.bd/"
-                  className="hover:underline hover:text-red-500 px-5"
+                  className="hover:underline hover:text-red-500"
                 >
                   ঢাকা শিক্ষা বোর্ড
                 </Link>
@@ -138,23 +138,23 @@ const MadrasahOverviewAndLinks = () => {
                 <Link
                   target="_blank"
                   to="https://barisalboard.portal.gov.bd/"
-                  className="hover:underline hover:text-red-500 px-5"
+                  className="hover:underline hover:text-red-500"
                 >
                   বরিশাল শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link target="_blank" to="https://moedu.gov.bd/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://moedu.gov.bd/" className="hover:underline hover:text-red-500">
                   শিক্ষা মন্ত্রনালয়
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link target="_blank" to="https://teachers.gov.bd/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://teachers.gov.bd/" className="hover:underline hover:text-red-500">
                   শিক্ষক বাতায়ন
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link target="_blank" to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="/" className="hover:underline hover:text-red-500">
                   বাংলা সংবাদ পত্র
                 </Link>
               </li>
@@ -162,7 +162,7 @@ const MadrasahOverviewAndLinks = () => {
                 <Link
                   target="_blank"
                   to="http://www.educationboardresults.gov.bd/"
-                  className="hover:underline hover:text-red-500 px-5"
+                  className="hover:underline hover:text-red-500"
                 >
                   এসএসসি / দাখিল বোর্ড ফলাফল
                 </Link>
@@ -171,7 +171,7 @@ const MadrasahOverviewAndLinks = () => {
                 <Link
                   target="_blank"
                   to="https://dhakaeducationboard.portal.gov.bd/"
-                  className="hover:underline hover:text-red-500 px-5"
+                  className="hover:underline hover:text-red-500"
                 >
                   মাধ্যমিক ও উচ্চ মাধ্যমিক শিক্ষা বোর্ড
                 </Link>

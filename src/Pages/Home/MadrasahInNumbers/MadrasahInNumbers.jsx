@@ -9,7 +9,7 @@ const MadrasahInNumbers = () => {
     "flex justify-center items-center p-5 bg-green-500 hover:bg-green-700 transition duration-300 ease-in-out";
 
   return (
-    <div className="my-20 bg-green-400">
+    <div className="my-10 bg-green-400">
       <div className="header-bg">
         <div className="text-center mb-5">
           <h1 className="text-lg lg:text-3xl font-semibold text-white pt-8 uppercase">Some facts of our Madrasah</h1>

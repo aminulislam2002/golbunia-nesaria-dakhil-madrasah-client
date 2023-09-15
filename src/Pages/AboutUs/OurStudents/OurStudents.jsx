@@ -10,7 +10,7 @@ const OurStudents = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
           <div className="md:col-span-4 bg-white">
-            <div className="shadow-emerald-300 shadow-lg py-2 text-center px-10">
+            <div className=" shadow-md py-2 text-center px-10">
               <img
                 src={image}
                 className="w-44 h-44 mx-auto border-4 border-green-500 mt-3-3 rounded-full"

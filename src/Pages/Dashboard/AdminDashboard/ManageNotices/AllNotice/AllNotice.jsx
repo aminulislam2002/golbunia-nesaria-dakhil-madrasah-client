@@ -50,7 +50,7 @@ const AllNotice = () => {
         <div className="overflow-y-auto max-h-[70vh]">
           {notices.map((notice) => (
             <div key={notice._id} className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 flex justify-center items-center">
+              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-md transition duration-300 mb-5 flex justify-center items-center">
                 <div className="w-11/12">
                   <h2 className="text-xl font-semibold">{notice?.noticeHeadline}</h2>
                   <p className="text-sm text-gray-500 mt-2">

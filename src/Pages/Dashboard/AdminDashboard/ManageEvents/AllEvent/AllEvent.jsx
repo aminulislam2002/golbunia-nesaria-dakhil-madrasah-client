@@ -50,7 +50,7 @@ const AllEvent = () => {
         <div className="overflow-y-auto max-h-[70vh]">
           {events.map((event) => (
             <div key={event._id} className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 flex justify-center items-center">
+              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-md transition duration-300 mb-5 flex justify-center items-center">
                 <div className="w-11/12">
                   <h2 className="text-xl font-semibold">{event.eventTitle}</h2>
                   <p className="text-sm text-gray-600 mt-2">
