@@ -169,8 +169,8 @@ const TeachersSection = () => {
   }, []);
 
   return (
-    <div className="container mx-auto py-10">
-      <div className="w-full lg:w-6/12 mx-auto py-3 my-10 bg-green-500">
+    <div className="container mx-auto py-10 lg:py-20">
+      <div className="w-full lg:w-6/12 mx-auto py-3 mb-10 lg:mb-20 bg-green-500">
         <h1 className="text-lg lg:text-2xl text-center uppercase text-white">MEET OUR TEACHERS</h1>
       </div>
 

@@ -271,7 +271,7 @@ const NavBar = () => {
   return (
     <>
       <div className={navbarClass}>
-        <div className="navbar-start flex lg:w-4/12">
+        <div className="navbar-start flex w-full lg:w-4/12">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <AiOutlineMenu className="text-white h-6 w-6"></AiOutlineMenu>
