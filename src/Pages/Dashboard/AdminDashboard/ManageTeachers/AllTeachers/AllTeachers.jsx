@@ -5,15 +5,25 @@ import Swal from "sweetalert2";
 
 const AllTeachers = () => {
   const [allTeachersData, setAllTeachersData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const teachers = async () => {
-      const res = await fetch("https://madrasah-server.vercel.app/getAllTeachers");
-      const data = await res.json();
-      setAllTeachersData(data);
-      console.log(data);
+    const fetchTeachers = async () => {
+      try {
+        const res = await fetch("https://madrasah-server.vercel.app/getAllTeachers");
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await res.json();
+        setAllTeachersData(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
+      }
     };
-    teachers();
+
+    fetchTeachers();
   }, []);
 
   console.log(allTeachersData);
@@ -89,33 +99,47 @@ const AllTeachers = () => {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
-              {/* Row */}
-              {allTeachersData.map((teacher, index) => (
-                <tr key={teacher._id}>
-                  <td>{index + 1}</td>
-                  <td>{teacher.name}</td>
-                  <td>{teacher.email}</td>
-                  <td>
-                    {teacher.role === "teacher" && (
-                      <button onClick={() => handleMakeAdmin(teacher._id)} className="btn btn-xs btn-outline btn-primary">
-                        Make Admin
-                      </button>
-                    )}
-                  </td>
-                  <td>
-                    <div>
-                      <button>
-                        <FcViewDetails className="w-8 h-8"></FcViewDetails>
-                      </button>
-                      <button onClick={() => handleDeleteTeacher(teacher._id)}>
-                        <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+            {isLoading ? (
+              <>
+                <div className="text-center my-4">
+                  <span className="loading loading-dots loading-lg"></span>
+                </div>
+              </>
+            ) : (
+              <>
+                {" "}
+                <tbody>
+                  {/* Row */}
+                  {allTeachersData.map((teacher, index) => (
+                    <tr key={teacher._id}>
+                      <td>{index + 1}</td>
+                      <td>{teacher.name}</td>
+                      <td>{teacher.email}</td>
+                      <td>
+                        {teacher.role === "teacher" && (
+                          <button
+                            onClick={() => handleMakeAdmin(teacher._id)}
+                            className="btn btn-xs btn-outline btn-primary"
+                          >
+                            Make Admin
+                          </button>
+                        )}
+                      </td>
+                      <td>
+                        <div>
+                          <button>
+                            <FcViewDetails className="w-8 h-8"></FcViewDetails>
+                          </button>
+                          <button onClick={() => handleDeleteTeacher(teacher._id)}>
+                            <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </>
+            )}
           </table>
         </div>
       </div>

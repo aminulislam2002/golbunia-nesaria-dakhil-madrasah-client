@@ -1,16 +1,19 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const UpdateStudentProfile = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const user = useLoaderData();
-  console.log("user:", user); // Log user here to check its value
 
   const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
+    setIsLoading(true);
+
     fetch(`https://madrasah-server.vercel.app/userUpdate/${user._id}`, {
       method: "PATCH",
       headers: {
@@ -31,6 +34,11 @@ const UpdateStudentProfile = () => {
             timer: 1500,
           });
         }
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
       });
   };
 
@@ -41,159 +49,169 @@ const UpdateStudentProfile = () => {
       </div>
 
       <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {/* Edit name field  */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Name:</label>
-            <input
-              type="text"
-              {...register("name")}
-              name="name"
-              placeholder="Enter your name"
-              defaultValue={user?.name}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+        {isLoading ? (
+          <>
+            <div className="text-center my-4">
+              <span className="loading loading-dots loading-lg"></span>
+            </div>
+          </>
+        ) : (
+          <>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              {/* Edit name field  */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Name:</label>
+                <input
+                  type="text"
+                  {...register("name")}
+                  name="name"
+                  placeholder="Enter your name"
+                  defaultValue={user?.name}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit nickName field  */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your NickName:</label>
-            <input
-              type="text"
-              {...register("nickName")}
-              name="nickName"
-              placeholder="Enter your nickName"
-              defaultValue={user?.nickName}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit nickName field  */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your NickName:</label>
+                <input
+                  type="text"
+                  {...register("nickName")}
+                  name="nickName"
+                  placeholder="Enter your nickName"
+                  defaultValue={user?.nickName}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit bio field  */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Bio:</label>
-            <input
-              type="text"
-              {...register("bio")}
-              name="bio"
-              placeholder="Enter your bio"
-              defaultValue={user?.bio}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit bio field  */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Bio:</label>
+                <input
+                  type="text"
+                  {...register("bio")}
+                  name="bio"
+                  placeholder="Enter your bio"
+                  defaultValue={user?.bio}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit father name field  */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Father Name:</label>
-            <input
-              type="text"
-              {...register("fatherName")}
-              name="fatherName"
-              placeholder="Enter your father name"
-              defaultValue={user?.fatherName}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit father name field  */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Father Name:</label>
+                <input
+                  type="text"
+                  {...register("fatherName")}
+                  name="fatherName"
+                  placeholder="Enter your father name"
+                  defaultValue={user?.fatherName}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit mother name field  */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Mother Name:</label>
-            <input
-              type="text"
-              {...register("motherName")}
-              name="motherName"
-              placeholder="Enter your mother name"
-              defaultValue={user?.motherName}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit mother name field  */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Mother Name:</label>
+                <input
+                  type="text"
+                  {...register("motherName")}
+                  name="motherName"
+                  placeholder="Enter your mother name"
+                  defaultValue={user?.motherName}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit your mobile number filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Mobile Number:</label>
-            <input
-              type="number"
-              {...register("mobileNumber")}
-              name="mobileNumber"
-              placeholder="Enter your mobile number"
-              defaultValue={user?.mobileNumber}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit your mobile number filed */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Mobile Number:</label>
+                <input
+                  type="number"
+                  {...register("mobileNumber")}
+                  name="mobileNumber"
+                  placeholder="Enter your mobile number"
+                  defaultValue={user?.mobileNumber}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit your blood group filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Blood Group:</label>
-            <input
-              type="text"
-              {...register("bloodGroup")}
-              name="bloodGroup"
-              placeholder="Enter your blood group"
-              defaultValue={user?.bloodGroup}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit your blood group filed */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Blood Group:</label>
+                <input
+                  type="text"
+                  {...register("bloodGroup")}
+                  name="bloodGroup"
+                  placeholder="Enter your blood group"
+                  defaultValue={user?.bloodGroup}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit your birthday filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Birthday:</label>
-            <input
-              type="date"
-              {...register("birthdayDate")}
-              name="birthdayDate"
-              placeholder="Enter your birthday"
-              defaultValue={user?.birthdayDate}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit your birthday filed */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Birthday:</label>
+                <input
+                  type="date"
+                  {...register("birthdayDate")}
+                  name="birthdayDate"
+                  placeholder="Enter your birthday"
+                  defaultValue={user?.birthdayDate}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit your class filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your class:</label>
-            <input
-              type="text"
-              {...register("class")}
-              name="class"
-              placeholder="Enter your class"
-              defaultValue={user?.class}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit your class filed */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your class:</label>
+                <input
+                  type="text"
+                  {...register("class")}
+                  name="class"
+                  placeholder="Enter your class"
+                  defaultValue={user?.class}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit your roll filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Roll:</label>
-            <input
-              type="number"
-              {...register("roll")}
-              name="roll"
-              placeholder="Enter your class roll"
-              defaultValue={user?.roll}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit your roll filed */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Roll:</label>
+                <input
+                  type="number"
+                  {...register("roll")}
+                  name="roll"
+                  placeholder="Enter your class roll"
+                  defaultValue={user?.roll}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          {/* Edit your address filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Address:</label>
-            <input
-              type="text"
-              {...register("address")}
-              name="address"
-              placeholder="Enter your address"
-              defaultValue={user?.address}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              {/* Edit your address filed */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Address:</label>
+                <input
+                  type="text"
+                  {...register("address")}
+                  name="address"
+                  placeholder="Enter your address"
+                  defaultValue={user?.address}
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
 
-          <div>
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-5 rounded w-full focus:outline-none focus:shadow-outline"
-            >
-              Update your profile
-            </button>
-          </div>
-        </form>
+              <div>
+                <button
+                  type="submit"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-5 rounded w-full focus:outline-none focus:shadow-outline"
+                >
+                  Update your profile
+                </button>
+              </div>
+            </form>
+          </>
+        )}
       </div>
     </div>
   );

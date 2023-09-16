@@ -5,16 +5,26 @@ import Swal from "sweetalert2";
 
 const AllStudents = () => {
   const [allStudentsData, setAllStudentsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const students = async () => {
-      const res = await fetch("https://madrasah-server.vercel.app/getAllStudents");
-      const data = await res.json();
-      setAllStudentsData(data);
+    const fetchStudents = async () => {
+      try {
+        const res = await fetch("https://madrasah-server.vercel.app/getAllStudents");
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await res.json();
+        setAllStudentsData(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
+      }
     };
-    students();
-  }, []);
 
+    fetchStudents();
+  }, []);
   const handleDeleteStudent = (id) => {
     fetch(`https://madrasah-server.vercel.app/deleteUser/${id}`, {
       method: "DELETE",
@@ -61,29 +71,39 @@ const AllStudents = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            {allStudentsData.map((student, index) => (
-              <tr key={student._id}>
-                <th>{index + 1}</th>
-                <td>{student?.name}</td>
-                <td>{student?.email}</td>
-                <td>{student?.fatherName}</td>
-                <td>{student?.motherName}</td>
-                <td>{student?.class}</td>
-                <td>{student?.roll}</td>
-                <td>
-                  <div>
-                    <button>
-                      <FcViewDetails className="w-5 h-5"></FcViewDetails>
-                    </button>
-                    <button onClick={() => handleDeleteStudent(student._id)}>
-                      <MdDelete className="w-5 h-5 text-red-500"></MdDelete>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+          {isLoading ? (
+            <>
+              <div className="text-center my-4">
+                <span className="loading loading-dots loading-lg"></span>
+              </div>
+            </>
+          ) : (
+            <>
+              <tbody>
+                {allStudentsData.map((student, index) => (
+                  <tr key={student._id}>
+                    <th>{index + 1}</th>
+                    <td>{student?.name}</td>
+                    <td>{student?.email}</td>
+                    <td>{student?.fatherName}</td>
+                    <td>{student?.motherName}</td>
+                    <td>{student?.class}</td>
+                    <td>{student?.roll}</td>
+                    <td>
+                      <div>
+                        <button>
+                          <FcViewDetails className="w-5 h-5"></FcViewDetails>
+                        </button>
+                        <button onClick={() => handleDeleteStudent(student._id)}>
+                          <MdDelete className="w-5 h-5 text-red-500"></MdDelete>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </>
+          )}
         </table>
       </div>
     </div>
