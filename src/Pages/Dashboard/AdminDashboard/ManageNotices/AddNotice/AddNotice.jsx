@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import useUrl from "../../../../../Hooks/useUrl";
 
 const AddNotice = () => {
   const {
@@ -8,9 +9,10 @@ const AddNotice = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const [url] = useUrl();
 
   const onSubmit = (data) => {
-    fetch("https://madrasah-server.vercel.app/notices", {
+    fetch(`${url}/notices`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

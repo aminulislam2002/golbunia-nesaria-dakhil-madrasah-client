@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import useUrl from "../../../../../Hooks/useUrl";
 
 const image_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 
@@ -10,17 +11,16 @@ const AddEvent = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const [url] = useUrl();
 
-  const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_hosting_token}`; // Ensure the URL is constructed correctly
+  const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_hosting_token}`;
 
   console.log(image_hosting_token);
 
   const onSubmit = (data) => {
-    // Create a FormData object to append the image file
     const formData = new FormData();
-    formData.append("image", data.eventImage[0]); // Ensure the field name matches the API's expectations
+    formData.append("image", data.eventImage[0]);
 
-    // Send a POST request to the ImgBB API to upload the image
     fetch(image_hosting_url, {
       method: "POST",
       body: formData,
@@ -32,11 +32,10 @@ const AddEvent = () => {
           const { eventTitle, eventDescription, eventDateTime } = data;
           const newItem = { eventTitle, eventDescription, eventDateTime, eventImage: imgURL };
 
-          // Send a POST request to your server to save the event data
-          fetch("https://madrasah-server.vercel.app/events", {
+          fetch(`${url}/events`, {
             method: "POST",
             headers: {
-              "Content-Type": "application/json", // Correct the content type header
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(newItem),
           })

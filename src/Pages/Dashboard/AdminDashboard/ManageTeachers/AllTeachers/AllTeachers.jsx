@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import { FcViewDetails } from "react-icons/fc";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
+import useUrl from "../../../../../Hooks/useUrl";
 
 const AllTeachers = () => {
   const [allTeachersData, setAllTeachersData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [url] = useUrl();
 
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const res = await fetch("https://madrasah-server.vercel.app/getAllTeachers");
+        const res = await fetch(`${url}/getAllTeachers`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
@@ -24,12 +26,12 @@ const AllTeachers = () => {
     };
 
     fetchTeachers();
-  }, []);
+  }, [url]);
 
   console.log(allTeachersData);
 
   const handleMakeAdmin = (id) => {
-    fetch(`https://madrasah-server.vercel.app/makeAdmin/${id}`, {
+    fetch(`${url}/makeAdmin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -56,7 +58,7 @@ const AllTeachers = () => {
   };
 
   const handleDeleteTeacher = (id) => {
-    fetch(`https://madrasah-server.vercel.app/deleteUser/${id}`, {
+    fetch(`${url}/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

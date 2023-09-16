@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import { FcViewDetails } from "react-icons/fc";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
+import useUrl from "../../../../../Hooks/useUrl";
 
 const AllAdmins = () => {
   const [allAdminsData, setAllAdminsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [url] = useUrl();
+
   useEffect(() => {
     const fetchAdmins = async () => {
       try {
-        const res = await fetch("https://madrasah-server.vercel.app/getAllAdmins");
+        const res = await fetch(`${url}/getAllAdmins`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
@@ -24,10 +27,10 @@ const AllAdmins = () => {
     };
 
     fetchAdmins();
-  }, []);
+  }, [url]);
 
   const handleRemoveAdmin = (id) => {
-    fetch(`https://madrasah-server.vercel.app/removeAdmin/${id}`, {
+    fetch(`${url}/removeAdmin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -54,7 +57,7 @@ const AllAdmins = () => {
   };
 
   const handleDeleteAdmin = (id) => {
-    fetch(`https://madrasah-server.vercel.app/deleteUser/${id}`, {
+    fetch(`${url}/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

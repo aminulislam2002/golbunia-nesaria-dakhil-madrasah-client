@@ -8,6 +8,7 @@ import useAdmin from "../Hooks/useAdmin";
 import useTeacher from "../Hooks/useTeacher";
 import useStudent from "../Hooks/useStudent";
 import Swal from "sweetalert2";
+import useUrl from "../Hooks/useUrl";
 
 const DashboardLayout = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -16,18 +17,19 @@ const DashboardLayout = () => {
   const [isAdmin] = useAdmin();
   const [isTeacher] = useTeacher();
   const [isStudent] = useStudent();
+  const [url] = useUrl();
 
   const navigate = useNavigate();
   // console.log(currentUser);
 
   useEffect(() => {
     const cu = async () => {
-      const res = await fetch(`https://madrasah-server.vercel.app/getUserByEmail/${user.email}`);
+      const res = await fetch(`${url}/getUserByEmail/${user.email}`);
       const data = await res.json();
       setCurrentUser(data);
     };
     cu();
-  }, [user]);
+  }, [user, url]);
 
   const handleLogOut = () => {
     logOut()
@@ -63,7 +65,7 @@ const DashboardLayout = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Delete the user from the database first
-        fetch(`https://madrasah-server.vercel.app/deleteUser/${id}`, {
+        fetch(`${url}/deleteUser/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

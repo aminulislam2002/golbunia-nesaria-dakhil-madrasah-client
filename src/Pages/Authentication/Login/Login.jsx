@@ -4,10 +4,12 @@ import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useUrl from "../../../Hooks/useUrl";
 
 const Login = () => {
   const { signIn, user, createUserWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [url] = useUrl();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -23,6 +25,7 @@ const Login = () => {
 
     signIn(data.email, data.password)
       .then(() => {
+        navigate("/");
         setIsLoading(false);
         Swal.fire({
           icon: "success",
@@ -31,9 +34,9 @@ const Login = () => {
           timer: 3000,
         });
         reset();
-        navigate("/");
       })
       .catch((error) => {
+        navigate("/");
         setIsLoading(false);
         console.log(error);
         Swal.fire({
@@ -42,7 +45,6 @@ const Login = () => {
           showConfirmButton: false,
           timer: 3000,
         });
-        navigate("/");
       });
   };
 
@@ -58,7 +60,7 @@ const Login = () => {
           email: loggedInUser.email,
           photo: loggedInUser.photoURL,
         };
-        fetch("https://madrasah-server.vercel.app/users", {
+        fetch(`${url}/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -71,6 +73,7 @@ const Login = () => {
           });
       })
       .catch((error) => {
+        navigate("/");
         setIsLoading(false);
         console.log(error);
         Swal.fire({
@@ -79,7 +82,6 @@ const Login = () => {
           showConfirmButton: false,
           timer: 3000,
         });
-        navigate("/");
       });
   };
 

@@ -104,22 +104,22 @@ export const router = createBrowserRouter([
       {
         path: "profile/update-student-profile/:id",
         element: <UpdateStudentProfile></UpdateStudentProfile>,
-        loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getUserById/${params.id}`),
       },
       {
         path: "profile/update-teacher-profile/:id",
         element: <UpdateTeacherProfile></UpdateTeacherProfile>,
-        loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getUserById/${params.id}`),
       },
       {
         path: "profile/update-admin-profile/:id",
         element: <UpdateAdminProfile></UpdateAdminProfile>,
-        loader: ({ params }) => fetch(`https://madrasah-server.vercel.app/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getUserById/${params.id}`),
       },
       {
         path: "manageEvents",
         element: <AllEvent></AllEvent>,
-        loader: () => fetch("https://madrasah-server.vercel.app/events"),
+        loader: () => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/events`),
       },
       {
         path: "addEvent",
@@ -132,7 +132,7 @@ export const router = createBrowserRouter([
       {
         path: "manageNotices",
         element: <AllNotice></AllNotice>,
-        loader: () => fetch("https://madrasah-server.vercel.app/notices"),
+        loader: () => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/notices`),
       },
       {
         path: "addNotice",

@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { useQuery } from "react-query";
 import { AuthContext } from "../../../../Providers/AuthProvider";
+import useUrl from "../../../../Hooks/useUrl";
 
 const TeacherProfile = () => {
   const { user } = useContext(AuthContext);
+  const [url] = useUrl();
 
   const { data: currentUser = {}, isLoading } = useQuery(["currentUser"], async () => {
-    const res = await fetch(`https://madrasah-server.vercel.app/getUserByEmail/${user.email}`);
+    const res = await fetch(`${url}/getUserByEmail/${user.email}`);
     return res.json();
   });
 

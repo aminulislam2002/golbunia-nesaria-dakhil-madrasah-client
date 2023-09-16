@@ -3,13 +3,14 @@ import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useUrl from "../../../../../Hooks/useUrl";
 
 const AllEvent = () => {
   const events = useLoaderData();
-  console.log(events);
+  const [url] = useUrl();
 
   const handleDeleteEvent = (_id) => {
-    fetch(`https://madrasah-server.vercel.app/events/${_id}`, {
+    fetch(`${url}/events/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

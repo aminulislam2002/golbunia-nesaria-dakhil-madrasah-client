@@ -2,10 +2,12 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import useUrl from "../../../../Hooks/useUrl";
 
 const UpdateAdminProfile = () => {
   const [isLoading, setIsLoading] = useState(false);
   const user = useLoaderData();
+  const [url] = useUrl();
 
   const navigate = useNavigate();
 
@@ -14,7 +16,7 @@ const UpdateAdminProfile = () => {
   const onSubmit = (data) => {
     setIsLoading(true);
 
-    fetch(`https://madrasah-server.vercel.app/userUpdate/${user._id}`, {
+    fetch(`${url}/userUpdate/${user._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

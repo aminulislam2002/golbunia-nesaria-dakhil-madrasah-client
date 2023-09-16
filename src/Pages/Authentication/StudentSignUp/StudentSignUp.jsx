@@ -4,11 +4,13 @@ import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useUrl from "../../../Hooks/useUrl";
 
 const StudentSignUp = () => {
   const [isAgreed, setIsAgreed] = useState(false);
   const [passwordMismatchError, setPasswordMismatchError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // State to track loading
+  const [isLoading, setIsLoading] = useState(false);
+  const [url] = useUrl();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,7 +37,7 @@ const StudentSignUp = () => {
           photo: loggedInUser.photoURL,
           role: "student",
         };
-        fetch("https://madrasah-server.vercel.app/users", {
+        fetch(`${url}/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -83,7 +85,7 @@ const StudentSignUp = () => {
             .then(() => {
               const saveUserData = { name: userData.name, email: userData.email, role: userData.role };
               // User information saved db logic here
-              fetch("https://madrasah-server.vercel.app/users", {
+              fetch(`${url}/users`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
